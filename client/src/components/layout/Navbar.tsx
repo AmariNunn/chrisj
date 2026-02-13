@@ -28,16 +28,16 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-3" 
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5 py-2" 
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="relative overflow-hidden rounded-lg w-10 h-10 md:w-12 md:h-12 border-2 border-primary/10 group-hover:border-accent/50 transition-colors">
+          <div className="flex items-center gap-2.5 cursor-pointer group">
+            <div className="relative overflow-hidden rounded-xl w-10 h-10 md:w-11 md:h-11 border-2 border-primary/10 group-hover:border-accent/50 transition-all duration-300 shadow-sm group-hover:shadow-md">
               <img 
                 src={logoImg} 
                 alt="Jordan Wellness" 
@@ -45,25 +45,24 @@ export function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display font-bold text-lg md:text-xl leading-tight ${isScrolled ? "text-primary" : "text-primary md:text-primary"}`}>
+              <span className="font-display font-bold text-lg md:text-xl leading-tight text-primary">
                 Jordan Wellness
               </span>
-              <span className={`text-[10px] uppercase tracking-wider font-semibold ${isScrolled ? "text-accent" : "text-accent"}`}>
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">
                 Experience
               </span>
             </div>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex gap-6">
+          <div className="flex gap-1">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
-                <span className={`cursor-pointer text-sm font-medium transition-colors hover:text-accent ${
+                <span className={`cursor-pointer text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
                   location === link.href 
-                    ? "text-accent font-semibold" 
-                    : isScrolled ? "text-foreground" : "text-foreground"
+                    ? "text-accent bg-accent/10 font-semibold" 
+                    : "text-foreground hover:text-accent hover:bg-accent/5"
                 }`}>
                   {link.name}
                 </span>
@@ -71,35 +70,38 @@ export function Navbar() {
             ))}
           </div>
           <Link href="/booking">
-            <Button className="rounded-full px-6 bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 hover:shadow-accent/40 transition-all hover:-translate-y-0.5">
+            <Button className="rounded-full px-6 py-5 bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all hover:-translate-y-0.5 font-semibold">
               Book Now
             </Button>
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2 text-primary"
+          className="md:hidden p-2.5 text-primary rounded-xl hover:bg-muted transition-colors"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
         >
-          {isMobileOpen ? <X /> : <Menu />}
+          {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-border absolute w-full"
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-border/50 absolute w-full shadow-xl"
           >
-            <div className="flex flex-col p-4 gap-4">
+            <div className="flex flex-col p-5 gap-2">
               {navLinks.map((link) => (
                 <Link key={link.name} href={link.href}>
                   <span 
-                    className="block p-2 text-lg font-medium text-foreground hover:bg-muted rounded-lg"
+                    className={`block p-3 text-lg font-medium rounded-xl transition-all ${
+                      location === link.href 
+                        ? "bg-accent/10 text-accent font-semibold" 
+                        : "text-foreground hover:bg-muted"
+                    }`}
                     onClick={() => setIsMobileOpen(false)}
                   >
                     {link.name}
@@ -108,12 +110,12 @@ export function Navbar() {
               ))}
               <div className="h-px bg-border my-2" />
               <Link href="/booking">
-                <Button className="w-full rounded-full bg-accent hover:bg-accent/90 text-white" onClick={() => setIsMobileOpen(false)}>
+                <Button className="w-full rounded-xl py-6 bg-accent hover:bg-accent/90 text-white text-lg shadow-lg" onClick={() => setIsMobileOpen(false)}>
                   Book Appointment
                 </Button>
               </Link>
-              <a href="tel:+15551234567" className="flex items-center justify-center gap-2 text-primary font-medium py-2">
-                <Phone className="w-4 h-4" /> (615) 555-0123
+              <a href="tel:+16152132145" className="flex items-center justify-center gap-2 text-primary font-medium py-3 rounded-xl hover:bg-muted transition-colors">
+                <Phone className="w-4 h-4" /> (615) 213-2145
               </a>
             </div>
           </motion.div>

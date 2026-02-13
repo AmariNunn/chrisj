@@ -172,6 +172,7 @@ export function BookingForm() {
                     placeholder="Tell us about your pain or goals..." 
                     className="rounded-xl min-h-[100px] bg-muted/30 border-transparent focus:bg-white focus:border-primary/20 transition-all resize-none" 
                     {...field} 
+                    value={field.value ?? ""}
                   />
                 </FormControl>
                 <FormMessage />
