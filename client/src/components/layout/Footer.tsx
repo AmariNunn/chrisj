@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from "lucide-react";
-import logoImg from "@assets/Screenshot_2026-02-12_at_6.39.56_PM_1770944132620.png";
+import logoImg from "@/assets/images/logo.jpg";
 
 export function Footer() {
   return (

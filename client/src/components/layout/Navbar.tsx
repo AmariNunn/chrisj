@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@assets/Screenshot_2026-02-12_at_6.39.56_PM_1770944132620.png";
+import logoImg from "@/assets/images/logo.jpg";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
