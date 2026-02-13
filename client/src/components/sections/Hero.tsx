@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import heroImg from "@assets/Screenshot_2026-02-12_at_6.40.23_PM_1770944158720.png";
+import heroImg from "@/assets/images/hero-doctor.jpg";
 import { Calendar, MapPin, Clock } from "lucide-react";
 
 export function Hero() {

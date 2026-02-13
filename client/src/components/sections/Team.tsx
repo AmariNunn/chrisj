@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import nicoleImg from "@assets/Screenshot_2026-02-12_at_6.40.57_PM_1770944145492.png";
-import chrisImg from "@assets/Screenshot_2026-02-12_at_6.41.05_PM_1770944145492.png";
+import nicoleImg from "@/assets/images/team-nicole.jpg";
+import chrisImg from "@/assets/images/team-chris.jpg";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const team = [

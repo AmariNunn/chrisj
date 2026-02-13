@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Activity, Heart, ShieldCheck, Star } from "lucide-react";
-import massageImg from "@assets/Screenshot_2026-02-12_at_6.41.28_PM_1770944145492.png";
-import coupleImg from "@assets/Screenshot_2026-02-12_at_6.42.38_PM_1770944145490.png";
+import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
+import massageImg from "@/assets/images/service-massage.jpg";
+import nutritionImg from "@/assets/images/service-nutrition.jpg";
+import coupleImg from "@/assets/images/about-couple.jpg";
 
 export default function Home() {
   return (
@@ -83,17 +85,13 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: massageImg, desc: "Spinal adjustments to relieve pain and improve function." },
-              { title: "Massage Therapy", img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80", desc: "Therapeutic massage to relax muscles and reduce stress." },
-              { title: "Nutrition Planning", img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80", desc: "Custom meal plans to fuel your body and mind." },
+              { title: "Chiropractic Care", img: chiropracticImg, desc: "Spinal adjustments to relieve pain and improve function." },
+              { title: "Massage Therapy", img: massageImg, desc: "Therapeutic massage to relax muscles and reduce stress." },
+              { title: "Nutrition Planning", img: nutritionImg, desc: "Custom meal plans to fuel your body and mind." },
             ].map((service, i) => (
               <div key={i} className="group relative overflow-hidden rounded-3xl shadow-lg cursor-pointer h-[400px]">
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10" />
                 
-                {/* Descriptive comment for Unsplash images used above: 
-                    Index 1: Spa massage setting 
-                    Index 2: Healthy food flatlay 
-                */}
                 <img 
                   src={service.img} 
                   alt={service.title} 
