@@ -1,10 +1,36 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "@/assets/images/hero-doctor.jpg";
+import slideImg1 from "@assets/IMG_2228_1772059900723.jpg";
+import slideImg2 from "@assets/IMG_2364_1772059900723.jpg";
+import slideImg3 from "@/assets/images/slide-2386.jpg";
+import slideImg4 from "@/assets/images/slide-2406.jpg";
+import slideImg5 from "@/assets/images/slide-3100.jpg";
 import { MapPin, Clock, Star, ArrowRight } from "lucide-react";
 
+const slides = [
+  { src: heroImg, alt: "Jordan Wellness Team" },
+  { src: slideImg1, alt: "Chiropractic neck adjustment" },
+  { src: slideImg2, alt: "Percussion therapy treatment" },
+  { src: slideImg3, alt: "Wellness care session" },
+  { src: slideImg4, alt: "Patient consultation" },
+  { src: slideImg5, alt: "Clinic treatment" },
+];
+
 export function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 3000);
+    return () => clearInterval(timer);
+  }, [next]);
+
   return (
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden hero-gradient">
       <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
@@ -74,11 +100,37 @@ export function Hero() {
           <div className="relative w-full h-full max-h-[520px] lg:max-h-full">
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/30 to-primary/20 rounded-[2.5rem] rotate-3 transform translate-x-4 translate-y-4 blur-sm" />
             <div className="absolute -inset-1 bg-gradient-to-tr from-accent/20 to-primary/10 rounded-[2.5rem] -rotate-2 transform -translate-x-2 -translate-y-2" />
-            <img 
-              src={heroImg} 
-              alt="Jordan Wellness Team" 
-              className="w-full h-full object-cover rounded-[2.5rem] shadow-2xl z-10 relative ring-1 ring-white/50"
-            />
+            <div className="relative w-full h-full rounded-[2.5rem] shadow-2xl z-10 ring-1 ring-white/50 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={current}
+                  src={slides[current].src}
+                  alt={slides[current].alt}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  data-testid={`hero-slide-${current}`}
+                />
+              </AnimatePresence>
+            </div>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2" data-testid="slideshow-indicators">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "bg-white w-6"
+                      : "bg-white/50 hover:bg-white/80"
+                  }`}
+                  data-testid={`slideshow-dot-${i}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
             
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
