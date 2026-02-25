@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
-import coupleImg from "@/assets/images/about-couple.jpg";
+import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
 
 export default function Home() {
   return (
