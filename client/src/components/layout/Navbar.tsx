@@ -40,7 +40,9 @@ export function Navbar() {
             <img 
               src={logoImg} 
               alt="Jordan Wellness Experience" 
-              className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+              className={`h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-all duration-300 ${
+                isScrolled ? "" : "brightness-0 invert"
+              }`}
             />
           </div>
         </Link>
@@ -52,7 +54,9 @@ export function Navbar() {
                 <span className={`cursor-pointer text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
                   location === link.href 
                     ? "text-accent bg-accent/10 font-semibold" 
-                    : "text-foreground hover:text-accent hover:bg-accent/5"
+                    : isScrolled 
+                      ? "text-foreground hover:text-accent hover:bg-accent/5"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}>
                   {link.name}
                 </span>
@@ -67,7 +71,9 @@ export function Navbar() {
         </div>
 
         <button 
-          className="md:hidden p-2.5 text-primary rounded-xl hover:bg-muted transition-colors"
+          className={`md:hidden p-2.5 rounded-xl transition-colors ${
+            isScrolled ? "text-primary hover:bg-muted" : "text-white hover:bg-white/10"
+          }`}
           onClick={() => setIsMobileOpen(!isMobileOpen)}
         >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}

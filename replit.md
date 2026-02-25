@@ -15,7 +15,8 @@ Preferred communication style: Simple, everyday language.
 - **Routing**: Wouter (lightweight client-side router) with pages: Home, About, Services, Booking, Reviews, Contact, Intake, and 404
 - **State/Data**: TanStack React Query for server state management; custom hooks in `client/src/hooks/use-api.ts` wrap all API calls with mutations and queries
 - **UI Components**: shadcn/ui (new-york style) built on Radix UI primitives, styled with Tailwind CSS and CSS variables for theming
-- **Animations**: Framer Motion for page transitions and scroll-triggered animations
+- **Animations**: Framer Motion for page transitions, scroll-triggered animations, and hero slideshow transitions
+- **Hero Section**: Full-screen background slideshow (5 clinic photos cycling every 3s) with dark gradient overlay and white text. Navbar switches between white (transparent over hero) and dark (scrolled with white background) styles. Logo uses `brightness-0 invert` filter when navbar is transparent.
 - **Forms**: React Hook Form with Zod resolvers for validation, sharing schemas from the `shared/` directory
 - **Styling**: Tailwind CSS with custom theme (Deep Blue primary, Gold/Orange accent), Inter font for body text, Outfit for headings. Glassmorphism effects used in navbar and cards
 - **Path aliases**: `@/` maps to `client/src/`, `@shared/` maps to `shared/`, `@assets/` maps to `attached_assets/`
