@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@/assets/images/logo.jpg";
+import logoImg from "@/assets/images/logo-new.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,22 +36,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
-          <div className="flex items-center gap-2.5 cursor-pointer group">
-            <div className="relative overflow-hidden rounded-xl w-10 h-10 md:w-11 md:h-11 border-2 border-primary/10 group-hover:border-accent/50 transition-all duration-300 shadow-sm group-hover:shadow-md">
-              <img 
-                src={logoImg} 
-                alt="Jordan Wellness" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-lg md:text-xl leading-tight text-primary">
-                Jordan Wellness
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">
-                Experience
-              </span>
-            </div>
+          <div className="flex items-center cursor-pointer group" data-testid="navbar-logo">
+            <img 
+              src={logoImg} 
+              alt="Jordan Wellness Experience" 
+              className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+            />
           </div>
         </Link>
 

@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock, Heart } from "lucide-react";
-import logoImg from "@/assets/images/logo.jpg";
+import logoImg from "@/assets/images/logo-new.png";
 
 export function Footer() {
   return (
@@ -12,14 +12,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white rounded-xl p-1 overflow-hidden shadow-lg">
-                <img src={logoImg} alt="Jordan Wellness" className="w-full h-full object-cover" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-xl leading-tight">Jordan Wellness</span>
-                <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">Experience</span>
-              </div>
+            <div className="flex items-center" data-testid="footer-logo">
+              <img 
+                src={logoImg} 
+                alt="Jordan Wellness Experience" 
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-primary-foreground/60 leading-relaxed">
               110% from us EVERYTIME. Your health is our priority. We are dedicated to providing holistic wellness care that transforms lives.
