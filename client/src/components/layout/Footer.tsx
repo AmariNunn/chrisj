@@ -78,7 +78,7 @@ export function Footer() {
                 <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4 text-accent" />
                 </div>
-                <a href="mailto:info@jordanwellness.com" className="hover:text-white transition-colors">info@jordanwellness.com</a>
+                <a href="mailto:info@jordanwellnessxp.com" className="hover:text-white transition-colors">info@jordanwellnessxp.com</a>
               </li>
             </ul>
           </div>

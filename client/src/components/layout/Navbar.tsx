@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/images/logo-new.png";
@@ -9,6 +9,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [location] = useLocation();
+  const isHome = location === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,102 +19,165 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [location]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "The Experience", href: "/experience" },
     { name: "Services", href: "/services" },
-    { name: "Membership & Packages", href: "/memberships" },
+    { name: "Memberships", href: "/memberships" },
     { name: "Conditions", href: "/conditions" },
     { name: "FAQ", href: "/faq" },
   ];
 
+  const showDark = isScrolled || !isHome;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5 py-2" 
-          : "bg-transparent py-4"
+        showDark
+          ? "bg-white/98 backdrop-blur-2xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] border-b border-black/[0.04]"
+          : "bg-gradient-to-b from-black/30 to-transparent"
       }`}
+      data-testid="navbar"
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/">
-          <div className="flex items-center cursor-pointer group" data-testid="navbar-logo">
-            <img 
-              src={logoImg} 
-              alt="Jordan Wellness Experience" 
-              className={`h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-all duration-300 ${
-                isScrolled ? "" : "brightness-0 invert"
-              }`}
-            />
-          </div>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex gap-1">
-            {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <span className={`cursor-pointer text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
-                  location === link.href 
-                    ? "text-accent bg-accent/10 font-semibold" 
-                    : isScrolled 
-                      ? "text-foreground hover:text-accent hover:bg-accent/5"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                }`}>
-                  {link.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-          <Link href="/booking">
-            <Button className="rounded-full px-6 py-5 bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all hover:-translate-y-0.5 font-semibold">
-              Book Now
-            </Button>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
+          <Link href="/">
+            <div className="flex items-center cursor-pointer group shrink-0" data-testid="navbar-logo">
+              <img
+                src={logoImg}
+                alt="Jordan Wellness Experience"
+                className={`h-9 lg:h-11 w-auto object-contain transition-all duration-300 ${
+                  showDark ? "" : "brightness-0 invert"
+                }`}
+              />
+            </div>
           </Link>
-        </div>
 
-        <button 
-          className={`md:hidden p-2.5 rounded-xl transition-colors ${
-            isScrolled ? "text-primary hover:bg-muted" : "text-white hover:bg-white/10"
-          }`}
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-        >
-          {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <div className="hidden lg:flex items-center">
+            <div className="flex items-center gap-0.5">
+              {navLinks.map((link) => {
+                const isActive = location === link.href;
+                return (
+                  <Link key={link.name} href={link.href}>
+                    <span
+                      className={`relative cursor-pointer text-[13px] font-medium px-3 xl:px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                        isActive
+                          ? showDark
+                            ? "text-accent font-semibold"
+                            : "text-white font-semibold"
+                          : showDark
+                            ? "text-foreground/70 hover:text-foreground hover:bg-muted/60"
+                            : "text-white/80 hover:text-white hover:bg-white/10"
+                      }`}
+                      data-testid={`nav-link-${link.href.slice(1) || "home"}`}
+                    >
+                      {link.name}
+                      {isActive && (
+                        <motion.div
+                          layoutId="nav-indicator"
+                          className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full ${
+                            showDark ? "bg-accent" : "bg-white"
+                          }`}
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className={`w-px h-6 mx-4 ${showDark ? "bg-border" : "bg-white/20"}`} />
+
+            <div className="flex items-center gap-3">
+              <a
+                href="tel:+16152132145"
+                className={`text-[13px] font-medium transition-colors whitespace-nowrap ${
+                  showDark
+                    ? "text-foreground/60 hover:text-foreground"
+                    : "text-white/70 hover:text-white"
+                }`}
+                data-testid="nav-phone"
+              >
+                <Phone className="w-3.5 h-3.5 inline-block mr-1.5 -mt-px" />
+                (615) 213-2145
+              </a>
+              <Link href="/booking">
+                <Button
+                  className="rounded-lg px-5 h-9 text-[13px] bg-accent hover:bg-accent/90 text-white font-semibold shadow-sm shadow-accent/20 hover:shadow-accent/30 transition-all"
+                  data-testid="nav-book-now"
+                >
+                  Book Now
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <button
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              showDark ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            data-testid="nav-mobile-toggle"
+          >
+            {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-border/50 absolute w-full shadow-xl"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border/50 shadow-xl"
           >
-            <div className="flex flex-col p-5 gap-2">
-              {navLinks.map((link) => (
-                <Link key={link.name} href={link.href}>
-                  <span 
-                    className={`block p-3 text-lg font-medium rounded-xl transition-all ${
-                      location === link.href 
-                        ? "bg-accent/10 text-accent font-semibold" 
-                        : "text-foreground hover:bg-muted"
-                    }`}
+            <div className="container mx-auto px-4">
+              <div className="py-3">
+                {navLinks.map((link, i) => (
+                  <Link key={link.name} href={link.href}>
+                    <span
+                      className={`flex items-center px-4 py-3 text-[15px] font-medium rounded-lg transition-all ${
+                        location === link.href
+                          ? "text-accent bg-accent/5 font-semibold"
+                          : "text-foreground/80 hover:text-foreground hover:bg-muted/50"
+                      }`}
+                      onClick={() => setIsMobileOpen(false)}
+                      data-testid={`nav-mobile-${link.href.slice(1) || "home"}`}
+                    >
+                      {link.name}
+                      {location === link.href && (
+                        <div className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
+                      )}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-border/50 py-4 space-y-3">
+                <Link href="/booking">
+                  <Button
+                    className="w-full rounded-lg h-12 bg-accent hover:bg-accent/90 text-white text-[15px] font-semibold shadow-md"
                     onClick={() => setIsMobileOpen(false)}
+                    data-testid="nav-mobile-book"
                   >
-                    {link.name}
-                  </span>
+                    Book Appointment
+                  </Button>
                 </Link>
-              ))}
-              <div className="h-px bg-border my-2" />
-              <Link href="/booking">
-                <Button className="w-full rounded-xl py-6 bg-accent hover:bg-accent/90 text-white text-lg shadow-lg" onClick={() => setIsMobileOpen(false)}>
-                  Book Appointment
-                </Button>
-              </Link>
-              <a href="tel:+16152132145" className="flex items-center justify-center gap-2 text-primary font-medium py-3 rounded-xl hover:bg-muted transition-colors">
-                <Phone className="w-4 h-4" /> (615) 213-2145
-              </a>
+                <a
+                  href="tel:+16152132145"
+                  className="flex items-center justify-center gap-2 text-foreground/70 font-medium py-2.5 rounded-lg hover:bg-muted/50 transition-colors text-[15px]"
+                >
+                  <Phone className="w-4 h-4" />
+                  (615) 213-2145
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
