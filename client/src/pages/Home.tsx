@@ -12,6 +12,9 @@ import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
+import chiroServiceImg from "@assets/IMG_3944_1772074849867.heic";
+import fitnessServiceImg from "@assets/IMG_5103_1772074900840.heic";
+import happyHourServiceImg from "@assets/IMG_5128_1772074900842.heic";
 
 export default function Home() {
   useEffect(() => {
@@ -134,9 +137,9 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: chiropracticImg, desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: massageImg, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: nutritionImg, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
+              { title: "Chiropractic Care", img: chiroServiceImg, desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
+              { title: "Fitness Training", img: fitnessServiceImg, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "\"Happy Hour\" Wellness Experience", img: happyHourServiceImg, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 
