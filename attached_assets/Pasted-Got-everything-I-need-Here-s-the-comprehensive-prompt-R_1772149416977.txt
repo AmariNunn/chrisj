@@ -1,0 +1,154 @@
+Got everything I need. Here's the comprehensive prompt:
+
+Replit Prompt — Jordan Wellness Experience Website (Complete Redesign)
+Redesign the Jordan Wellness Experience website from scratch. The current site (https://futurevision1.netlify.app/) looks too basic and generic. The client wants something that feels elevated, luxurious, boutique, and modern — not cookie-cutter clinic. Think high-end private wellness studio, concierge-level care, editorial elegance. This site will be deployed on Netlify.
+
+DESIGN OVERHAUL DIRECTION:
+The current site looks like a standard template medical site. Blow it up. The new design should feel like:
+
+A luxury wellness brand — think Equinox, Alo Yoga, or a high-end med spa website
+Clean but NOT boring. Elegant but NOT stuffy. Warm but NOT clinical.
+Generous white space, beautiful typography, refined color palette
+Large cinematic imagery — photos should breathe and fill the screen
+Smooth scroll animations, subtle parallax, fade-ins — the site should feel alive and fluid
+Typography hierarchy matters: use a refined serif or elegant sans-serif for headings, clean sans-serif for body text. Think editorial magazine quality.
+Color palette suggestion: crisp white backgrounds, warm neutrals (soft beige, warm gray, taupe), with a rich accent color — deep gold, muted sage green, or warm bronze — to convey premium quality. NO harsh clinical blues or reds.
+Buttons and CTAs should feel tactile and premium — soft rounded corners, subtle hover transitions, not flat generic rectangles
+The overall feel should make someone think "this is a private, exclusive wellness experience" the moment the page loads
+
+
+NAVIGATION MENU:
+Include the following items in the navigation:
+
+Home
+About
+Services
+New Patient Forms
+Testimonials
+Book Appointment
+Contact
+
+
+HOME PAGE:
+Background: WHITE — clean white background is important so photos display clearly.
+Hero Section:
+
+Large, cinematic hero area
+Business name: Jordan Wellness Experience
+Tagline: Where Clinical Precision Meets Lifelong Wellness
+Remove ALL other words, paragraphs, star ratings, review counts, etc. from the hero — keep it clean with just the name, tagline, and two buttons
+Two CTA buttons: Book Appointment | View Services
+Remove any "Taking New Patients" text
+Add a scrolling banner/marquee across the screen that says "Now Accepting New Patients" — this should be a sleek, animated ribbon-style banner that scrolls continuously. Style it elegantly — not cheap or flashy, think refined ticker. Could be placed just below the hero or as an overlay strip.
+
+Location & Hours:
+
+Keep the location and "Open Daily By Appointment" info — display it cleanly
+Location: 3228 Clarksville Pike, Suite 101, Nashville, TN 37218
+Hours: By Appointment Only — 11am to 2pm and 4pm to 7pm, Sunday – Saturday
+Phone: 615-434-4328
+
+Photo Slideshow:
+
+Create a beautiful slideshow with 10 image slots
+Each slide should display for approximately 3 seconds
+The slideshow should loop continuously as long as someone is on the Home page
+Smooth transitions between slides (fade or soft slide — nothing jarring)
+Use clearly labeled placeholder images for each slot with these descriptions so the client knows which photos to upload:
+
+"Photo 1: Dr. Cox-Jordan in pink shirt — side posture adjustment on male patient in black shirt and jeans"
+"Photo 2: Dr. Cox-Jordan in all black — adjusting seated woman's neck (black jacket, blue shirt, blue/white skirt)"
+"Photo 3: Chris in wellness studio — black t-shirt and black hat showing weights to a couple"
+"Photo 4: Two women in wellness studio with backs turned — one on treadmill, one on exercise bike"
+"Photo 5: Dr. Cox-Jordan in light blue blouse standing beside patient in massage chair (patient in light green sweatshirt, grey sweatpants)"
+"Photo 6: Dr. Cox-Jordan in red top — using theragun on male patient's upper back (patient in red t-shirt)"
+"Photo 7: Dr. Cox-Jordan adjusting a child — both sitting on black table, silver instrument to child's upper back (child in blue shirt, black pants)"
+"Photo 8: Chris in wellness studio — black t-shirt and hat showing a woman how to use weights"
+"Photo 9: Woman standing in red half top with tattoos — getting a fat freezing session"
+"Photo 10: Dr. Cox-Jordan measuring a patient's arm"
+
+
+Make it very easy for the client to swap in real photos later (clear file naming convention or CMS-style image slots)
+
+Wellness Branding Section (replaces the old Private Wellness Setting / Intentional Care / Whole Body Approach boxes):
+
+REMOVE the old three-box layout entirely
+Replace with an elegant branding section that incorporates these phrases — display them in a visually striking way (large typography, staggered layout, editorial style, or as an elegant grid of statements):
+
+"Where precision care meets elevated living."
+"Wellness, refined."
+"Private care. Exceptional outcomes."
+"Because your body deserves concierge-level care."
+"Restore. Strengthen. Elevate. Enhance."
+"Experience care without compromise."
+"An experience reserved for the discerning."
+
+
+These could be displayed as a large typographic section with alternating sizes, or as elegant cards, or as a flowing editorial layout — get creative but keep it premium feeling
+
+About / Studio Description Section:
+
+Include a photo spot for Chris and Dr. Cox-Jordan together (placeholder labeled "Photo: Chris & Dr. Cox-Jordan")
+Display this text:
+
+"Jordan Wellness Experience is a forward thinking concept, rooted in longevity, vitality, and total body calibration. It's a private standard in life long wellness engineered for enduring strength. With every Jordan Wellness Experience, we prioritize a thoughtful and individualized approach to wellness. Our process is neither rushed nor transactional, ensuring that each session and treatment plan is tailored to the unique needs of our clients. Conveniently located in Nashville, our private wellness studio was established to support professionals, caregivers, parents, leaders, athletes, and others who constantly pour into others but often overlook their own well-being. We provide a discreet and tranquil environment that respects your time, privacy, and health."
+
+MEET THE EXPERTS SECTION:
+Dr. Nicole Cox-Jordan:
+
+Photo placeholder (labeled clearly)
+Full bio:
+
+"Dr. Nicole Cox-Jordan hails from Nashville, Tennessee. She completed her education at Davidson County Public Schools and graduated from Whites Creek High School. She earned her Bachelor's degree from Fisk University in Nashville. Subsequently, Dr. Cox-Jordan obtained her Doctor of Chiropractic (DC) degree from Parker College of Chiropractic in Dallas, Texas. Upon completing her studies, she returned to her community to practice. Notably, Dr. Cox-Jordan became the first African American female Chiropractor to practice in the state of Tennessee.
+Dr. Cox-Jordan commenced her career as an Independent Contractor. Within eight months, she co-founded Back 2 Back Chiropractic and Wellness Center. Throughout her career, she has positively impacted numerous lives, often providing hope to those in need. Dr. Cox-Jordan is highly skilled in her profession, demonstrates exceptional bedside manner, and treats every individual with respect and professionalism regardless of age or socioeconomic status. In addition to her Chiropractic license, Dr. Cox-Jordan is Certified in SubZero Aesthetics and SubZero Orthopedics Cryotherapy.
+Dr. Cox-Jordan has 25+ years of Chiropractic experience; by teaming up with her husband Chris, they are better equipped to offer a unique, fun, and comprehensive wellness experience."
+Christopher Jordan, CPT:
+
+Photo placeholder — center his picture and make sure his title text does NOT obstruct/overlay his head
+Full bio:
+
+"Chris graduated from Whites Creek High School and attended Tennessee State University, majoring in Architectural Engineering. He then relocated to Everett, Washington, where he lived for the next 9 years and began his career in the communications industry.
+At one point, Chris weighed 350 pounds and was diagnosed with stage 2 hypertension. Over time, he aimed to lose 100 pounds in hopes of managing his blood pressure without medication. For the next 3 years, he followed a routine of daily cardio and improved diet. As a result of these lifestyle changes, Chris now maintains a weight of 260 pounds, suitable for his 6'5" frame.
+Chris started his first business years ago called Healthy Meal Prep by Chris. He prepared affordable, healthy entrees and snacks to demonstrate that eating healthy can be interesting, flavorful, and cost-effective. Chris aimed to better serve his clients by completing Certifications from the International Sports Sciences Association (ISSA). ISSA Certified in Fitness Training, Strength and Conditioning, Nutritional Counseling, and Kinesiotaping. In his spare time, he works out, relaxes, and spends time with his family. Chris is a long-standing member of The Temple Church in Nashville, TN."
+
+TESTIMONIALS SECTION:
+
+Include a dedicated Testimonials section (also accessible from the nav menu)
+For now, use placeholder testimonial cards with "Client testimonial coming soon" or pull any real reviews from their Google listing if accessible
+Design these as elegant quote cards — large quotation marks, clean typography, client first name only
+
+
+NEW PATIENT FORMS:
+
+Include a New Patient Forms page or section accessible from the nav menu
+This can link to their existing intake form URL: https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/
+Or provide a clean landing page that says the forms are available and links out to them
+
+
+CONTACT SECTION:
+
+Contact form (name, email, phone, message)
+Location with embedded Google Map: 3228 Clarksville Pike, Suite 101, Nashville, TN 37218
+Phone: 615-434-4328
+Email: backdr4u@gmail.com
+Social media links: Instagram (@jordanwellnessxp)
+Book Appointment button linking to: https://www.vagaro.com/us04/jordanwellnessexperience
+
+
+GENERAL DESIGN NOTES:
+
+Remove ALL lorem ipsum text — every piece of text should be real content
+Remove all placeholder stock testimonials with fake names (Tyler Curtis, Alessio Dunn, Kaira Beasley from the old site are fake — remove them)
+Remove the old "Why Choose Us" section with lorem ipsum
+Remove the old Blog section
+Smooth scroll-triggered animations on all sections (fade in, slide up, etc.)
+Mobile responsive — looks great on all devices
+Fast loading, optimized images
+SEO-friendly with proper meta tags
+
+TECH & DEPLOYMENT:
+
+Netlify-ready: include netlify.toml with proper build command and publish directory
+If React/Vite: build command npm run build, publish directory dist
+If SPA with routing: include _redirects file with /* /index.html 200
+Clean, maintainable code so the client's developer can update content and swap photos easily
