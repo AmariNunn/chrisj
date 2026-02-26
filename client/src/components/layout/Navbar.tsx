@@ -1,9 +1,20 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/images/logo-new.png";
+
+const VAGARO_URL = "https://www.vagaro.com/us04/jordanwellnessexperience";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "New Patient Forms", href: "/new-patient-forms" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Contact", href: "/contact" },
+];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,15 +33,6 @@ export function Navbar() {
   useEffect(() => {
     setIsMobileOpen(false);
   }, [location]);
-
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "The Experience", href: "/experience" },
-    { name: "Services", href: "/services" },
-    { name: "Memberships", href: "/memberships" },
-    { name: "Conditions", href: "/conditions" },
-    { name: "FAQ", href: "/faq" },
-  ];
 
   const showDark = isScrolled || !isHome;
 
@@ -64,7 +66,7 @@ export function Navbar() {
                 return (
                   <Link key={link.name} href={link.href}>
                     <span
-                      className={`relative cursor-pointer text-[13px] font-medium px-3 xl:px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                      className={`relative cursor-pointer text-[13px] font-medium px-3 xl:px-4 py-2 rounded-md transition-all duration-200 whitespace-nowrap ${
                         isActive
                           ? showDark
                             ? "text-accent font-semibold"
@@ -95,7 +97,7 @@ export function Navbar() {
 
             <div className="flex items-center gap-3">
               <a
-                href="tel:+16154145294"
+                href="tel:+16154344328"
                 className={`text-[13px] font-medium transition-colors whitespace-nowrap ${
                   showDark
                     ? "text-foreground/60 hover:text-foreground"
@@ -104,21 +106,25 @@ export function Navbar() {
                 data-testid="nav-phone"
               >
                 <Phone className="w-3.5 h-3.5 inline-block mr-1.5 -mt-px" />
-                (615) 414-5294
+                (615) 434-4328
               </a>
-              <Link href="/booking">
+              <a
+                href={VAGARO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
-                  className="rounded-lg px-5 h-9 text-[13px] bg-accent hover:bg-accent/90 text-white font-semibold shadow-sm shadow-accent/20 hover:shadow-accent/30 transition-all"
-                  data-testid="nav-book-now"
+                  className="rounded-md px-5 text-[13px] bg-accent border-accent text-white font-semibold shadow-sm shadow-accent/20 transition-all"
+                  data-testid="nav-book-appointment"
                 >
-                  Book Now
+                  Book Appointment
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
 
           <button
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
+            className={`lg:hidden p-2 rounded-md transition-colors ${
               showDark ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
             }`}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -140,10 +146,10 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4">
               <div className="py-3">
-                {navLinks.map((link, i) => (
+                {navLinks.map((link) => (
                   <Link key={link.name} href={link.href}>
                     <span
-                      className={`flex items-center px-4 py-3 text-[15px] font-medium rounded-lg transition-all ${
+                      className={`flex items-center px-4 py-3 text-[15px] font-medium rounded-md transition-all ${
                         location === link.href
                           ? "text-accent bg-accent/5 font-semibold"
                           : "text-foreground/80 hover:text-foreground hover:bg-muted/50"
@@ -161,21 +167,28 @@ export function Navbar() {
               </div>
 
               <div className="border-t border-border/50 py-4 space-y-3">
-                <Link href="/booking">
+                <a
+                  href={VAGARO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
                   <Button
-                    className="w-full rounded-lg h-12 bg-accent hover:bg-accent/90 text-white text-[15px] font-semibold shadow-md"
+                    className="w-full rounded-md bg-accent border-accent text-white text-[15px] font-semibold shadow-md"
+                    size="lg"
                     onClick={() => setIsMobileOpen(false)}
-                    data-testid="nav-mobile-book"
+                    data-testid="nav-mobile-book-appointment"
                   >
                     Book Appointment
                   </Button>
-                </Link>
+                </a>
                 <a
-                  href="tel:+16154145294"
-                  className="flex items-center justify-center gap-2 text-foreground/70 font-medium py-2.5 rounded-lg hover:bg-muted/50 transition-colors text-[15px]"
+                  href="tel:+16154344328"
+                  className="flex items-center justify-center gap-2 text-foreground/70 font-medium py-2.5 rounded-md hover:bg-muted/50 transition-colors text-[15px]"
+                  data-testid="nav-mobile-phone"
                 >
                   <Phone className="w-4 h-4" />
-                  (615) 414-5294
+                  (615) 434-4328
                 </a>
               </div>
             </div>

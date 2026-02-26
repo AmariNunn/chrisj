@@ -5,26 +5,22 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import Home from "@/pages/Home";
-import Experience from "@/pages/Experience";
+import About from "@/pages/About";
 import Services from "@/pages/Services";
-import Memberships from "@/pages/Memberships";
-import Conditions from "@/pages/Conditions";
-import FAQ from "@/pages/FAQ";
-import Booking from "@/pages/Booking";
-import Reviews from "@/pages/Reviews";
+import NewPatientForms from "@/pages/NewPatientForms";
+import Testimonials from "@/pages/Testimonials";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/experience" component={Experience} />
+      <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
-      <Route path="/memberships" component={Memberships} />
-      <Route path="/conditions" component={Conditions} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/booking" component={Booking} />
-      <Route path="/reviews" component={Reviews} />
+      <Route path="/new-patient-forms" component={NewPatientForms} />
+      <Route path="/testimonials" component={Testimonials} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );

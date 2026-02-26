@@ -1,0 +1,86 @@
+import { useEffect } from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Section } from "@/components/ui/section";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
+
+const testimonials = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+];
+
+export default function Testimonials() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
+      <Navbar />
+
+      <main>
+        <section className="relative py-20 md:py-28 bg-primary text-white overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] -top-40 -left-40" />
+            <div className="absolute w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] -bottom-40 -right-40" />
+          </div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block" data-testid="text-testimonials-subtitle">
+                What Our Clients Say
+              </span>
+              <h1 className="font-display font-bold text-4xl md:text-6xl leading-tight mb-6" data-testid="text-testimonials-title">
+                Testimonials
+              </h1>
+              <p className="text-lg text-white/70 max-w-xl mx-auto" data-testid="text-testimonials-intro">
+                Real experiences from those who trust us with their wellness journey
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <Section className="bg-white">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                className="relative p-8 rounded-2xl bg-muted/30 border border-border"
+                data-testid={`card-testimonial-${item.id}`}
+              >
+                <div className="mb-6">
+                  <Quote className="text-accent/30" size={48} />
+                </div>
+                <p className="text-muted-foreground leading-relaxed italic text-lg mb-8" data-testid={`text-testimonial-${item.id}`}>
+                  Client testimonial coming soon
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                    <span className="text-accent font-bold text-sm">{idx + 1}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Valued Client</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
