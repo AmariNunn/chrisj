@@ -32,6 +32,10 @@ import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
 
+const chiroServiceImg = "/images/chiro-service.jpg";
+const fitnessServiceImg = "/images/fitness-service.jpg";
+const happyHourServiceImg = "/images/happy-hour-service.jpg";
+
 export default function Services() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,7 +45,7 @@ export default function Services() {
     {
       title: "Chiropractic Care",
       icon: Activity,
-      img: chiropracticImg,
+      img: chiroServiceImg,
       features: [
         "Private wellness setting",
         "Precision adjustments coupled with PT modalities",
@@ -55,7 +59,7 @@ export default function Services() {
     {
       title: "Fitness Training Wellness Experience",
       icon: Dumbbell,
-      img: nutritionImg,
+      img: fitnessServiceImg,
       features: [
         "Private workout studio",
         "Personalized programs",
@@ -68,7 +72,7 @@ export default function Services() {
     {
       title: '"Happy Hour" Wellness Experience',
       icon: Clock,
-      img: massageImg,
+      img: happyHourServiceImg,
       description:
         "ONE FULL HOUR of Relaxation therapy. Releases tension, supports recovery, reduces stress, and provides a nervous system reset.",
       features: [
