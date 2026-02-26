@@ -27,7 +27,8 @@ import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import servicesHeaderImg from "@/assets/images/booking-header.jpg";
-import chiroFitnessVideo from "@assets/crisj_1772072399228.mp4";
+import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
+import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 
 export default function Services() {
   useEffect(() => {
@@ -84,7 +85,7 @@ export default function Services() {
       icon: Star,
       badge: "Concierge Membership",
       price: "Starting at $299+",
-      video: chiroFitnessVideo,
+      video: essentialVideo,
       features: [
         "Chiro optimization",
         "Private fitness training",
@@ -101,6 +102,7 @@ export default function Services() {
       badge: "Non-Invasive",
       price: "Starting at $99+/session (min 6 sessions)",
       note: "NOT for weight loss",
+      video: bodySculptingVideo,
       features: [
         "Abdomen",
         "Love handles",
