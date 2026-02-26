@@ -1,28 +1,28 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertAppointmentSchema, type InsertAppointment } from "@shared/schema";
-import { useCreateAppointment } from "@/hooks/use-api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Loader2 } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
+import { CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 import { z } from "zod";
 
-// Extend schema to handle Date object from Calendar component
-const formSchema = insertAppointmentSchema.extend({
-  date: z.date({ required_error: "A date of appointment is required." }),
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(7, "Please enter a valid phone number"),
+  service: z.string().min(1, "Please select a service"),
+  notes: z.string().optional(),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
 export function BookingForm() {
-  const mutation = useCreateAppointment();
-  
-  const form = useForm<z.infer<typeof formSchema>>({
+  const [submitted, setSubmitted] = useState(false);
+
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -33,17 +33,41 @@ export function BookingForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    mutation.mutate(values as InsertAppointment, {
-      onSuccess: () => form.reset(),
-    });
+  function onSubmit(values: FormValues) {
+    const subject = encodeURIComponent(`Appointment Request – ${values.service}`);
+    const body = encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\nService: ${values.service}\nNotes: ${values.notes || "None"}`
+    );
+    window.location.href = `mailto:info@jordanwellnessxp.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-border flex flex-col items-center justify-center text-center min-h-[300px] gap-4">
+        <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
+          <CheckCircle2 className="text-accent" size={36} />
+        </div>
+        <h3 className="font-display font-bold text-2xl text-primary">Request Sent!</h3>
+        <p className="text-muted-foreground max-w-sm">
+          Your appointment request has been sent to our team. We'll reach out to confirm your visit shortly.
+        </p>
+        <Button
+          variant="outline"
+          className="rounded-xl mt-2"
+          onClick={() => { setSubmitted(false); form.reset(); }}
+        >
+          Submit Another Request
+        </Button>
+      </div>
+    );
   }
 
   return (
     <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-border">
       <div className="mb-8">
         <h3 className="font-display font-bold text-2xl text-primary mb-2">Book Your Visit</h3>
-        <p className="text-muted-foreground">Select a service and date that works for you.</p>
+        <p className="text-muted-foreground">Select a service and we'll be in touch to confirm your appointment.</p>
       </div>
 
       <Form {...form}>
@@ -62,7 +86,6 @@ export function BookingForm() {
                 </FormItem>
               )}
             />
-            
             <FormField
               control={form.control}
               name="email"
@@ -86,13 +109,12 @@ export function BookingForm() {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="(555) 000-0000" className="rounded-xl h-12 bg-muted/30 border-transparent focus:bg-white focus:border-primary/20 transition-all" {...field} />
+                    <Input placeholder="(615) 000-0000" className="rounded-xl h-12 bg-muted/30 border-transparent focus:bg-white focus:border-primary/20 transition-all" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="service"
@@ -106,11 +128,14 @@ export function BookingForm() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="chiropractic">Chiropractic Adjustment</SelectItem>
-                      <SelectItem value="nutrition">Nutrition Consultation</SelectItem>
-                      <SelectItem value="massage">Massage Therapy</SelectItem>
-                      <SelectItem value="rehab">Rehabilitation</SelectItem>
-                      <SelectItem value="new_patient">New Patient Exam</SelectItem>
+                      <SelectItem value="Chiropractic Care">Chiropractic Care</SelectItem>
+                      <SelectItem value="Fitness Training">Fitness Training</SelectItem>
+                      <SelectItem value="Happy Hour Wellness">Happy Hour Wellness Experience</SelectItem>
+                      <SelectItem value="Essential ChiroFitness">Essential ChiroFitness Experience</SelectItem>
+                      <SelectItem value="Body Sculpting">Enhanced Body Sculpting / Fat Freezing</SelectItem>
+                      <SelectItem value="Cryotherapy">Elevated Targeted Cryotherapy</SelectItem>
+                      <SelectItem value="Elite VIP">Elite VIP Experience</SelectItem>
+                      <SelectItem value="New Patient Exam">New Patient Exam</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -121,57 +146,15 @@ export function BookingForm() {
 
           <FormField
             control={form.control}
-            name="date"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Preferred Date</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-full h-12 pl-3 text-left font-normal rounded-xl bg-muted/30 border-transparent hover:bg-muted/50",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date < new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
             name="notes"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Notes (Optional)</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="Tell us about your pain or goals..." 
-                    className="rounded-xl min-h-[100px] bg-muted/30 border-transparent focus:bg-white focus:border-primary/20 transition-all resize-none" 
-                    {...field} 
+                  <Textarea
+                    placeholder="Tell us about your goals or any concerns..."
+                    className="rounded-xl min-h-[100px] bg-muted/30 border-transparent focus:bg-white focus:border-primary/20 transition-all resize-none"
+                    {...field}
                     value={field.value ?? ""}
                   />
                 </FormControl>
@@ -180,20 +163,13 @@ export function BookingForm() {
             )}
           />
 
-          <Button 
-            type="submit" 
-            size="lg" 
+          <Button
+            type="submit"
+            size="lg"
             className="w-full h-14 rounded-xl text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
-            disabled={mutation.isPending}
+            data-testid="button-submit-booking"
           >
-            {mutation.isPending ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              "Request Appointment"
-            )}
+            Request Appointment
           </Button>
         </form>
       </Form>

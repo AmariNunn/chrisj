@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
-import servicesHeaderImg from "@assets/IMG_3100_1772065125105.heic";
+import servicesHeaderImg from "@/assets/images/booking-header.jpg";
 
 export default function Services() {
   useEffect(() => {
@@ -157,7 +157,7 @@ export default function Services() {
           <img
             src={servicesHeaderImg}
             alt="Services"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
