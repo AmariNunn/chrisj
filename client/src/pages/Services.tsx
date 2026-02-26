@@ -29,7 +29,7 @@ import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import servicesHeaderImg from "@/assets/images/booking-header.jpg";
 import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
 import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
-import cryoVideo from "@assets/0225_(1)_1772074291069.mp4";
+import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
 
 export default function Services() {
