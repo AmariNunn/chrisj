@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import nicoleImg from "@/assets/images/team-nicole.jpg";
-import chrisImg from "@/assets/images/team-chris.jpg";
+import nicoleImg from "@assets/IMG_2611_1772064095430.JPG";
+import chrisImg from "@assets/IMG_1722_1772064111490.JPG";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const team = [
@@ -9,13 +9,13 @@ const team = [
     name: "Dr. Nicole Cox-Jordan",
     role: "Chiropractor",
     image: nicoleImg,
-    bio: "Dr. Nicole Cox-Jordan is a board-certified chiropractor with over 15 years of experience. She specializes in spinal adjustments, prenatal care, and holistic pain management.",
+    bio: "Dr. Nicole Cox-Jordan hails from Nashville, Tennessee. She earned her Bachelor's degree from Fisk University and her Doctor of Chiropractic (DC) degree from Parker College of Chiropractic in Dallas, Texas. Notably, Dr. Cox-Jordan became the first African American female Chiropractor from Nashville. She co-founded Back 2 Back Chiropractic and Wellness Center and has positively impacted numerous lives, demonstrating exceptional bedside manner and treating every individual with respect and professionalism.",
   },
   {
-    name: "Christopher Jordan",
+    name: "Christopher Jordan, CPT",
     role: "Fitness & Nutrition Specialist",
     image: chrisImg,
-    bio: "Christopher brings a wealth of knowledge in sports physiology and nutrition. He creates personalized fitness plans that complement chiropractic care for total body wellness.",
+    bio: "Chris graduated from Whites Creek High School and attended Tennessee State University. After being diagnosed with stage 2 hypertension at 350 pounds, he transformed his health through daily cardio and improved diet, losing over 90 pounds. He completed Certifications in Personal Training, Strength and Conditioning, and Nutrition from the International Sports Sciences Association (ISSA). Chris is passionate about helping others achieve their fitness and wellness goals.",
   }
 ];
 
@@ -42,7 +42,8 @@ export function Team() {
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-[420px] object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                data-testid={`img-team-${idx}`}
               />
               
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 translate-y-20 group-hover:translate-y-0 transition-all duration-500 z-20">
@@ -61,7 +62,7 @@ export function Team() {
             </div>
             
             <div className="text-center space-y-3 px-4">
-              <h3 className="font-display font-bold text-2xl text-primary">{member.name}</h3>
+              <h3 className="font-display font-bold text-2xl text-primary" data-testid={`text-team-name-${idx}`}>{member.name}</h3>
               <div className="w-12 h-1 bg-gradient-to-r from-accent to-orange-400 rounded-full mx-auto" />
               <p className="text-muted-foreground leading-relaxed pt-1">{member.bio}</p>
             </div>
