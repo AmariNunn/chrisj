@@ -95,7 +95,7 @@ export function Navbar() {
 
             <div className="flex items-center gap-3">
               <a
-                href="tel:+16152132145"
+                href="tel:+16154145294"
                 className={`text-[13px] font-medium transition-colors whitespace-nowrap ${
                   showDark
                     ? "text-foreground/60 hover:text-foreground"
@@ -104,7 +104,7 @@ export function Navbar() {
                 data-testid="nav-phone"
               >
                 <Phone className="w-3.5 h-3.5 inline-block mr-1.5 -mt-px" />
-                (615) 213-2145
+                (615) 414-5294
               </a>
               <Link href="/booking">
                 <Button
@@ -171,11 +171,11 @@ export function Navbar() {
                   </Button>
                 </Link>
                 <a
-                  href="tel:+16152132145"
+                  href="tel:+16154145294"
                   className="flex items-center justify-center gap-2 text-foreground/70 font-medium py-2.5 rounded-lg hover:bg-muted/50 transition-colors text-[15px]"
                 >
                   <Phone className="w-4 h-4" />
-                  (615) 213-2145
+                  (615) 414-5294
                 </a>
               </div>
             </div>

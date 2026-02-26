@@ -27,6 +27,7 @@ import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import servicesHeaderImg from "@/assets/images/booking-header.jpg";
+import chiroFitnessVideo from "@assets/crisj_1772072399228.mp4";
 
 export default function Services() {
   useEffect(() => {
@@ -83,6 +84,7 @@ export default function Services() {
       icon: Star,
       badge: "Concierge Membership",
       price: "Starting at $299+",
+      video: chiroFitnessVideo,
       features: [
         "Chiro optimization",
         "Private fitness training",
@@ -282,9 +284,22 @@ export default function Services() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
               >
                 <Card
-                  className="overflow-visible h-full"
+                  className="overflow-hidden h-full"
                   data-testid={`card-premium-service-${i}`}
                 >
+                  {"video" in service && service.video && (
+                    <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: "16/9" }}>
+                      <video
+                        src={service.video as string}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                        data-testid="video-chirofitness"
+                      />
+                    </div>
+                  )}
                   <div className="p-6 space-y-4">
                     <div className="flex items-start justify-between gap-4 flex-wrap">
                       <div className="flex items-center gap-3">

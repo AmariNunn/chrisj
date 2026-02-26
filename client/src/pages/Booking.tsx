@@ -55,7 +55,7 @@ export default function Booking() {
               <div className="space-y-6">
                 {[
                   { icon: MapPin, label: "Visit Us", value: "3228 Clarksville Pike, Suite 101\nNashville, TN 37218" },
-                  { icon: Phone, label: "Call Us", value: "(615) 213-2145" },
+                  { icon: Phone, label: "Call Us", value: "(615) 414-5294" },
                   { icon: Mail, label: "Email Us", value: "info@jordanwellnessxp.com" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 group">
