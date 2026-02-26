@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
-import servicesHeaderImg from "@/assets/images/booking-header.jpg";
+import servicesHeaderImg from "/images/services-header.jpg";
 import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
 import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";

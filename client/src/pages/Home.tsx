@@ -12,9 +12,10 @@ import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
-import chiroServiceImg from "@assets/IMG_3944_1772074849867.heic";
-import fitnessServiceImg from "@assets/IMG_5103_1772074900840.heic";
-import happyHourServiceImg from "@assets/IMG_5128_1772074900842.heic";
+
+const chiroServiceImg = "/images/chiro-service.jpg";
+const fitnessServiceImg = "/images/fitness-service.jpg";
+const happyHourServiceImg = "/images/happy-hour-service.jpg";
 
 export default function Home() {
   useEffect(() => {
