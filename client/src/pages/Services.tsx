@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
 import massageImg from "@/assets/images/service-massage.jpg";
 import nutritionImg from "@/assets/images/service-nutrition.jpg";
-import bookingHeaderImg from "@/assets/images/booking-header.jpg";
+import servicesHeaderImg from "@assets/IMG_3100_1772065125105.heic";
 
 export default function Services() {
   useEffect(() => {
@@ -155,7 +155,7 @@ export default function Services() {
       <div className="relative h-[340px] md:h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={bookingHeaderImg}
+            src={servicesHeaderImg}
             alt="Services"
             className="w-full h-full object-cover"
           />
