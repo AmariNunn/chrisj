@@ -38,11 +38,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "About Us", href: "/about" },
+                { name: "The Experience", href: "/experience" },
                 { name: "Services", href: "/services" },
-                { name: "Book Now", href: "/booking" },
-                { name: "Contact Us", href: "/contact" },
-                { name: "Intake Form", href: "/intake" }
+                { name: "Membership & Packages", href: "/memberships" },
+                { name: "Conditions", href: "/conditions" },
+                { name: "FAQ", href: "/faq" },
+                { name: "Book Now", href: "/booking" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>

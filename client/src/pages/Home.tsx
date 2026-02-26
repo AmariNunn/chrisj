@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -13,6 +14,10 @@ import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -24,9 +29,9 @@ export default function Home() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { icon: ShieldCheck, title: "Trusted Clinic", desc: "Certified professionals dedicated to your care.", color: "from-blue-500/10 to-primary/10" },
-              { icon: Heart, title: "110% Guarantee", desc: "We give 110% from us EVERYTIME. Your health is priority.", color: "from-rose-500/10 to-pink-500/10" },
-              { icon: Activity, title: "Expert Care", desc: "Advanced techniques for faster recovery.", color: "from-accent/10 to-orange-500/10" },
+              { icon: ShieldCheck, title: "Private Wellness Setting", desc: "A discreet, private sanctuary designed for those who value personalized attention.", color: "from-blue-500/10 to-primary/10" },
+              { icon: Heart, title: "Intentional Care", desc: "Every visit is unhurried, every treatment plan is built around your unique needs.", color: "from-rose-500/10 to-pink-500/10" },
+              { icon: Activity, title: "Whole-Body Approach", desc: "Chiropractic care, fitness training, and restoration therapies working together.", color: "from-accent/10 to-orange-500/10" },
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -88,15 +93,15 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <span className="inline-block text-accent font-bold tracking-wider uppercase text-sm px-4 py-1.5 bg-accent/10 rounded-full">About Us</span>
+              <span className="inline-block text-accent font-bold tracking-wider uppercase text-sm px-4 py-1.5 bg-accent/10 rounded-full">The Experience</span>
               <h2 className="font-display font-bold text-4xl md:text-5xl text-primary leading-tight">
                 Whatever life throws at you, we've got your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">BACK!</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At Jordan Wellness Experience, we believe in a whole-body approach to health. Whether you are recovering from an injury, dealing with chronic pain, or looking to improve your overall fitness, our team is here to guide you every step of the way.
+                At Jordan Wellness Experience, wellness is not rushed. It is not transactional. And it is never one-size-fits-all. Every visit is intentional, every treatment is unhurried, and every plan is built around you. Located in Nashville, this private wellness studio was created for those who quietly carry a lot &mdash; professionals, caregivers, parents, leaders, and athletes.
               </p>
               <ul className="space-y-4 pt-4">
-                {["Personalized Treatment Plans", "Holistic Wellness Approach", "Experienced Specialists"].map((item, i) => (
+                {["Unhurried, Intentional Appointments", "Private Wellness Setting", "Whole-Body Personalized Care"].map((item, i) => (
                   <motion.li
                     key={i}
                     initial={{ opacity: 0, x: 20 }}
@@ -115,9 +120,9 @@ export default function Home() {
                 ))}
               </ul>
               <div className="pt-6">
-                <Link href="/about">
+                <Link href="/experience">
                   <Button className="rounded-full px-8 py-6 bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1 group">
-                    Learn More About Us
+                    The Experience
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
@@ -129,9 +134,9 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: chiropracticImg, desc: "Spinal adjustments to relieve pain and improve function." },
-              { title: "Massage Therapy", img: massageImg, desc: "Therapeutic massage to relax muscles and reduce stress." },
-              { title: "Nutrition Planning", img: nutritionImg, desc: "Custom meal plans to fuel your body and mind." },
+              { title: "Chiropractic Care", img: chiropracticImg, desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
+              { title: "Fitness Training", img: massageImg, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "\"Happy Hour\" Wellness Experience", img: nutritionImg, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 
@@ -210,9 +215,9 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/experience">
                 <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white hover:text-primary rounded-full px-10 h-14 text-lg backdrop-blur-sm transition-all hover:-translate-y-1">
-                  Contact Us
+                  The Experience
                 </Button>
               </Link>
             </motion.div>

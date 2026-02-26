@@ -12,7 +12,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend
 - **Framework**: React 18 with TypeScript, bundled by Vite
-- **Routing**: Wouter (lightweight client-side router) with pages: Home, About, Services, Booking, Reviews, Contact, Intake, and 404
+- **Routing**: Wouter (lightweight client-side router) with pages: Home (`/`), The Experience (`/experience`), Services (`/services`), Membership & Packages (`/memberships`), Conditions (`/conditions`), FAQ (`/faq`), Booking (`/booking`), Reviews (`/reviews`), and 404. Each page scrolls to top on mount via `useEffect`.
 - **State/Data**: TanStack React Query for server state management; custom hooks in `client/src/hooks/use-api.ts` wrap all API calls with mutations and queries
 - **UI Components**: shadcn/ui (new-york style) built on Radix UI primitives, styled with Tailwind CSS and CSS variables for theming
 - **Animations**: Framer Motion for page transitions, scroll-triggered animations, and hero slideshow transitions

@@ -69,14 +69,18 @@ export function Hero() {
             </motion.div>
 
             <h1 className="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-white">
-              Your Health is <br />
+              Welcome to <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-400 animate-gradient">
-                Our Priority
+                Jordan Wellness Experience
               </span>
             </h1>
 
+            <p className="text-sm md:text-base text-white/90 font-semibold uppercase tracking-widest max-w-lg">
+              A Private Sanctuary for Strength, Restoration, and Whole-Body Care
+            </p>
+
             <p className="text-lg md:text-xl text-white/80 max-w-lg leading-relaxed">
-              Experience holistic wellness with our expert team. We provide chiropractor services, physical therapy, and personalized nutrition plans.
+              Wellness is not rushed. It is not transactional. And it is never one-size-fits-all. Here, every visit is intentional, every treatment is unhurried, and every plan is built around you.
             </p>
 
             <div className="flex items-center gap-6 text-sm text-white/70">

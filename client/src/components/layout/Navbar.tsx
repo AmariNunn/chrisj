@@ -20,10 +20,11 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "The Experience", href: "/experience" },
     { name: "Services", href: "/services" },
-    { name: "Reviews", href: "/reviews" },
-    { name: "Contact", href: "/contact" },
+    { name: "Membership & Packages", href: "/memberships" },
+    { name: "Conditions", href: "/conditions" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   return (

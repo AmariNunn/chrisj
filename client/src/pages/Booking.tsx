@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BookingForm } from "@/components/forms/BookingForm";
@@ -7,6 +8,10 @@ import { motion } from "framer-motion";
 import bookingImg from "@/assets/images/booking-header.jpg";
 
 export default function Booking() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen font-sans bg-background">
       <Navbar />
