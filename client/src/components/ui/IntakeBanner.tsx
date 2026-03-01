@@ -1,5 +1,5 @@
 import { ClipboardList, ArrowRight } from "lucide-react";
-import { FORMS_URL } from "@/lib/constants";
+import { Link } from "wouter";
 
 export function IntakeBanner() {
   return (
@@ -14,16 +14,14 @@ export function IntakeBanner() {
             Complete your intake forms before your first visit for a seamless experience.
           </p>
         </div>
-        <a
-          href={FORMS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/intake-form"
           className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 transition-colors whitespace-nowrap group"
           data-testid="banner-intake-form-link"
         >
           Complete Intake Form
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-        </a>
+        </Link>
       </div>
     </div>
   );
