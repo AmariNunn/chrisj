@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Team } from "@/components/sections/Team";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { CheckCircle2, ExternalLink, ArrowRight, Quote } from "lucide-react";
+import { CheckCircle2, ArrowRight, Quote, ExternalLink } from "lucide-react";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
 const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Jordan+Wellness+Experience+Nashville+TN";
@@ -215,12 +215,12 @@ export default function Experience() {
                 After submission, we will personally reach out to you within 24 hours to coordinate your Private Assessment.
               </p>
               <div className="pt-4">
-                <a href={FORMS_URL} target="_blank" rel="noopener noreferrer">
+                <Link href="/intake-form">
                   <Button size="lg" className="rounded-full px-10 bg-accent text-white shadow-md shadow-accent/20 group" data-testid="button-intake-forms">
                     Complete Your Intake Forms
-                    <ExternalLink className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

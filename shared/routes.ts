@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertInquirySchema, insertAppointmentSchema, insertReviewSchema, insertSubscriberSchema, insertIntakeSubmissionSchema, reviews } from './schema';
+import { insertInquirySchema, insertAppointmentSchema, insertReviewSchema, insertSubscriberSchema, reviews } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -60,17 +60,6 @@ export const api = {
       method: 'POST' as const,
       path: '/api/subscribers' as const,
       input: insertSubscriberSchema,
-      responses: {
-        201: z.object({ success: z.boolean(), message: z.string() }),
-        400: errorSchemas.validation,
-      },
-    },
-  },
-  intake: {
-    create: {
-      method: 'POST' as const,
-      path: '/api/intake' as const,
-      input: insertIntakeSubmissionSchema,
       responses: {
         201: z.object({ success: z.boolean(), message: z.string() }),
         400: errorSchemas.validation,

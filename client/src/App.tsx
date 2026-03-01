@@ -10,6 +10,7 @@ import Services from "@/pages/Services";
 import Membership from "@/pages/Membership";
 import Testimonials from "@/pages/Testimonials";
 import Contact from "@/pages/Contact";
+import IntakeForm from "@/pages/IntakeForm";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/membership" component={Membership} />
       <Route path="/testimonials" component={Testimonials} />
       <Route path="/contact" component={Contact} />
+      <Route path="/intake-form" component={IntakeForm} />
       <Route component={NotFound} />
     </Switch>
   );
