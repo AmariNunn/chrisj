@@ -18,7 +18,7 @@ export function Footer() {
               />
             </div>
             <p className="text-primary-foreground/60 leading-relaxed">
-              Where clinical precision meets lifelong wellness. A private sanctuary for strength, restoration, and whole-body care.
+              Where clinical precision meets lifelong vitality. A private sanctuary for strength, restoration, and whole-body care.
             </p>
             <div className="flex gap-3">
               <a
@@ -37,11 +37,11 @@ export function Footer() {
             <h4 className="font-display font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { name: "About", href: "/about" },
+                { name: "The Experience", href: "/experience" },
                 { name: "Services", href: "/services" },
-                { name: "Testimonials", href: "/testimonials" },
-                { name: "New Patient Forms", href: "/new-patient-forms" },
+                { name: "Membership", href: "/membership" },
                 { name: "Contact", href: "/contact" },
+                { name: "Testimonials", href: "/testimonials" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href}>

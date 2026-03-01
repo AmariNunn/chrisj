@@ -9,11 +9,11 @@ const VAGARO_URL = "https://www.vagaro.com/us04/jordanwellnessexperience";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "The Experience", href: "/experience" },
   { name: "Services", href: "/services" },
-  { name: "New Patient Forms", href: "/new-patient-forms" },
-  { name: "Testimonials", href: "/testimonials" },
+  { name: "Membership", href: "/membership" },
   { name: "Contact", href: "/contact" },
+  { name: "Testimonials", href: "/testimonials" },
 ];
 
 export function Navbar() {

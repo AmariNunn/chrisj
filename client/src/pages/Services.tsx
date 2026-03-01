@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -427,7 +428,7 @@ export default function Services() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="/services#">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   variant="outline"
@@ -436,7 +437,7 @@ export default function Services() {
                 >
                   Contact Us
                 </Button>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>

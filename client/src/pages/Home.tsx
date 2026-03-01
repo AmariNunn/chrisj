@@ -6,25 +6,35 @@ import { Team } from "@/components/sections/Team";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, MapPin, Clock, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
+import slidePhoto1 from "@assets/IMG_2228_1772059900723.jpg";
+import slidePhoto2 from "@assets/IMG_2364_1772059900723.jpg";
+import slidePhoto3 from "@/assets/images/slide-2386.jpg";
+import slidePhoto4 from "@/assets/images/slide-2406.jpg";
+import slidePhoto5 from "@/assets/images/slide-3100.jpg";
+import slidePhoto6 from "@assets/IMG_5085_1772390113181.jpg";
+import slidePhoto7 from "@assets/IMG_6517_1772390113182.jpg";
+import slidePhoto8 from "@/assets/images/img-3944.jpg";
+import slidePhoto9 from "@/assets/images/img-4930.jpg";
+import slidePhoto10 from "@/assets/images/img-5128.jpg";
 
 const chiroServiceImg = "/images/chiro-service.jpg";
 const fitnessServiceImg = "/images/fitness-service.jpg";
 const happyHourServiceImg = "/images/happy-hour-service.jpg";
 
 const slideshowPhotos = [
-  { id: 1, label: "Photo 1: Dr. Cox-Jordan in pink shirt \u2014 side posture adjustment on male patient in black shirt and jeans" },
-  { id: 2, label: "Photo 2: Dr. Cox-Jordan in all black \u2014 adjusting seated woman's neck (black jacket, blue shirt, blue/white skirt)" },
-  { id: 3, label: "Photo 3: Chris in wellness studio \u2014 black t-shirt and black hat showing weights to a couple" },
-  { id: 4, label: "Photo 4: Two women in wellness studio with backs turned \u2014 one on treadmill, one on exercise bike" },
-  { id: 5, label: "Photo 5: Dr. Cox-Jordan in light blue blouse standing beside patient in massage chair (patient in light green sweatshirt, grey sweatpants)" },
-  { id: 6, label: "Photo 6: Dr. Cox-Jordan in red top \u2014 using theragun on male patient's upper back (patient in red t-shirt)" },
-  { id: 7, label: "Photo 7: Dr. Cox-Jordan adjusting a child \u2014 both sitting on black table, silver instrument to child's upper back (child in blue shirt, black pants)" },
-  { id: 8, label: "Photo 8: Chris in wellness studio \u2014 black t-shirt and hat showing a woman how to use weights" },
-  { id: 9, label: "Photo 9: Woman standing in red half top with tattoos \u2014 getting a fat freezing session" },
-  { id: 10, label: "Photo 10: Dr. Cox-Jordan measuring a patient's arm" },
+  { id: 1, src: slidePhoto1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
+  { id: 2, src: slidePhoto2, alt: "Percussion therapy treatment" },
+  { id: 3, src: slidePhoto3, alt: "Wellness care session" },
+  { id: 4, src: slidePhoto4, alt: "Patient consultation" },
+  { id: 5, src: slidePhoto5, alt: "Clinic treatment" },
+  { id: 6, src: slidePhoto6, alt: "Jordan Wellness Experience" },
+  { id: 7, src: slidePhoto7, alt: "Wellness studio" },
+  { id: 8, src: slidePhoto8, alt: "Chiropractic care" },
+  { id: 9, src: slidePhoto9, alt: "Fitness training session" },
+  { id: 10, src: slidePhoto10, alt: "Body wellness treatment" },
 ];
 
 function PhotoSlideshow() {
@@ -38,29 +48,26 @@ function PhotoSlideshow() {
   }, []);
 
   return (
-    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-md overflow-hidden bg-muted" data-testid="slideshow-container">
+    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-md overflow-hidden bg-muted shadow-lg" data-testid="slideshow-container">
       <AnimatePresence mode="wait">
-        <motion.div
+        <motion.img
           key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          src={slideshowPhotos[currentIndex].src}
+          alt={slideshowPhotos[currentIndex].alt}
+          initial={{ opacity: 0, scale: 1.03 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary to-muted"
-        >
-          <div className="text-center px-6 max-w-2xl">
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed italic" data-testid={`slideshow-label-${slideshowPhotos[currentIndex].id}`}>
-              {slideshowPhotos[currentIndex].label}
-            </p>
-          </div>
-        </motion.div>
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
+          data-testid={`slideshow-img-${slideshowPhotos[currentIndex].id}`}
+        />
       </AnimatePresence>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slideshowPhotos.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentIndex(i)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-accent w-6" : "bg-foreground/20"}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-white w-6" : "bg-white/40 w-1.5"}`}
             data-testid={`slideshow-dot-${i}`}
             aria-label={`Go to slide ${i + 1}`}
           />
@@ -81,71 +88,6 @@ export default function Home() {
       
       <main>
         <Hero />
-
-        <Section className="bg-white" id="location-hours">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex items-start gap-4"
-            >
-              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                <MapPin size={22} />
-              </div>
-              <div>
-                <h3 className="font-display font-semibold text-lg text-primary mb-1" data-testid="text-location-title">Location</h3>
-                <p className="text-muted-foreground leading-relaxed" data-testid="text-location-address">
-                  3228 Clarksville Pike, Suite 101<br />
-                  Nashville, TN 37218
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="flex items-start gap-4"
-            >
-              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                <Clock size={22} />
-              </div>
-              <div>
-                <h3 className="font-display font-semibold text-lg text-primary mb-1" data-testid="text-hours-title">Hours</h3>
-                <p className="text-muted-foreground leading-relaxed" data-testid="text-hours-info">
-                  By Appointment Only<br />
-                  11am to 2pm and 4pm to 7pm<br />
-                  Sunday &ndash; Saturday
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-start gap-4"
-            >
-              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                <Phone size={22} />
-              </div>
-              <div>
-                <h3 className="font-display font-semibold text-lg text-primary mb-1" data-testid="text-phone-title">Phone</h3>
-                <a
-                  href="tel:6154344328"
-                  className="text-muted-foreground leading-relaxed transition-colors"
-                  data-testid="link-phone"
-                >
-                  615-434-4328
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </Section>
 
         <Section className="bg-secondary/30">
           <motion.div
@@ -234,7 +176,7 @@ export default function Home() {
                 Conveniently located in Nashville, our private wellness studio was established to support professionals, caregivers, parents, leaders, athletes, and others who constantly pour into others but often overlook their own well-being. We provide a discreet and tranquil environment that respects your time, privacy, and health.
               </p>
               <div className="pt-4">
-                <Link href="/about">
+                <Link href="/experience">
                   <Button className="rounded-full px-8 bg-primary text-primary-foreground group" data-testid="button-learn-more">
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

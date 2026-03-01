@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, ExternalLink } from "lucide-react";
+
+const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Jordan+Wellness+Experience+Nashville+TN";
 
 const testimonials = [
   { id: 1 },
@@ -77,6 +80,29 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-center mt-16 space-y-4"
+          >
+            <p className="text-muted-foreground text-lg">
+              Enjoyed your experience? We'd love to hear from you.
+            </p>
+            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full border-2 border-primary/20 text-primary px-10"
+                data-testid="button-google-review"
+              >
+                Leave a Google Review
+                <ExternalLink className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+          </motion.div>
         </Section>
       </main>
 
