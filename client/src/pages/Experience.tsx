@@ -5,10 +5,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Team } from "@/components/sections/Team";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Quote, ExternalLink } from "lucide-react";
+import { CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
-const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Jordan+Wellness+Experience+Nashville+TN";
 
 const pillars = [
   {
@@ -405,56 +404,6 @@ export default function Experience() {
                 </Button>
               </a>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Testimonials + Google Review */}
-        <section className="py-20 md:py-28 bg-secondary/30">
-          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-center mb-14"
-            >
-              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Client Stories</span>
-              <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-experience-testimonials-title">
-                Patient Testimonials
-              </h2>
-            </motion.div>
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[1, 2, 3].map((id, idx) => (
-                <motion.div
-                  key={id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1, duration: 0.6 }}
-                  className="bg-white rounded-md border border-border/50 p-7 shadow-sm"
-                  data-testid={`card-exp-testimonial-${id}`}
-                >
-                  <Quote className="text-accent/30 mb-4" size={36} />
-                  <p className="text-muted-foreground italic leading-relaxed mb-6">
-                    Client testimonial coming soon.
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center">
-                      <span className="text-accent font-bold text-xs">{id}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Valued Client</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="text-center">
-              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="rounded-full border-2 border-primary/20 text-primary" data-testid="button-google-review-experience">
-                  Leave a Google Review
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
-            </div>
           </div>
         </section>
       </main>
