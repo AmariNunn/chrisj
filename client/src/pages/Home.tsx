@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IntakeBanner } from "@/components/ui/IntakeBanner";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
 import slidePhoto1 from "@assets/IMG_2228_1772059900723.jpg";
 import slidePhoto2 from "@assets/IMG_2364_1772059900723.jpg";
@@ -88,6 +89,8 @@ export default function Home() {
       
       <main>
         <Hero />
+
+        <IntakeBanner />
 
         <Section className="bg-secondary/30">
           <motion.div

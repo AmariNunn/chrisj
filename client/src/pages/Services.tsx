@@ -31,6 +31,7 @@ import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
 import { BOOKING_URL } from "@/lib/constants";
+import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 const chiroServiceImg = "/images/chiro-service.jpg";
 const fitnessServiceImg = "/images/fitness-service.jpg";
@@ -197,6 +198,8 @@ export default function Services() {
       </div>
 
       <main>
+        <IntakeBanner />
+
         <section className="py-20 md:py-28 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div

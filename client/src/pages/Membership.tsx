@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Star, Sparkles, Snowflake, Crown, CheckCircle2, ExternalLink } from "lucide-react";
+import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
 
@@ -111,6 +112,8 @@ export default function Membership() {
             </motion.div>
           </div>
         </section>
+
+        <IntakeBanner />
 
         {/* Membership Model Intro */}
         <section className="py-16 md:py-24 bg-white">

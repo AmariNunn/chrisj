@@ -6,6 +6,7 @@ import { Team } from "@/components/sections/Team";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
+import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
 
@@ -91,6 +92,8 @@ export default function Experience() {
             </motion.div>
           </div>
         </section>
+
+        <IntakeBanner />
 
         {/* Meet the Team */}
         <Team />
