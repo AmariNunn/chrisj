@@ -103,16 +103,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-accent w-6" : "bg-white/30 w-1.5"}`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
 
       <div className="bg-primary text-primary-foreground overflow-hidden py-3" data-testid="marquee-banner">
