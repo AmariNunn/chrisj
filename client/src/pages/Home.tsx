@@ -265,7 +265,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
             >
-              <a href="https://www.vagaro.com/us04/jordanwellnessexperience" target="_blank" rel="noopener noreferrer">
+              <a href="https://cal.com/jordanwellnessexperience" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-white rounded-full text-lg group" data-testid="button-book-cta">
                   Book Appointment
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

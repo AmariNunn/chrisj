@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
 import logoImg from "@/assets/images/logo-new.png";
 
-const VAGARO_URL = "https://www.vagaro.com/us04/jordanwellnessexperience";
+import { BOOKING_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -56,7 +56,7 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href={VAGARO_URL}
+                  href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:text-accent/80 transition-colors block py-1 font-medium"

@@ -178,7 +178,7 @@ export default function Contact() {
 
               <div className="pt-4">
                 <a
-                  href="https://www.vagaro.com/us04/jordanwellnessexperience"
+                  href="https://cal.com/jordanwellnessexperience"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-book-appointment-contact"

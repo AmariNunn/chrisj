@@ -30,12 +30,11 @@ import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
 import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
+import { BOOKING_URL } from "@/lib/constants";
 
 const chiroServiceImg = "/images/chiro-service.jpg";
 const fitnessServiceImg = "/images/fitness-service.jpg";
 const happyHourServiceImg = "/images/happy-hour-service.jpg";
-
-const VAGARO_URL = "https://www.vagaro.com/us04/jordanwellnessexperience";
 
 export default function Services() {
   useEffect(() => {
@@ -418,7 +417,7 @@ export default function Services() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
             >
-              <a href={VAGARO_URL} target="_blank" rel="noopener noreferrer">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-accent border-accent text-white rounded-md px-10 text-base group"

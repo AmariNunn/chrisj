@@ -5,16 +5,15 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Quote, ExternalLink } from "lucide-react";
+import { GOOGLE_REVIEW_URL } from "@/lib/constants";
+import testimonialVideo from "@assets/IMG_3520_1772391098187.mov";
 
-const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Jordan+Wellness+Experience+Nashville+TN";
-
-const testimonials = [
+const placeholderCards = [
   { id: 1 },
   { id: 2 },
   { id: 3 },
   { id: 4 },
   { id: 5 },
-  { id: 6 },
 ];
 
 export default function Testimonials() {
@@ -27,6 +26,7 @@ export default function Testimonials() {
       <Navbar />
 
       <main>
+        {/* Page Hero */}
         <section className="relative py-20 md:py-28 bg-primary text-white overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] -top-40 -left-40" />
@@ -51,9 +51,66 @@ export default function Testimonials() {
           </div>
         </section>
 
+        {/* Featured Video Testimonial */}
+        <section className="py-20 md:py-28 bg-secondary/30">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-12"
+            >
+              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Featured</span>
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-primary leading-tight">
+                Hear It Directly From Our Clients
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="rounded-md overflow-hidden shadow-xl bg-black"
+              data-testid="video-testimonial"
+            >
+              <video
+                src={testimonialVideo}
+                controls
+                playsInline
+                className="w-full max-h-[600px] object-contain"
+                poster=""
+              />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-center text-muted-foreground italic mt-6 text-sm"
+            >
+              A valued Jordan Wellness Experience client shares their story.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Written Testimonial Cards */}
         <Section className="bg-white">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Client Stories</span>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-primary leading-tight">
+              More Experiences
+            </h2>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((item, idx) => (
+            {placeholderCards.map((item, idx) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/images/logo-new.png";
 
-const VAGARO_URL = "https://www.vagaro.com/us04/jordanwellnessexperience";
+import { BOOKING_URL } from "@/lib/constants";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -109,7 +109,7 @@ export function Navbar() {
                 (615) 434-4328
               </a>
               <a
-                href={VAGARO_URL}
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -168,7 +168,7 @@ export function Navbar() {
 
               <div className="border-t border-border/50 py-4 space-y-3">
                 <a
-                  href={VAGARO_URL}
+                  href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
