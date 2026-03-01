@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { GOOGLE_REVIEW_URL } from "@/lib/constants";
 import testimonialVideo1 from "@assets/IMG_3520_1772391098187.mov";
-import testimonialVideo2 from "@assets/IMG_1419_1772074592270.mov";
+import testimonialVideo2 from "@assets/IMG_0470_1772391846808.mov";
 
 const videoTestimonials = [
   {
