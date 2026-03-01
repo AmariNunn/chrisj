@@ -4,16 +4,22 @@ import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Quote, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { GOOGLE_REVIEW_URL } from "@/lib/constants";
-import testimonialVideo from "@assets/IMG_3520_1772391098187.mov";
+import testimonialVideo1 from "@assets/IMG_3520_1772391098187.mov";
+import testimonialVideo2 from "@assets/IMG_6723_1772065919846.mov";
 
-const placeholderCards = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
+const videoTestimonials = [
+  {
+    id: "v1",
+    src: testimonialVideo1,
+    label: "A valued Jordan Wellness Experience client shares their story.",
+  },
+  {
+    id: "v2",
+    src: testimonialVideo2,
+    label: "Experience transformation through our dedicated care.",
+  }
 ];
 
 export default function Testimonials() {
@@ -51,99 +57,57 @@ export default function Testimonials() {
           </div>
         </section>
 
-        {/* Featured Video Testimonial */}
+        {/* Featured Video Testimonials */}
         <section className="py-20 md:py-28 bg-secondary/30">
-          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
               <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Featured</span>
               <h2 className="font-display font-bold text-3xl md:text-4xl text-primary leading-tight">
                 Hear It Directly From Our Clients
               </h2>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="rounded-md overflow-hidden shadow-xl bg-black"
-              data-testid="video-testimonial"
-            >
-              <video
-                src={testimonialVideo}
-                controls
-                playsInline
-                className="w-full max-h-[600px] object-contain"
-                poster=""
-              />
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-center text-muted-foreground italic mt-6 text-sm"
-            >
-              A valued Jordan Wellness Experience client shares their story.
-            </motion.p>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              {videoTestimonials.map((video, idx) => (
+                <motion.div
+                  key={video.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: idx * 0.2 }}
+                  className="flex flex-col"
+                >
+                  <div className="rounded-md overflow-hidden shadow-xl bg-black aspect-video flex items-center justify-center">
+                    <video
+                      src={video.src}
+                      controls
+                      playsInline
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <p className="text-center text-muted-foreground italic mt-6 text-sm">
+                    {video.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Written Testimonial Cards */}
+        {/* Google Review CTA */}
         <Section className="bg-white">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Client Stories</span>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-primary leading-tight">
-              More Experiences
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {placeholderCards.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="relative p-8 rounded-2xl bg-muted/30 border border-border"
-                data-testid={`card-testimonial-${item.id}`}
-              >
-                <div className="mb-6">
-                  <Quote className="text-accent/30" size={48} />
-                </div>
-                <p className="text-muted-foreground leading-relaxed italic text-lg mb-8" data-testid={`text-testimonial-${item.id}`}>
-                  Client testimonial coming soon
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                    <span className="text-accent font-bold text-sm">{idx + 1}</span>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Valued Client</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-center mt-16 space-y-4"
+            className="text-center space-y-4"
           >
             <p className="text-muted-foreground text-lg">
               Enjoyed your experience? We'd love to hear from you.
