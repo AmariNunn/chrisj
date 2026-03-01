@@ -238,7 +238,7 @@ export default function Services() {
                         <service.icon size={22} />
                       </div>
                     </div>
-                    <div className="p-6 space-y-4 flex flex-col">
+                    <div className="p-6 space-y-4 flex flex-col flex-1">
                       <h3 className="font-display font-bold text-xl text-primary">
                         {service.title}
                       </h3>
@@ -258,11 +258,11 @@ export default function Services() {
                           </li>
                         ))}
                       </ul>
-                      <div className="pt-2">
+                      <div className="mt-auto pt-6">
                         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" className="w-full rounded-md bg-accent text-white hover:bg-accent/90" data-testid={`button-book-signature-${i}`}>
+                          <Button size="lg" className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" data-testid={`button-book-signature-${i}`}>
                             Book Now
-                            <ArrowRight className="ml-2 w-4 h-4" />
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
                         </a>
                       </div>
@@ -347,7 +347,7 @@ export default function Services() {
                         />
                       </div>
                     )}
-                    <div className="p-6 space-y-4">
+                    <div className="p-6 space-y-4 flex flex-col flex-1">
                       <div className="flex items-start justify-between gap-4 flex-wrap">
                         <div className="flex items-center gap-3">
                           <div className="w-11 h-11 rounded-md bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center text-accent">
@@ -374,7 +374,7 @@ export default function Services() {
                         </p>
                       )}
 
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2.5 flex-1">
                         {service.features.map((feature, j) => (
                           <li
                             key={j}
@@ -385,11 +385,11 @@ export default function Services() {
                           </li>
                         ))}
                       </ul>
-                      <div className="pt-2">
+                      <div className="mt-auto pt-6">
                         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" className="w-full rounded-md bg-accent text-white hover:bg-accent/90" data-testid={`button-book-premium-${i}`}>
+                          <Button size="lg" className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" data-testid={`button-book-premium-${i}`}>
                             Book Now
-                            <ArrowRight className="ml-2 w-4 h-4" />
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
                         </a>
                       </div>
