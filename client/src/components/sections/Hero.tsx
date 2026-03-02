@@ -51,7 +51,7 @@ export function Hero() {
               <img
                 src={slides[current].src}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
+                className="absolute inset-0 w-full h-full object-cover scale-150 blur-3xl opacity-80"
                 aria-hidden="true"
               />
               <img
