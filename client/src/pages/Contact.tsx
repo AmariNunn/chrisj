@@ -262,40 +262,6 @@ export default function Contact() {
           </div>
         </Section>
 
-        <Section className="bg-muted/30">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8"
-            >
-              <h2 className="font-display font-bold text-3xl text-primary" data-testid="text-map-heading">
-                Find Us
-              </h2>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="rounded-2xl overflow-hidden shadow-lg border border-border"
-              data-testid="map-container"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.5!2d-86.83!3d36.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z3228+Clarksville+Pike+Nashville+TN+37218!5e0!3m2!1sen!2sus!4v1"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Jordan Wellness Experience Location"
-              />
-            </motion.div>
-          </div>
-        </Section>
       </main>
       <Footer />
     </div>
