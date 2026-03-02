@@ -273,15 +273,16 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                          <Button 
-                            size="lg" 
-                            className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
-                            data-testid={`button-book-signature-${i}`}
-                            onClick={() => window.location.href = "/contact"}
-                          >
-                            Contact Us
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
+                          <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer" className="block w-full">
+                            <Button 
+                              size="lg" 
+                              className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
+                              data-testid={`button-book-signature-${i}`}
+                            >
+                              Book Experience
+                              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </a>
                       </div>
                     </div>
                   </Card>
@@ -403,15 +404,16 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                          <Button 
-                            size="lg" 
-                            className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
-                            data-testid={`button-book-premium-${i}`}
-                            onClick={() => window.location.href = "/contact"}
-                          >
-                            Contact Us
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
+                          <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer" className="block w-full">
+                            <Button 
+                              size="lg" 
+                              className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
+                              data-testid={`button-book-premium-${i}`}
+                            >
+                              Book Experience
+                              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </a>
                       </div>
                     </div>
                   </Card>
@@ -463,16 +465,16 @@ export default function Services() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <Link href="/contact">
+              <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white/30 text-white rounded-md px-10 text-base backdrop-blur-sm"
                   data-testid="button-contact-us-footer"
                 >
-                  Contact Us
+                  Book Experience
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           </div>
         </section>
