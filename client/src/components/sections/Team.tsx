@@ -6,7 +6,7 @@ const team = [
   {
     name: "Dr. Nicole Cox-Jordan",
     role: "Licensed Chiropractor",
-    credentials: "DC — Licensed in TN & TX",
+    credentials: "DC — Licensed in TN\nCertified in Subzero Aesthetics & Orthopedic Cryotherapy",
     image: nicoleImg,
     imageLabel: "Photo: Dr. Nicole Cox-Jordan",
     bio: [
@@ -84,7 +84,7 @@ export function Team() {
                   <h3 className="font-display font-bold text-2xl md:text-3xl text-primary" data-testid={`text-team-name-${idx}`}>
                     {member.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm mt-1" data-testid={`text-team-credentials-${idx}`}>
+                  <p className="text-muted-foreground text-sm mt-1 whitespace-pre-line" data-testid={`text-team-credentials-${idx}`}>
                     {member.credentials}
                   </p>
                   <div className="w-10 h-[2px] bg-accent mt-4" />
