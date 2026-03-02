@@ -38,9 +38,6 @@ export function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-24"
         >
-          <span className="text-accent font-semibold tracking-[0.2em] uppercase text-sm mb-4 block" data-testid="text-team-subtitle">
-            Our Team
-          </span>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-team-title">
             Meet The Experts
           </h2>
