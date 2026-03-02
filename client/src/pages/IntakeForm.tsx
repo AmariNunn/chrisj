@@ -6,10 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronRight, ChevronLeft, ArrowRight } from "lucide-react";
 
-// ─── UPDATE THIS with your Formspree form ID ─────────────────────────────────
-// Sign up free at formspree.io → New Form → copy the ID from the endpoint URL
-// e.g.  https://formspree.io/f/xpwzgkln  →  FORM_ID = "xpwzgkln"
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdavkwp";
 
 const STEPS = [
   "Personal Info",

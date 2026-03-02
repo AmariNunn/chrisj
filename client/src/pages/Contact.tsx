@@ -10,7 +10,8 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, Send, Clock } from "lucide-react";
 import { SiInstagram } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdavkwp";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -31,12 +32,18 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      await apiRequest("POST", "/api/inquiries", {
-        name: formData.name,
-        email: formData.email,
-        subject: `Contact from ${formData.name}${formData.phone ? ` (${formData.phone})` : ""}`,
-        message: formData.message,
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
+
+      if (!res.ok) throw new Error("Submission failed");
 
       toast({
         title: "Message Sent",
