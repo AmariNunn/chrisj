@@ -8,6 +8,8 @@ import { ExternalLink } from "lucide-react";
 import { GOOGLE_REVIEW_URL } from "@/lib/constants";
 import testimonialVideo1 from "@assets/IMG_3520_1772391098187.mov";
 import testimonialVideo2 from "@assets/IMG_0470_1772391846808.mov";
+import testimonialVideo3 from "@assets/IMG_2660_1772495485675.mov";
+import testimonialVideo4 from "@assets/IMG_2664_1772495488167.mov";
 
 const videoTestimonials = [
   {
@@ -19,7 +21,17 @@ const videoTestimonials = [
     id: "v2",
     src: testimonialVideo2,
     label: "Experience transformation through our dedicated care.",
-  }
+  },
+  {
+    id: "v3",
+    src: testimonialVideo3,
+    label: "Hear what our clients have to say about the Jordan Wellness Experience.",
+  },
+  {
+    id: "v4",
+    src: testimonialVideo4,
+    label: "Real results from real people — see why our clients keep coming back.",
+  },
 ];
 
 export default function Testimonials() {
