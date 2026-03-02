@@ -85,7 +85,6 @@ export default function Contact() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
       <Navbar />
-
       <main>
         <section className="relative py-20 md:py-28 bg-primary text-white overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
@@ -104,9 +103,7 @@ export default function Contact() {
               <h1 className="font-display font-bold text-4xl md:text-6xl leading-tight mb-6" data-testid="text-contact-title">
                 Contact Us
               </h1>
-              <p className="text-lg text-white/70 max-w-xl mx-auto" data-testid="text-contact-intro">
-                We'd love to hear from you. Reach out to schedule your visit or ask any questions.
-              </p>
+              <p className="text-lg text-white/70 max-w-xl mx-auto" data-testid="text-contact-intro">We'd love to hear from you. Reach out to ask any questions or concerns.</p>
             </motion.div>
           </div>
         </section>
@@ -300,7 +297,6 @@ export default function Contact() {
           </div>
         </Section>
       </main>
-
       <Footer />
     </div>
   );
