@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Clock } from "lucide-react";
 import slideImg1 from "@assets/IMG_2228_1772413231480.jpeg";
-import slideImg2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
+import slideImg2 from "@assets/IMG_5128_fitness.jpg";
 import slideImg3 from "@/assets/images/img-2509.jpg";
 import slideImg4 from "@assets/IMG_2636_1772413240374.jpeg";
 import slideImg5 from "@assets/IMG_6517_1772413246373.jpeg";

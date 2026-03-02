@@ -34,8 +34,8 @@ import { BOOKING_URL } from "@/lib/constants";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
-import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
-import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
+import slidePhoto2 from "@assets/IMG_5128_fitness.jpg";
+import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
 
 export default function Services() {
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Services() {
     {
       title: '"Happy Hour" Wellness Experience',
       icon: Clock,
-      img: slidePhoto4,
+      img: happyHourImg,
       description:
         "ONE FULL HOUR of Relaxation therapy. Releases tension, supports recovery, reduces stress, and provides a nervous system reset.",
       features: [
