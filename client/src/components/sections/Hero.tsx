@@ -38,21 +38,21 @@ export function Hero() {
   return (
     <>
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-black">
           <AnimatePresence mode="wait">
             <motion.img
               key={current}
               src={slides[current].src}
               alt={slides[current].alt}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain"
               data-testid={`hero-slide-${current}`}
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pb-24">
