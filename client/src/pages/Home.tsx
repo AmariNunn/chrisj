@@ -17,7 +17,7 @@ import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
 import slidePhoto5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slidePhoto6 from "@/assets/images/img-4930.jpg";
 import slidePhoto7 from "@/assets/images/img-4462.jpg";
-import slidePhoto8 from "@/assets/images/img-4196.jpg";
+import slidePhoto8 from "@assets/IMG_2364_1772494881531.jpg";
 
 const slideshowPhotos = [
   { id: 1, src: slidePhoto1, alt: "Dr. Cox-Jordan chiropractic adjustment" },

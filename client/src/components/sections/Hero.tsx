@@ -9,7 +9,7 @@ import slideImg3 from "@/assets/images/img-2509.jpg";
 import slideImg5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slideImg6 from "@/assets/images/img-4930.jpg";
 import slideImg7 from "@/assets/images/img-4462.jpg";
-import slideImg8 from "@/assets/images/img-4196.jpg";
+import slideImg8 from "@assets/IMG_2364_1772494881531.jpg";
 import slideImg9 from "@assets/IMG_1065_1772494729327.jpeg";
 
 const slides = [
