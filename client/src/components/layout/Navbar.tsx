@@ -117,7 +117,7 @@ export function Navbar() {
                   className="rounded-md px-5 text-[13px] bg-accent border-accent text-white font-semibold shadow-sm shadow-accent/20 transition-all"
                   data-testid="nav-book-appointment"
                 >
-                  Book Appointment
+                  Book Experience
                 </Button>
               </a>
             </div>
@@ -179,7 +179,7 @@ export function Navbar() {
                     onClick={() => setIsMobileOpen(false)}
                     data-testid="nav-mobile-book-appointment"
                   >
-                    Book Appointment
+                    Book Experience
                   </Button>
                 </a>
                 <a

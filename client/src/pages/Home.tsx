@@ -191,7 +191,7 @@ export default function Home() {
             >
               <a href="https://cal.com/jordanwellnessexperience" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-white rounded-full text-lg group" data-testid="button-book-cta">
-                  Book Appointment
+                  Book Experience
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>

@@ -459,7 +459,7 @@ export default function Services() {
                   className="bg-accent border-accent text-white rounded-md px-10 text-base group"
                   data-testid="button-book-appointment"
                 >
-                  Book Appointment
+                  Book Experience
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>

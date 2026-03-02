@@ -175,7 +175,7 @@ export default function Contact() {
                   data-testid="link-book-appointment-contact"
                 >
                   <Button size="lg" className="rounded-full px-10 bg-accent text-white shadow-lg shadow-accent/20">
-                    Book Appointment
+                    Book Experience
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </a>

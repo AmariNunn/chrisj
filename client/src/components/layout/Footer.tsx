@@ -62,7 +62,7 @@ export function Footer() {
                   className="text-accent hover:text-accent/80 transition-colors block py-1 font-medium"
                   data-testid="footer-link-book"
                 >
-                  Book Appointment
+                  Book Experience
                 </a>
               </li>
             </ul>
