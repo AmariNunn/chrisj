@@ -1,0 +1,102 @@
+You are redesigning the full color palette of the Jordan Wellness Experience website (futurevision1.netlify.app). The goal is to match every visual element to the brand's logo colors — a vibrant orange and a deep royal blue. Remove ALL instances of brown, gold, tan, beige, or warm neutral tones. Every corner of the site should feel cohesive, modern, and energetic.
+
+---
+
+🎨 NEW COLOR PALETTE (use these exact values throughout):
+
+Primary Orange:       #F47B20   (vibrant brand orange — buttons, CTAs, highlights, accents)
+Orange Gradient:      linear-gradient(135deg, #F47B20, #F05A28)   (hero backgrounds, section dividers)
+Deep Royal Blue:      #0C4DA2   (headings, nav, footer, icon text)
+Medium Blue:          #1A6BBF   (subheadings, links, hover states)
+Light Blue Tint:      #E8F2FC   (section backgrounds, cards, alternating rows)
+White:                #FFFFFF   (primary background, cards)
+Dark Navy:            #0B2A5C   (footer background, dark sections)
+Text Dark:            #1A1A2E   (body copy)
+Text Gray:            #555F6E   (secondary text, captions)
+
+---
+
+🔧 IMPLEMENTATION INSTRUCTIONS:
+
+1. **CSS Variables / Tailwind Config**
+   - Replace all existing color variables (especially any browns: #8B5E3C, #7B4F2E, #A0835A, #D4A574, #C8956C, etc.) with the new palette above.
+   - Update tailwind.config.js or root CSS variables (:root) immediately.
+
+2. **Navbar**
+   - Background: White or Deep Royal Blue (#0C4DA2)
+   - Logo: keep as-is (already branded)
+   - Nav links: Deep Royal Blue on white bg, OR white text on blue bg
+   - Active/hover state: Primary Orange #F47B20
+   - CTA button: Orange (#F47B20) with white text, rounded corners
+
+3. **Hero Section**
+   - Background: Orange gradient (linear-gradient(135deg, #F47B20, #F05A28)) OR Deep Royal Blue (#0C4DA2)
+   - Headline text: White
+   - Subheadline: White at 85% opacity
+   - CTA buttons: White background with orange text, or solid orange
+
+4. **All Buttons / CTAs**
+   - Primary: #F47B20 background, white text, hover darken to #D4620F
+   - Secondary/Outline: #0C4DA2 border + text, hover fills blue
+   - Remove all brown/tan buttons entirely
+
+5. **Section Backgrounds (alternating)**
+   - Section 1: White (#FFFFFF)
+   - Section 2: Light Blue Tint (#E8F2FC)
+   - Section 3: White
+   - Section 4: Dark Navy (#0B2A5C) with white text
+   - Never use beige, cream, or warm tan for any section bg
+
+6. **Cards / Service Boxes**
+   - Background: White with a subtle box-shadow
+   - Border or top accent: 4px solid #F47B20 (orange top border)
+   - Icon color: #F47B20 or #0C4DA2
+   - Heading: #0C4DA2
+   - Body text: #555F6E
+
+7. **Headings (H1–H4)**
+   - H1: White (on colored bg) or Deep Royal Blue (#0C4DA2) on white bg
+   - H2: Deep Royal Blue (#0C4DA2)
+   - H3: Medium Blue (#1A6BBF) or Orange (#F47B20) for emphasis
+   - H4: #0C4DA2
+
+8. **Body Text**
+   - Primary: #1A1A2E
+   - Secondary/caption: #555F6E
+   - Links: #1A6BBF, hover: #F47B20
+
+9. **Icons & SVGs**
+   - Replace all brown/tan icon fills with #F47B20 (orange) or #0C4DA2 (blue)
+
+10. **Footer**
+    - Background: Dark Navy (#0B2A5C)
+    - Text: White
+    - Links: Light blue tint (#A8C8F0), hover: Orange (#F47B20)
+    - Divider lines: rgba(255,255,255,0.15)
+
+11. **Forms / Input Fields**
+    - Border: #1A6BBF
+    - Focus border: #F47B20
+    - Label text: #0C4DA2
+    - Submit button: #F47B20 background, white text
+
+12. **Dividers / Decorative Elements**
+    - Replace all warm/brown decorative lines with #F47B20 or #0C4DA2
+    - Wave dividers: use orange or blue, not tan
+
+---
+
+🚫 STRICT REMOVAL LIST — Find and delete/replace every instance of:
+- #8B5E3C, #7B4F2E, #A0835A, #D4A574, #C8956C (browns)
+- #DAA520, #B8860B, #CFB53B (gold/dark gold)
+- Any CSS value containing "brown", "gold", "tan", "beige", "wheat", "sienna", "chocolate", "peru", "burlywood", "sandybrown"
+- Any rgba() values that resolve to warm brown or gold tones
+- Any Tailwind classes like: yellow-600, yellow-700, amber-700, amber-800, orange-900 used as backgrounds
+
+---
+
+After making all changes, do a final audit:
+- Open every page/section in preview
+- Confirm zero brown or gold tones remain anywhere
+- Confirm all interactive states (hover, focus, active) match the new palette
+- Confirm the site looks cohesive and professional end-to-end

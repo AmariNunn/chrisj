@@ -109,7 +109,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: i * 0.08 }}
-                className={`font-display font-semibold leading-tight tracking-tight py-4 md:py-6 ${phrase.align} ${phrase.size} ${i % 2 === 0 ? "text-primary" : "text-gradient-gold"}`}
+                className={`font-display font-semibold leading-tight tracking-tight py-4 md:py-6 ${phrase.align} ${phrase.size} ${i % 2 === 0 ? "text-primary" : "text-gradient-brand"}`}
                 data-testid={`text-branding-phrase-${i}`}
               >
                 {phrase.text}
@@ -234,7 +234,7 @@ export default function Home() {
               className="space-y-6"
             >
               <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
-                Ready to Prioritize Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-400">Health?</span>
+                Ready to Prioritize Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">Health?</span>
               </h2>
               <p className="text-lg md:text-xl text-white/70 max-w-lg mx-auto leading-relaxed">
                 Book your appointment today and start your journey to a healthier, happier you.

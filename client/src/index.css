@@ -5,33 +5,39 @@
 @tailwind utilities;
 
 :root {
-  --primary: 30 10% 25%;
-  --primary-foreground: 40 20% 98%;
+  /* Deep Royal Blue #0C4DA2 → HSL(214, 86%, 34%) */
+  --primary: 214 86% 34%;
+  --primary-foreground: 0 0% 100%;
 
-  --accent: 36 60% 48%;
-  --accent-foreground: 40 20% 98%;
+  /* Vibrant Orange #F47B20 → HSL(26, 91%, 54%) */
+  --accent: 26 91% 54%;
+  --accent-foreground: 0 0% 100%;
 
   --background: 0 0% 100%;
-  --foreground: 30 10% 15%;
+  /* Dark Navy text #1A1A2E → HSL(240, 28%, 14%) */
+  --foreground: 240 28% 14%;
 
-  --card: 30 15% 98%;
-  --card-foreground: 30 10% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 28% 14%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 30 10% 15%;
+  --popover-foreground: 240 28% 14%;
 
-  --secondary: 30 8% 94%;
-  --secondary-foreground: 30 10% 25%;
+  /* Light Blue Tint #E8F2FC → HSL(210, 67%, 95%) */
+  --secondary: 210 67% 95%;
+  --secondary-foreground: 214 86% 34%;
 
-  --muted: 30 10% 95%;
-  --muted-foreground: 30 5% 45%;
+  --muted: 210 40% 96%;
+  /* Text Gray #555F6E → HSL(214, 13%, 38%) */
+  --muted-foreground: 214 13% 38%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 30 10% 90%;
-  --input: 30 10% 90%;
-  --ring: 36 60% 48%;
+  --border: 210 30% 88%;
+  --input: 210 30% 88%;
+  /* Ring = orange */
+  --ring: 26 91% 54%;
 
   --radius: 0.625rem;
 
@@ -53,8 +59,8 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-700;
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-orange-400 to-accent;
   }
 }
 
