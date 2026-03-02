@@ -9,77 +9,177 @@ import { CheckCircle2, ChevronRight, ChevronLeft, ArrowRight } from "lucide-reac
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdavkwp";
 
 const STEPS = [
-  "Personal Info",
-  "Visit Reason",
+  "Patient Info",
+  "Health Goals",
   "Health History",
-  "Lifestyle & Goals",
-  "Review & Submit",
+  "Lifestyle & Services",
+  "Membership & Consent",
 ];
 
 type FormData = {
   fullName: string;
+  todayDate: string;
   dateOfBirth: string;
-  gender: string;
-  phone: string;
-  email: string;
-  address: string;
-  emergencyContactName: string;
-  emergencyContactPhone: string;
-  visitReason: string;
-  chiefComplaint: string;
-  painLevel: string;
-  symptomDuration: string;
-  makesBetter: string;
-  makesWorse: string;
-  previousChiropractic: string;
-  currentMedications: string;
-  previousSurgeriesInjuries: string;
-  medicalConditions: string[];
-  allergies: string;
+  age: string;
+  maritalStatus: string;
+  sex: string;
+  preferredPronouns: string;
   occupation: string;
-  exerciseLevel: string;
-  sleepQuality: string;
+  employer: string;
+  homeAddress: string;
+  cityStateZip: string;
+  cellPhone: string;
+  email: string;
+  preferredContact: string;
+  emergencyContact: string;
+  emergencyRelationship: string;
+  emergencyPhone: string;
+  referredBy: string;
+  primaryGoals: string[];
+  wellnessGoal1: string;
+  wellnessGoal2: string;
+  wellnessGoal3: string;
+  currentConcerns: string[];
+  concernStarted: string;
+  previousTreatment: string;
+  previousTreatmentDetails: string;
+  personalHistory: string[];
+  surgeries: string;
+  medications: string;
+  hasAllergies: string;
+  allergyDetails: string;
+  pregnant: string;
+  exerciseFrequency: string;
   stressLevel: string;
-  healthGoals: string;
-  heardAboutUs: string;
-  consentAgreed: boolean;
+  sleepQuality: string;
+  nutritionalStyle: string;
+  signatureServices: string[];
+  premiumServices: string[];
+  experiencePreference: string[];
+  membershipOption: string;
+  consentDate: string;
   consentName: string;
+  consentAgreed: boolean;
 };
 
 const INITIAL: FormData = {
   fullName: "",
+  todayDate: "",
   dateOfBirth: "",
-  gender: "",
-  phone: "",
-  email: "",
-  address: "",
-  emergencyContactName: "",
-  emergencyContactPhone: "",
-  visitReason: "",
-  chiefComplaint: "",
-  painLevel: "",
-  symptomDuration: "",
-  makesBetter: "",
-  makesWorse: "",
-  previousChiropractic: "",
-  currentMedications: "",
-  previousSurgeriesInjuries: "",
-  medicalConditions: [],
-  allergies: "",
+  age: "",
+  maritalStatus: "",
+  sex: "",
+  preferredPronouns: "",
   occupation: "",
-  exerciseLevel: "",
-  sleepQuality: "",
+  employer: "",
+  homeAddress: "",
+  cityStateZip: "",
+  cellPhone: "",
+  email: "",
+  preferredContact: "",
+  emergencyContact: "",
+  emergencyRelationship: "",
+  emergencyPhone: "",
+  referredBy: "",
+  primaryGoals: [],
+  wellnessGoal1: "",
+  wellnessGoal2: "",
+  wellnessGoal3: "",
+  currentConcerns: [],
+  concernStarted: "",
+  previousTreatment: "",
+  previousTreatmentDetails: "",
+  personalHistory: [],
+  surgeries: "",
+  medications: "",
+  hasAllergies: "",
+  allergyDetails: "",
+  pregnant: "",
+  exerciseFrequency: "",
   stressLevel: "",
-  healthGoals: "",
-  heardAboutUs: "",
-  consentAgreed: false,
+  sleepQuality: "",
+  nutritionalStyle: "",
+  signatureServices: [],
+  premiumServices: [],
+  experiencePreference: [],
+  membershipOption: "",
+  consentDate: "",
   consentName: "",
+  consentAgreed: false,
 };
 
-const CONDITIONS = [
-  "Arthritis", "Diabetes", "Heart Disease", "High Blood Pressure",
-  "Osteoporosis", "Cancer (current/history)", "Herniated Disc",
-  "Sciatica", "Anxiety / Depression", "Fibromyalgia", "None of the above",
+const PRIMARY_GOALS = [
+  "Auto Injury Recovery",
+  "Performance Optimization",
+  "Pain Relief",
+  "Longevity & Preventative Care",
+  "Body Sculpting/Fat Freezing",
+  "Stress",
+  "Targeted Cryotherapy",
+  "Postural Correction",
+  "Weight Mgmt",
+  "Sports Injury",
+  "Nutritional Coaching",
+  "Other",
+];
+
+const CURRENT_CONCERNS = [
+  "Neck pain/stiffness",
+  "Back pain/stiffness",
+  "Sciatica",
+  "Headaches/Migraines",
+  "Joint Pain",
+  "Muscle Tightness",
+  "Chronic fatigue",
+  "Limited Mobility",
+  "Weight Issues",
+  "Stress/Burnout",
+  "Vertigo",
+  "Insomnia",
+  "Alopecia/Hair loss",
+  "Acne",
+  "Eczema/Psoriasis",
+  "Wrinkles/Fine lines/Dark spots",
+  "Other",
+];
+
+const PERSONAL_HISTORY = [
+  "High Blood Pressure",
+  "Heart Disease",
+  "Stroke",
+  "Heart Attack",
+  "Diabetes",
+  "Thyroid disorder",
+  "Autoimmune Disease",
+  "Cancer",
+  "Gout",
+  "Osteoporosis/Osteopenia",
+  "High Cholesterol",
+  "Arthritis",
+  "Anxiety/Depression",
+  "Glaucoma",
+  "Other",
+];
+
+const SIGNATURE_SERVICES = [
+  "Chiropractic",
+  "Fitness Training",
+  "Happy Hour/Relaxation Therapy",
+];
+
+const PREMIUM_SERVICES = [
+  'ChiroFitness – "Essential Jordan Wellness Experience"',
+  'Body Sculpting/Fat Freezing – "Enhanced Jordan Wellness Experience"',
+  'Targeted Cryotherapy – "Elevated Jordan Wellness Experience"',
+  'VIP Concierge – "Elite Jordan Wellness Experience"',
+];
+
+const EXPERIENCE_PREFERENCES = [
+  "Pain focused clinical care",
+  "Athletic performance driven",
+  "Aesthetic & Body contour focused",
+  "Stress recovery & Nervous System reset",
+  "Executive-level Concierge/Long term wellness",
 ];
 
 const inputClass =
@@ -93,6 +193,43 @@ function FieldGroup({ children }: { children: React.ReactNode }) {
 
 function Row({ children }: { children: React.ReactNode }) {
   return <div className="grid sm:grid-cols-2 gap-5">{children}</div>;
+}
+
+function SectionDivider({ title }: { title: string }) {
+  return (
+    <div className="pt-2 border-t border-border/50">
+      <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wider">{title}</p>
+    </div>
+  );
+}
+
+function CheckboxGroup({
+  options,
+  selected,
+  onToggle,
+  testPrefix,
+}: {
+  options: string[];
+  selected: string[];
+  onToggle: (val: string) => void;
+  testPrefix: string;
+}) {
+  return (
+    <div className="grid sm:grid-cols-2 gap-2 mt-2">
+      {options.map((opt) => (
+        <label key={opt} className="flex items-center gap-3 cursor-pointer group" data-testid={`${testPrefix}-${opt.replace(/\s+/g, "-").toLowerCase()}`}>
+          <div
+            className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 transition-colors ${selected.includes(opt) ? "bg-accent border-accent" : "border-border group-hover:border-accent/50"}`}
+            onClick={() => onToggle(opt)}
+          >
+            {selected.includes(opt) && <CheckCircle2 className="w-3 h-3 text-white" />}
+          </div>
+          <span className="text-sm text-foreground/80 leading-snug">{opt}</span>
+          <input type="checkbox" className="sr-only" checked={selected.includes(opt)} onChange={() => onToggle(opt)} />
+        </label>
+      ))}
+    </div>
+  );
 }
 
 export default function IntakeForm() {
@@ -114,14 +251,12 @@ export default function IntakeForm() {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
 
-  function toggleCondition(cond: string) {
+  function toggle(field: "primaryGoals" | "currentConcerns" | "personalHistory" | "signatureServices" | "premiumServices" | "experiencePreference", val: string) {
     setForm((prev) => {
-      const list = prev.medicalConditions;
+      const list = prev[field] as string[];
       return {
         ...prev,
-        medicalConditions: list.includes(cond)
-          ? list.filter((c) => c !== cond)
-          : [...list, cond],
+        [field]: list.includes(val) ? list.filter((v) => v !== val) : [...list, val],
       };
     });
   }
@@ -135,8 +270,48 @@ export default function IntakeForm() {
     setSubmitting(true);
 
     const payload = {
-      ...form,
-      medicalConditions: form.medicalConditions.join(", ") || "None selected",
+      "Patient Name": form.fullName,
+      "Today's Date": form.todayDate,
+      "Date of Birth": form.dateOfBirth,
+      "Age": form.age,
+      "Marital Status": form.maritalStatus,
+      "Sex": form.sex,
+      "Preferred Pronouns": form.preferredPronouns,
+      "Occupation": form.occupation,
+      "Employer": form.employer,
+      "Home Address": form.homeAddress,
+      "City, State, Zip": form.cityStateZip,
+      "Cell #": form.cellPhone,
+      "Email": form.email,
+      "Preferred Contact Method": form.preferredContact,
+      "Emergency Contact": form.emergencyContact,
+      "Emergency Relationship": form.emergencyRelationship,
+      "Emergency Phone": form.emergencyPhone,
+      "Referred By": form.referredBy,
+      "Primary Health Goals": form.primaryGoals.join(", ") || "None",
+      "Wellness Goal 1": form.wellnessGoal1,
+      "Wellness Goal 2": form.wellnessGoal2,
+      "Wellness Goal 3": form.wellnessGoal3,
+      "Current Health Concerns": form.currentConcerns.join(", ") || "None",
+      "When Concern Began": form.concernStarted,
+      "Previous Treatment": form.previousTreatment,
+      "Previous Treatment Details": form.previousTreatmentDetails,
+      "Personal Health History": form.personalHistory.join(", ") || "None",
+      "Surgeries and Dates": form.surgeries,
+      "Current Medications/Vitamins/Supplements": form.medications,
+      "Has Allergies": form.hasAllergies,
+      "Allergy Details": form.allergyDetails,
+      "Pregnant or Trying to Conceive": form.pregnant,
+      "Exercise Frequency": form.exerciseFrequency,
+      "Stress Level": form.stressLevel,
+      "Sleep Quality": form.sleepQuality,
+      "Nutritional Style": form.nutritionalStyle,
+      "Signature Services of Interest": form.signatureServices.join(", ") || "None",
+      "Premium Services of Interest": form.premiumServices.join(", ") || "None",
+      "Experience Preference": form.experiencePreference.join(", ") || "None",
+      "Membership Option": form.membershipOption,
+      "Consent Signature": form.consentName,
+      "Consent Date": form.consentDate,
     };
 
     try {
@@ -195,7 +370,6 @@ export default function IntakeForm() {
       <Navbar />
 
       <main>
-        {/* Page Hero */}
         <section className="relative py-16 md:py-24 bg-primary text-white overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] -top-40 -left-40" />
@@ -216,7 +390,6 @@ export default function IntakeForm() {
           </div>
         </section>
 
-        {/* Progress Bar */}
         <div className="bg-white border-b border-border sticky top-0 z-20 shadow-sm">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl py-4">
             <div className="flex items-center justify-between mb-3">
@@ -224,11 +397,7 @@ export default function IntakeForm() {
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                      i < step
-                        ? "bg-accent text-white"
-                        : i === step
-                        ? "bg-primary text-white"
-                        : "bg-muted text-muted-foreground"
+                      i < step ? "bg-accent text-white" : i === step ? "bg-primary text-white" : "bg-muted text-muted-foreground"
                     }`}
                   >
                     {i < step ? <CheckCircle2 className="w-4 h-4" /> : i + 1}
@@ -242,13 +411,12 @@ export default function IntakeForm() {
             <div className="w-full bg-muted rounded-full h-1.5">
               <div
                 className="bg-accent h-1.5 rounded-full transition-all duration-500"
-                style={{ width: `${((step) / (STEPS.length - 1)) * 100}%` }}
+                style={{ width: `${(step / (STEPS.length - 1)) * 100}%` }}
               />
             </div>
           </div>
         </div>
 
-        {/* Form Body */}
         <section className="py-12 md:py-16 bg-secondary/20">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <AnimatePresence mode="wait">
@@ -260,122 +428,159 @@ export default function IntakeForm() {
                 transition={{ duration: 0.35 }}
                 className="bg-white rounded-xl border border-border/50 shadow-sm p-8 md:p-10"
               >
-                {/* Step 1: Personal Information */}
+                {/* Step 1: Patient Information */}
                 {step === 0 && (
                   <FieldGroup>
                     <div>
-                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Personal Information</h2>
+                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Patient Information</h2>
                       <p className="text-muted-foreground text-sm">Tell us a bit about yourself.</p>
                     </div>
                     <Row>
                       <div>
-                        <label className={labelClass}>Full Name *</label>
-                        <input data-testid="input-full-name" className={inputClass} placeholder="Jane Doe" value={form.fullName} onChange={e => set("fullName", e.target.value)} />
+                        <label className={labelClass}>Name *</label>
+                        <input data-testid="input-full-name" className={inputClass} placeholder="Full name" value={form.fullName} onChange={e => set("fullName", e.target.value)} />
                       </div>
                       <div>
-                        <label className={labelClass}>Date of Birth *</label>
-                        <input data-testid="input-dob" type="date" className={inputClass} value={form.dateOfBirth} onChange={e => set("dateOfBirth", e.target.value)} />
+                        <label className={labelClass}>Today's Date</label>
+                        <input data-testid="input-today-date" type="date" className={inputClass} value={form.todayDate} onChange={e => set("todayDate", e.target.value)} />
                       </div>
                     </Row>
                     <Row>
                       <div>
-                        <label className={labelClass}>Gender *</label>
-                        <select data-testid="select-gender" className={selectClass} value={form.gender} onChange={e => set("gender", e.target.value)}>
+                        <label className={labelClass}>Date of Birth</label>
+                        <input data-testid="input-dob" type="date" className={inputClass} value={form.dateOfBirth} onChange={e => set("dateOfBirth", e.target.value)} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Age</label>
+                        <input data-testid="input-age" className={inputClass} placeholder="Age" value={form.age} onChange={e => set("age", e.target.value)} />
+                      </div>
+                    </Row>
+                    <Row>
+                      <div>
+                        <label className={labelClass}>Marital Status</label>
+                        <select data-testid="select-marital" className={selectClass} value={form.maritalStatus} onChange={e => set("maritalStatus", e.target.value)}>
                           <option value="">Select...</option>
-                          <option>Female</option>
-                          <option>Male</option>
-                          <option>Non-binary</option>
-                          <option>Prefer not to say</option>
+                          <option>Married (M)</option>
+                          <option>Single (S)</option>
+                          <option>Divorced (D)</option>
+                          <option>Widowed (W)</option>
                         </select>
                       </div>
                       <div>
-                        <label className={labelClass}>Phone Number *</label>
-                        <input data-testid="input-phone" className={inputClass} placeholder="(615) 000-0000" value={form.phone} onChange={e => set("phone", e.target.value)} />
+                        <label className={labelClass}>Sex</label>
+                        <select data-testid="select-sex" className={selectClass} value={form.sex} onChange={e => set("sex", e.target.value)}>
+                          <option value="">Select...</option>
+                          <option>Male (M)</option>
+                          <option>Female (F)</option>
+                        </select>
+                      </div>
+                    </Row>
+                    <Row>
+                      <div>
+                        <label className={labelClass}>Preferred Pronouns</label>
+                        <input data-testid="input-pronouns" className={inputClass} placeholder="e.g. She/Her, He/Him, They/Them" value={form.preferredPronouns} onChange={e => set("preferredPronouns", e.target.value)} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Occupation</label>
+                        <input data-testid="input-occupation" className={inputClass} placeholder="Your occupation" value={form.occupation} onChange={e => set("occupation", e.target.value)} />
                       </div>
                     </Row>
                     <div>
-                      <label className={labelClass}>Email Address *</label>
-                      <input data-testid="input-email" type="email" className={inputClass} placeholder="you@example.com" value={form.email} onChange={e => set("email", e.target.value)} />
+                      <label className={labelClass}>Employer</label>
+                      <input data-testid="input-employer" className={inputClass} placeholder="Employer name" value={form.employer} onChange={e => set("employer", e.target.value)} />
                     </div>
                     <div>
                       <label className={labelClass}>Home Address</label>
-                      <input data-testid="input-address" className={inputClass} placeholder="123 Main St, Nashville, TN 37201" value={form.address} onChange={e => set("address", e.target.value)} />
+                      <input data-testid="input-address" className={inputClass} placeholder="Street address" value={form.homeAddress} onChange={e => set("homeAddress", e.target.value)} />
                     </div>
-                    <div className="pt-2 border-t border-border/50">
-                      <p className="text-sm font-semibold text-primary mb-4">Emergency Contact</p>
-                      <Row>
-                        <div>
-                          <label className={labelClass}>Name</label>
-                          <input data-testid="input-emergency-name" className={inputClass} placeholder="Contact name" value={form.emergencyContactName} onChange={e => set("emergencyContactName", e.target.value)} />
-                        </div>
-                        <div>
-                          <label className={labelClass}>Phone</label>
-                          <input data-testid="input-emergency-phone" className={inputClass} placeholder="(615) 000-0000" value={form.emergencyContactPhone} onChange={e => set("emergencyContactPhone", e.target.value)} />
-                        </div>
-                      </Row>
+                    <div>
+                      <label className={labelClass}>City, State, Zip</label>
+                      <input data-testid="input-city-state-zip" className={inputClass} placeholder="Nashville, TN 37218" value={form.cityStateZip} onChange={e => set("cityStateZip", e.target.value)} />
+                    </div>
+                    <Row>
+                      <div>
+                        <label className={labelClass}>Cell # *</label>
+                        <input data-testid="input-cell" className={inputClass} placeholder="(615) 000-0000" value={form.cellPhone} onChange={e => set("cellPhone", e.target.value)} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Email *</label>
+                        <input data-testid="input-email" type="email" className={inputClass} placeholder="you@example.com" value={form.email} onChange={e => set("email", e.target.value)} />
+                      </div>
+                    </Row>
+                    <div>
+                      <label className={labelClass}>Preferred Method of Communication</label>
+                      <select data-testid="select-preferred-contact" className={selectClass} value={form.preferredContact} onChange={e => set("preferredContact", e.target.value)}>
+                        <option value="">Select...</option>
+                        <option>Call</option>
+                        <option>Text</option>
+                        <option>Email</option>
+                      </select>
+                    </div>
+                    <SectionDivider title="Emergency Contact" />
+                    <Row>
+                      <div>
+                        <label className={labelClass}>Emergency Contact Name</label>
+                        <input data-testid="input-emergency-name" className={inputClass} placeholder="Full name" value={form.emergencyContact} onChange={e => set("emergencyContact", e.target.value)} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Relationship</label>
+                        <input data-testid="input-emergency-relationship" className={inputClass} placeholder="e.g. Spouse, Parent" value={form.emergencyRelationship} onChange={e => set("emergencyRelationship", e.target.value)} />
+                      </div>
+                    </Row>
+                    <div>
+                      <label className={labelClass}>Emergency Contact Phone #</label>
+                      <input data-testid="input-emergency-phone" className={inputClass} placeholder="(615) 000-0000" value={form.emergencyPhone} onChange={e => set("emergencyPhone", e.target.value)} />
+                    </div>
+                    <div>
+                      <label className={labelClass}>Referred By</label>
+                      <input data-testid="input-referred-by" className={inputClass} placeholder="Name or source" value={form.referredBy} onChange={e => set("referredBy", e.target.value)} />
                     </div>
                   </FieldGroup>
                 )}
 
-                {/* Step 2: Reason for Visit */}
+                {/* Step 2: Primary Health Goals & Current Health Concerns */}
                 {step === 1 && (
                   <FieldGroup>
                     <div>
-                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Reason for Visit</h2>
-                      <p className="text-muted-foreground text-sm">Help us understand why you're coming in.</p>
+                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Primary Health Goals</h2>
+                      <p className="text-muted-foreground text-sm">Help us understand what brings you to Jordan Wellness Experience.</p>
                     </div>
                     <div>
-                      <label className={labelClass}>Primary Reason for Visit *</label>
-                      <select data-testid="select-visit-reason" className={selectClass} value={form.visitReason} onChange={e => set("visitReason", e.target.value)}>
-                        <option value="">Select a service...</option>
-                        <option>Chiropractic Care</option>
-                        <option>Fitness Training / ChiroFitness</option>
-                        <option>Body Sculpting / Fat Freezing</option>
-                        <option>Targeted Cryotherapy</option>
-                        <option>Relaxation Therapy (Happy Hour)</option>
-                        <option>Membership Inquiry</option>
-                        <option>General Wellness / Multiple Services</option>
-                        <option>Other</option>
+                      <label className={labelClass}>What brings you to Jordan Wellness Experience? (Check all that apply)</label>
+                      <CheckboxGroup options={PRIMARY_GOALS} selected={form.primaryGoals} onToggle={(v) => toggle("primaryGoals", v)} testPrefix="goal" />
+                    </div>
+                    <div>
+                      <label className={labelClass}>What are your top 3 Wellness Goals?</label>
+                      <div className="space-y-3">
+                        <input data-testid="input-wellness-goal-1" className={inputClass} placeholder="1." value={form.wellnessGoal1} onChange={e => set("wellnessGoal1", e.target.value)} />
+                        <input data-testid="input-wellness-goal-2" className={inputClass} placeholder="2." value={form.wellnessGoal2} onChange={e => set("wellnessGoal2", e.target.value)} />
+                        <input data-testid="input-wellness-goal-3" className={inputClass} placeholder="3." value={form.wellnessGoal3} onChange={e => set("wellnessGoal3", e.target.value)} />
+                      </div>
+                    </div>
+
+                    <SectionDivider title="Current Health Concerns" />
+                    <div>
+                      <label className={labelClass}>Current Health Concerns (Check all that apply)</label>
+                      <CheckboxGroup options={CURRENT_CONCERNS} selected={form.currentConcerns} onToggle={(v) => toggle("currentConcerns", v)} testPrefix="concern" />
+                    </div>
+                    <div>
+                      <label className={labelClass}>When did this begin?</label>
+                      <input data-testid="input-concern-started" className={inputClass} placeholder="e.g. 3 months ago, last year..." value={form.concernStarted} onChange={e => set("concernStarted", e.target.value)} />
+                    </div>
+                    <div>
+                      <label className={labelClass}>Have you received treatment for this before?</label>
+                      <select data-testid="select-previous-treatment" className={selectClass} value={form.previousTreatment} onChange={e => set("previousTreatment", e.target.value)}>
+                        <option value="">Select...</option>
+                        <option>Yes</option>
+                        <option>No</option>
                       </select>
                     </div>
-                    <div>
-                      <label className={labelClass}>Chief Complaint / Health Concern *</label>
-                      <textarea data-testid="textarea-complaint" className={`${inputClass} min-h-[100px] resize-none`} placeholder="Describe your primary concern or what you'd like to address..." value={form.chiefComplaint} onChange={e => set("chiefComplaint", e.target.value)} />
-                    </div>
-                    <Row>
+                    {form.previousTreatment === "Yes" && (
                       <div>
-                        <label className={labelClass}>Pain Level (if applicable)</label>
-                        <select data-testid="select-pain" className={selectClass} value={form.painLevel} onChange={e => set("painLevel", e.target.value)}>
-                          <option value="">Select...</option>
-                          {[0,1,2,3,4,5,6,7,8,9,10].map(n => (
-                            <option key={n}>{n} – {n === 0 ? "No pain" : n <= 3 ? "Mild" : n <= 6 ? "Moderate" : "Severe"}</option>
-                          ))}
-                        </select>
+                        <label className={labelClass}>If yes, what kind of treatment and when?</label>
+                        <textarea data-testid="textarea-treatment-details" className={`${inputClass} min-h-[80px] resize-none`} placeholder="Describe the treatment and approximate date..." value={form.previousTreatmentDetails} onChange={e => set("previousTreatmentDetails", e.target.value)} />
                       </div>
-                      <div>
-                        <label className={labelClass}>How Long Have You Had This?</label>
-                        <select data-testid="select-duration" className={selectClass} value={form.symptomDuration} onChange={e => set("symptomDuration", e.target.value)}>
-                          <option value="">Select...</option>
-                          <option>Less than 1 week</option>
-                          <option>1–4 weeks</option>
-                          <option>1–3 months</option>
-                          <option>3–6 months</option>
-                          <option>6 months – 1 year</option>
-                          <option>More than 1 year</option>
-                          <option>Not applicable</option>
-                        </select>
-                      </div>
-                    </Row>
-                    <Row>
-                      <div>
-                        <label className={labelClass}>What Makes It Better?</label>
-                        <input data-testid="input-better" className={inputClass} placeholder="e.g. Rest, heat, stretching..." value={form.makesBetter} onChange={e => set("makesBetter", e.target.value)} />
-                      </div>
-                      <div>
-                        <label className={labelClass}>What Makes It Worse?</label>
-                        <input data-testid="input-worse" className={inputClass} placeholder="e.g. Sitting, cold, activity..." value={form.makesWorse} onChange={e => set("makesWorse", e.target.value)} />
-                      </div>
-                    </Row>
+                    )}
                   </FieldGroup>
                 )}
 
@@ -387,137 +592,173 @@ export default function IntakeForm() {
                       <p className="text-muted-foreground text-sm">Your medical background helps us care for you safely.</p>
                     </div>
                     <div>
-                      <label className={labelClass}>Have you received chiropractic care before?</label>
-                      <select data-testid="select-chiro-history" className={selectClass} value={form.previousChiropractic} onChange={e => set("previousChiropractic", e.target.value)}>
+                      <label className={labelClass}>Do you have a personal history of: (Check all that apply)</label>
+                      <CheckboxGroup options={PERSONAL_HISTORY} selected={form.personalHistory} onToggle={(v) => toggle("personalHistory", v)} testPrefix="history" />
+                    </div>
+                    <div>
+                      <label className={labelClass}>List Surgeries and Dates</label>
+                      <textarea data-testid="textarea-surgeries" className={`${inputClass} min-h-[80px] resize-none`} placeholder="e.g. Knee surgery – 2018, Appendectomy – 2015 (or type 'None')" value={form.surgeries} onChange={e => set("surgeries", e.target.value)} />
+                    </div>
+                    <div>
+                      <label className={labelClass}>Current Medications, Vitamins, Supplements</label>
+                      <textarea data-testid="textarea-medications" className={`${inputClass} min-h-[80px] resize-none`} placeholder="List all medications, vitamins, or supplements (or type 'None')" value={form.medications} onChange={e => set("medications", e.target.value)} />
+                    </div>
+                    <div>
+                      <label className={labelClass}>Do you have any allergies?</label>
+                      <select data-testid="select-allergies" className={selectClass} value={form.hasAllergies} onChange={e => set("hasAllergies", e.target.value)}>
                         <option value="">Select...</option>
                         <option>Yes</option>
                         <option>No</option>
                       </select>
                     </div>
-                    <div>
-                      <label className={labelClass}>Current Medications</label>
-                      <textarea data-testid="textarea-medications" className={`${inputClass} min-h-[80px] resize-none`} placeholder="List any current medications or supplements (or type 'None')..." value={form.currentMedications} onChange={e => set("currentMedications", e.target.value)} />
-                    </div>
-                    <div>
-                      <label className={labelClass}>Previous Surgeries or Injuries</label>
-                      <textarea data-testid="textarea-surgeries" className={`${inputClass} min-h-[80px] resize-none`} placeholder="Include year and area of the body if applicable (or type 'None')..." value={form.previousSurgeriesInjuries} onChange={e => set("previousSurgeriesInjuries", e.target.value)} />
-                    </div>
-                    <div>
-                      <label className={labelClass}>Existing Medical Conditions (check all that apply)</label>
-                      <div className="grid sm:grid-cols-2 gap-2 mt-2">
-                        {CONDITIONS.map((cond) => (
-                          <label key={cond} className="flex items-center gap-3 cursor-pointer group" data-testid={`checkbox-condition-${cond.replace(/\s+/g, "-").toLowerCase()}`}>
-                            <div className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 transition-colors ${form.medicalConditions.includes(cond) ? "bg-accent border-accent" : "border-border group-hover:border-accent/50"}`}>
-                              {form.medicalConditions.includes(cond) && <CheckCircle2 className="w-3 h-3 text-white" />}
-                            </div>
-                            <span className="text-sm text-foreground/80">{cond}</span>
-                            <input type="checkbox" className="sr-only" checked={form.medicalConditions.includes(cond)} onChange={() => toggleCondition(cond)} />
-                          </label>
-                        ))}
+                    {form.hasAllergies === "Yes" && (
+                      <div>
+                        <label className={labelClass}>If yes, please list:</label>
+                        <input data-testid="input-allergy-details" className={inputClass} placeholder="e.g. Penicillin, latex, peanuts..." value={form.allergyDetails} onChange={e => set("allergyDetails", e.target.value)} />
                       </div>
-                    </div>
+                    )}
                     <div>
-                      <label className={labelClass}>Known Allergies</label>
-                      <input data-testid="input-allergies" className={inputClass} placeholder="e.g. Penicillin, latex, none..." value={form.allergies} onChange={e => set("allergies", e.target.value)} />
+                      <label className={labelClass}>Are you pregnant or trying to conceive?</label>
+                      <select data-testid="select-pregnant" className={selectClass} value={form.pregnant} onChange={e => set("pregnant", e.target.value)}>
+                        <option value="">Select...</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                      </select>
                     </div>
                   </FieldGroup>
                 )}
 
-                {/* Step 4: Lifestyle & Goals */}
+                {/* Step 4: Lifestyle & Services */}
                 {step === 3 && (
                   <FieldGroup>
                     <div>
-                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Lifestyle & Goals</h2>
-                      <p className="text-muted-foreground text-sm">Understanding your lifestyle helps us build the right plan for you.</p>
+                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Lifestyle & Services</h2>
+                      <p className="text-muted-foreground text-sm">Help us tailor your experience to your life.</p>
                     </div>
-                    <div>
-                      <label className={labelClass}>Occupation / Type of Work</label>
-                      <input data-testid="input-occupation" className={inputClass} placeholder="e.g. Nurse, teacher, office worker, contractor..." value={form.occupation} onChange={e => set("occupation", e.target.value)} />
-                    </div>
+
+                    <SectionDivider title="Lifestyle Profile" />
                     <Row>
                       <div>
-                        <label className={labelClass}>Exercise Level</label>
-                        <select data-testid="select-exercise" className={selectClass} value={form.exerciseLevel} onChange={e => set("exerciseLevel", e.target.value)}>
+                        <label className={labelClass}>Exercise Frequency</label>
+                        <select data-testid="select-exercise" className={selectClass} value={form.exerciseFrequency} onChange={e => set("exerciseFrequency", e.target.value)}>
                           <option value="">Select...</option>
-                          <option>Sedentary (little to no exercise)</option>
-                          <option>Light (1–2 days/week)</option>
-                          <option>Moderate (3–4 days/week)</option>
-                          <option>Active (5+ days/week)</option>
+                          <option>None</option>
+                          <option>1–2x/week</option>
+                          <option>3–4x/week</option>
+                          <option>5+x/week</option>
                         </select>
                       </div>
+                      <div>
+                        <label className={labelClass}>Stress Level</label>
+                        <select data-testid="select-stress" className={selectClass} value={form.stressLevel} onChange={e => set("stressLevel", e.target.value)}>
+                          <option value="">Select...</option>
+                          <option>Low</option>
+                          <option>Moderate</option>
+                          <option>High</option>
+                        </select>
+                      </div>
+                    </Row>
+                    <Row>
                       <div>
                         <label className={labelClass}>Sleep Quality</label>
                         <select data-testid="select-sleep" className={selectClass} value={form.sleepQuality} onChange={e => set("sleepQuality", e.target.value)}>
                           <option value="">Select...</option>
-                          <option>Poor</option>
-                          <option>Fair</option>
-                          <option>Good</option>
                           <option>Excellent</option>
+                          <option>Fair</option>
+                          <option>Poor</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className={labelClass}>Nutritional Style</label>
+                        <select data-testid="select-nutrition" className={selectClass} value={form.nutritionalStyle} onChange={e => set("nutritionalStyle", e.target.value)}>
+                          <option value="">Select...</option>
+                          <option>Balanced</option>
+                          <option>High Protein</option>
+                          <option>Keto</option>
+                          <option>Vegetarian</option>
+                          <option>Other</option>
                         </select>
                       </div>
                     </Row>
+
+                    <SectionDivider title="Services of Interest" />
                     <div>
-                      <label className={labelClass}>Current Stress Level</label>
-                      <select data-testid="select-stress" className={selectClass} value={form.stressLevel} onChange={e => set("stressLevel", e.target.value)}>
-                        <option value="">Select...</option>
-                        <option>Low</option>
-                        <option>Moderate</option>
-                        <option>High</option>
-                        <option>Very High</option>
-                      </select>
+                      <label className={labelClass}>Signature Services (select all that apply)</label>
+                      <CheckboxGroup options={SIGNATURE_SERVICES} selected={form.signatureServices} onToggle={(v) => toggle("signatureServices", v)} testPrefix="sig-service" />
                     </div>
                     <div>
-                      <label className={labelClass}>Your Health Goals</label>
-                      <textarea data-testid="textarea-goals" className={`${inputClass} min-h-[100px] resize-none`} placeholder="What are you hoping to achieve through your care at Jordan Wellness Experience?" value={form.healthGoals} onChange={e => set("healthGoals", e.target.value)} />
+                      <label className={labelClass}>Premium Services (select all that apply)</label>
+                      <CheckboxGroup options={PREMIUM_SERVICES} selected={form.premiumServices} onToggle={(v) => toggle("premiumServices", v)} testPrefix="prem-service" />
                     </div>
+
+                    <SectionDivider title="Experience Preference" />
                     <div>
-                      <label className={labelClass}>How Did You Hear About Us?</label>
-                      <select data-testid="select-heard" className={selectClass} value={form.heardAboutUs} onChange={e => set("heardAboutUs", e.target.value)}>
-                        <option value="">Select...</option>
-                        <option>Google Search</option>
-                        <option>Instagram</option>
-                        <option>Friend or Family Referral</option>
-                        <option>Doctor Referral</option>
-                        <option>Flyer / In-person</option>
-                        <option>Other</option>
-                      </select>
+                      <label className={labelClass}>How would you like your experience tailored? (Check all that apply)</label>
+                      <CheckboxGroup options={EXPERIENCE_PREFERENCES} selected={form.experiencePreference} onToggle={(v) => toggle("experiencePreference", v)} testPrefix="exp-pref" />
                     </div>
                   </FieldGroup>
                 )}
 
-                {/* Step 5: Review & Consent */}
+                {/* Step 5: Membership & Consent */}
                 {step === 4 && (
                   <FieldGroup>
                     <div>
-                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Review & Consent</h2>
-                      <p className="text-muted-foreground text-sm">Please review your submission and sign your consent below.</p>
+                      <h2 className="font-display font-bold text-2xl text-primary mb-1">Membership & Consent</h2>
+                      <p className="text-muted-foreground text-sm">Select your membership option and sign to complete your questionnaire.</p>
                     </div>
 
-                    <div className="bg-secondary/30 rounded-lg p-5 space-y-3 text-sm">
-                      <p><span className="font-semibold text-primary">Name:</span> {form.fullName || "—"}</p>
-                      <p><span className="font-semibold text-primary">Date of Birth:</span> {form.dateOfBirth || "—"}</p>
-                      <p><span className="font-semibold text-primary">Phone:</span> {form.phone || "—"}</p>
-                      <p><span className="font-semibold text-primary">Email:</span> {form.email || "—"}</p>
-                      <p><span className="font-semibold text-primary">Visit Reason:</span> {form.visitReason || "—"}</p>
-                      <p><span className="font-semibold text-primary">Chief Complaint:</span> {form.chiefComplaint || "—"}</p>
-                      <p><span className="font-semibold text-primary">Conditions:</span> {form.medicalConditions.length ? form.medicalConditions.join(", ") : "None selected"}</p>
-                      <p><span className="font-semibold text-primary">Health Goals:</span> {form.healthGoals || "—"}</p>
+                    <SectionDivider title="Membership Options" />
+                    <div className="space-y-3">
+                      {[
+                        {
+                          value: "Signature Services – Non-Membership",
+                          label: "Signature Services – Non-Membership",
+                          desc: "Pay per visit services",
+                        },
+                        {
+                          value: "Premium Services – Private Wellness Membership",
+                          label: "Premium Services – Private, Discreet Wellness Membership",
+                          desc: "Integrated treatment plan by both Chiropractor and Fitness trainer, with the option to renew/cancel in month 3; one-on-one precision care by both providers; Priority Access to providers and Priority Hours; family and friend perks",
+                        },
+                        {
+                          value: "I would like guidance selecting the right plan for me",
+                          label: "I would like guidance selecting the right plan for me",
+                          desc: "",
+                        },
+                      ].map((opt) => (
+                        <label key={opt.value} className="flex items-start gap-3 cursor-pointer p-4 rounded-lg border border-border hover:border-accent/40 transition-colors" data-testid={`membership-${opt.value.replace(/\s+/g, "-").toLowerCase().slice(0, 20)}`}>
+                          <div
+                            className={`mt-0.5 w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${form.membershipOption === opt.value ? "bg-accent border-accent" : "border-border"}`}
+                            onClick={() => set("membershipOption", opt.value)}
+                          >
+                            {form.membershipOption === opt.value && <div className="w-2.5 h-2.5 rounded-full bg-white" />}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-primary leading-snug">{opt.label}</p>
+                            {opt.desc && <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{opt.desc}</p>}
+                          </div>
+                          <input type="radio" className="sr-only" checked={form.membershipOption === opt.value} onChange={() => set("membershipOption", opt.value)} />
+                        </label>
+                      ))}
                     </div>
 
-                    <div className="bg-primary/5 border border-primary/15 rounded-lg p-5 text-sm text-foreground/80 leading-relaxed space-y-3">
-                      <p className="font-semibold text-primary text-base">Consent to Care</p>
+                    <SectionDivider title="Informed Consent & Acknowledgement" />
+                    <div className="bg-primary/5 border border-primary/15 rounded-lg p-5 text-sm text-foreground/80 leading-relaxed">
                       <p>
-                        I voluntarily consent to chiropractic evaluation, treatment, and wellness services provided by Jordan Wellness Experience. I understand that results vary by individual and that I may withdraw consent at any time. The information I have provided is accurate to the best of my knowledge.
-                      </p>
-                      <p>
-                        I authorize Jordan Wellness Experience to use this information to coordinate my personalized care plan.
+                        "I understand that services provided at Jordan Wellness Experience are wellness based and may include Chiropractic care, Fitness training, Relaxation therapy, Targeted Cryotherapy, and/or Body Sculpting/Fat Freezing procedures. I acknowledge that I have disclosed my health history accurately."
                       </p>
                     </div>
 
-                    <div>
-                      <label className={labelClass}>Electronic Signature (Type Full Name) *</label>
-                      <input data-testid="input-consent-name" className={inputClass} placeholder="Type your full name to sign" value={form.consentName} onChange={e => set("consentName", e.target.value)} />
-                    </div>
+                    <Row>
+                      <div>
+                        <label className={labelClass}>Signature (Type Full Name) *</label>
+                        <input data-testid="input-consent-name" className={inputClass} placeholder="Type your full name to sign" value={form.consentName} onChange={e => set("consentName", e.target.value)} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Date</label>
+                        <input data-testid="input-consent-date" type="date" className={inputClass} value={form.consentDate} onChange={e => set("consentDate", e.target.value)} />
+                      </div>
+                    </Row>
 
                     <label className="flex items-start gap-3 cursor-pointer" data-testid="checkbox-consent">
                       <div
@@ -527,7 +768,7 @@ export default function IntakeForm() {
                         {form.consentAgreed && <CheckCircle2 className="w-3 h-3 text-white" />}
                       </div>
                       <span className="text-sm text-foreground/80 leading-relaxed">
-                        I have read and agree to the consent to care statement above. I confirm that the information provided is accurate.
+                        I have read and agree to the consent statement above. I confirm that the information provided is accurate.
                       </span>
                     </label>
 
@@ -539,7 +780,6 @@ export default function IntakeForm() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
             <div className="flex justify-between items-center mt-8">
               <Button
                 variant="outline"

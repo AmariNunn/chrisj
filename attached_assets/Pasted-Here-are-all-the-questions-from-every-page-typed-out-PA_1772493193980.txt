@@ -1,0 +1,156 @@
+Here are all the questions from every page typed out:
+
+---
+
+**PATIENT INFORMATION**
+- Name
+- Today's Date
+- Date of Birth (DOB)
+- Age
+- Marital Status (M / S / D / W)
+- Sex (M or F)
+- Preferred Pronouns
+- Occupation
+- Employer
+- Home Address
+- City, State, Zip
+- Cell #
+- Email
+- Preferred Method of Communication (Call / Text / Email)
+- Emergency Contact, Relationship, and Phone #
+- Referred By
+
+---
+
+**PRIMARY HEALTH GOALS**
+
+*What brings you to Jordan Wellness Experience? (Check all that apply)*
+- Auto Injury Recovery
+- Performance Optimization
+- Pain Relief
+- Longevity & Preventative Care
+- Body Sculpting/Fat Freezing
+- Stress
+- Targeted Cryotherapy
+- Postural Correction
+- Weight Mgmt
+- Sports Injury
+- Nutritional Coaching
+- Other
+
+*What are your top 3 Wellness Goals?*
+1. ___
+2. ___
+3. ___
+
+---
+
+**CURRENT HEALTH CONCERNS**
+
+*(Check all that apply)*
+- Neck pain/stiffness
+- Back pain/stiffness
+- Sciatica
+- Headaches/Migraines
+- Joint Pain
+- Muscle Tightness
+- Chronic fatigue
+- Limited Mobility
+- Weight Issues
+- Stress/Burnout
+- Vertigo
+- Insomnia
+- Alopecia/Hair loss
+- Acne
+- Eczema/Psoriasis
+- Wrinkles/Fine lines/Dark spots
+- Other
+
+- When did this begin?
+- Have you received treatment for this before? (Y or N) — If yes, please explain what kind of treatment and when?
+
+---
+
+**HEALTH HISTORY**
+
+*Do you have a personal history of: (Check all that apply)*
+- High Blood Pressure
+- Heart Disease
+- Stroke
+- Heart Attack
+- Diabetes
+- Thyroid disorder
+- Autoimmune Disease
+- Cancer
+- Gout
+- Osteoporosis/Osteopenia
+- High Cholesterol
+- Arthritis
+- Anxiety/Depression
+- Glaucoma
+- Other
+
+- List Surgeries and Dates
+- Current Medications, Vitamins, Supplements
+- Any allergies? (Y or N) — If yes, list:
+- Are you pregnant or trying to conceive? (Y or N)
+
+---
+
+**LIFESTYLE PROFILE**
+
+*Exercise Frequency*
+- None / 1-2x/week / 3-4x/week / 5+x/week
+
+*Stress Level*
+- Low / Moderate / High
+
+*Sleep Quality*
+- Excellent / Fair / Poor
+
+*Nutritional Style*
+- Balanced / High Protein / Keto / Vegetarian / Other
+
+---
+
+**SERVICES OF INTEREST**
+
+*Signature Services (select all that apply)*
+- Chiropractic
+- Fitness Training
+- Happy Hour/Relaxation Therapy
+
+*Premium Services (select all that apply)*
+- ChiroFitness – "Essential Jordan Wellness Experience"
+- Body Sculpting/Fat Freezing – "Enhanced Jordan Wellness Experience"
+- Targeted Cryotherapy – "Elevated Jordan Wellness Experience"
+- VIP Concierge – "Elite Jordan Wellness Experience"
+
+---
+
+**EXPERIENCE PREFERENCE**
+
+*How would you like your experience tailored? (Check all that apply)*
+- Pain focused clinical care
+- Athletic performance driven
+- Aesthetic & Body contour focused
+- Stress recovery & Nervous System reset
+- Executive-level Concierge/Long term wellness
+
+---
+
+**MEMBERSHIP OPTIONS**
+
+*(Select one)*
+- Signature Services – Non-Membership (pay per visit services)
+- Premium Services – Private, Discreet Wellness Membership (integrated treatment plan by both Chiropractor and Fitness trainer, with the option to renew/cancel in month 3; one-on-one precision care by both providers; Priority Access to providers and Priority Hours; family and friend perks)
+- I would like guidance selecting the right plan for me
+
+---
+
+**INFORMED CONSENT AND ACKNOWLEDGEMENT**
+
+*"I understand that services provided at Jordan Wellness Experience are wellness based and may include Chiropractic care, Fitness training, Relaxation therapy, Targeted Cryotherapy, and/or Body Sculpting/Fat Freezing procedures. I acknowledge that I have disclosed my health history accurately."*
+
+- Signature
+- Date
