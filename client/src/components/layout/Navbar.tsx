@@ -14,6 +14,7 @@ const navLinks = [
   { name: "Membership", href: "/membership" },
   { name: "Contact", href: "/contact" },
   { name: "Testimonials", href: "/testimonials" },
+  { name: "FAQ", href: "/faq" },
 ];
 
 export function Navbar() {
