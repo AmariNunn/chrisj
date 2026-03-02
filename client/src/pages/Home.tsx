@@ -9,7 +9,6 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
-import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
 import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
 import slidePhoto3 from "@/assets/images/img-2509.jpg";
@@ -109,57 +108,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        <Section className="bg-secondary/30" id="about">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-md overflow-hidden bg-muted/30 border border-border/50">
-                <img
-                  src={coupleImg}
-                  alt="Chris and Dr. Cox-Jordan"
-                  className="w-full h-full object-cover"
-                  data-testid="img-about-couple"
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-3 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-md" data-testid="text-photo-label">
-                Photo: Chris &amp; Dr. Cox-Jordan
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="space-y-6"
-            >
-              <span className="inline-block text-accent font-semibold tracking-widest uppercase text-xs" data-testid="text-about-subtitle">Our Studio</span>
-              <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-primary leading-tight" data-testid="text-about-heading">
-                The Jordan Wellness Experience
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed" data-testid="text-about-description">
-                Jordan Wellness Experience is a forward thinking concept, rooted in longevity, vitality, and total body calibration. It's a private standard in life long wellness engineered for enduring strength. With every Jordan Wellness Experience, we prioritize a thoughtful and individualized approach to wellness. Our process is neither rushed nor transactional, ensuring that each session and treatment plan is tailored to the unique needs of our clients.
-              </p>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed" data-testid="text-about-description-2">
-                Conveniently located in Nashville, our private wellness studio was established to support professionals, caregivers, parents, leaders, athletes, and others who constantly pour into others but often overlook their own well-being. We provide a discreet and tranquil environment that respects your time, privacy, and health.
-              </p>
-              <div className="pt-4">
-                <Link href="/experience">
-                  <Button className="rounded-full px-8 bg-primary text-primary-foreground group" data-testid="button-learn-more">
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </Section>
 
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">

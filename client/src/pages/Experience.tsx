@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Team } from "@/components/sections/Team";
+import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
+import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
 
@@ -94,8 +95,49 @@ export default function Experience() {
 
         <IntakeBanner />
 
-        {/* Meet the Team */}
-        <Team />
+        {/* Our Studio */}
+        <Section className="bg-secondary/30" id="about">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              <div className="aspect-[4/5] rounded-md overflow-hidden bg-muted/30 border border-border/50">
+                <img
+                  src={coupleImg}
+                  alt="Chris and Dr. Cox-Jordan"
+                  className="w-full h-full object-cover"
+                  data-testid="img-about-couple"
+                />
+              </div>
+              <div className="absolute -bottom-3 -right-3 bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-md" data-testid="text-photo-label">
+                Photo: Chris &amp; Dr. Cox-Jordan
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="space-y-6"
+            >
+              <span className="inline-block text-accent font-semibold tracking-widest uppercase text-xs" data-testid="text-about-subtitle">Our Studio</span>
+              <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-primary leading-tight" data-testid="text-about-heading">
+                The Jordan Wellness Experience
+              </h2>
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed" data-testid="text-about-description">
+                Jordan Wellness Experience is a forward thinking concept, rooted in longevity, vitality, and total body calibration. It's a private standard in life long wellness engineered for enduring strength. With every Jordan Wellness Experience, we prioritize a thoughtful and individualized approach to wellness. Our process is neither rushed nor transactional, ensuring that each session and treatment plan is tailored to the unique needs of our clients.
+              </p>
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed" data-testid="text-about-description-2">
+                Conveniently located in Nashville, our private wellness studio was established to support professionals, caregivers, parents, leaders, athletes, and others who constantly pour into others but often overlook their own well-being. We provide a discreet and tranquil environment that respects your time, privacy, and health.
+              </p>
+            </motion.div>
+          </div>
+        </Section>
 
         {/* What to Expect */}
         <section className="py-20 md:py-28 bg-secondary/30">
