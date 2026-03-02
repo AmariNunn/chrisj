@@ -92,27 +92,6 @@ export default function Home() {
 
         <IntakeBanner />
 
-        <Section className="bg-secondary/30">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10 max-w-2xl mx-auto"
-          >
-            <span className="text-accent font-bold tracking-wider uppercase text-sm mb-3 block">Gallery</span>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight">Inside the Studio</h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <PhotoSlideshow />
-          </motion.div>
-        </Section>
-
         <section className="py-20 md:py-32 bg-white" data-testid="section-branding">
           <div className="container mx-auto px-4 md:px-6 max-w-5xl">
             {[
