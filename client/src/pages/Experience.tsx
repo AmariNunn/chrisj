@@ -203,7 +203,7 @@ export default function Experience() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs block">New Patient Intake</span>
+              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs block">For new patients</span>
               <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-portfolio-title">
                 The Jordan Wellness Experience Portfolio
               </h2>
