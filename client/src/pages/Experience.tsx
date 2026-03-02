@@ -208,10 +208,7 @@ export default function Experience() {
                 The Jordan Wellness Experience Portfolio
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
-                Our 4-page intake forms tell us about you — your health history, your health focus, and your long-term health interests. Complete them online and submit to get started.
-              </p>
-              <p className="text-muted-foreground text-base leading-relaxed italic max-w-xl mx-auto">
-                After submission, we will personally reach out to you within 24 hours to coordinate your Private Assessment.
+                Our 4-page intake forms tell us about you — your health history, your health focus, and your long-term health interests. Complete them online and submit to get started. After submission, we will personally reach out to you within 24 hours to coordinate your Private Assessment.
               </p>
               <div className="pt-4">
                 <Link href="/intake-form">
