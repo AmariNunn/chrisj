@@ -3,28 +3,24 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Clock } from "lucide-react";
-import slideImg1 from "@assets/IMG_2228_1772059900723.jpg";
-import slideImg2 from "@assets/IMG_2364_1772059900723.jpg";
-import slideImg3 from "@/assets/images/slide-2386.jpg";
-import slideImg4 from "@/assets/images/slide-2406.jpg";
-import slideImg5 from "@/assets/images/slide-3100.jpg";
-import slideImg6 from "@assets/IMG_5085_1772390113181.jpg";
-import slideImg7 from "@assets/IMG_6517_1772390113182.jpg";
-import slideImg8 from "@/assets/images/img-3944.jpg";
-import slideImg9 from "@/assets/images/img-4930.jpg";
-import slideImg10 from "@/assets/images/img-5103.jpg";
+import slideImg1 from "@assets/IMG_2228_1772413231480.jpeg";
+import slideImg2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
+import slideImg3 from "@/assets/images/img-2509.jpg";
+import slideImg4 from "@assets/IMG_2636_1772413240374.jpeg";
+import slideImg5 from "@assets/IMG_6517_1772413246373.jpeg";
+import slideImg6 from "@/assets/images/img-4930.jpg";
+import slideImg7 from "@/assets/images/img-4462.jpg";
+import slideImg8 from "@/assets/images/img-4196.jpg";
 
 const slides = [
-  { src: slideImg1, alt: "Dr. Cox-Jordan chiropractic neck adjustment" },
-  { src: slideImg2, alt: "Percussion therapy treatment" },
+  { src: slideImg1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
+  { src: slideImg2, alt: "Fitness training session" },
   { src: slideImg3, alt: "Wellness care session" },
-  { src: slideImg4, alt: "Patient consultation" },
-  { src: slideImg5, alt: "Clinic treatment" },
-  { src: slideImg6, alt: "Wellness studio session" },
-  { src: slideImg7, alt: "Jordan Wellness Experience" },
-  { src: slideImg8, alt: "Chiropractic care" },
-  { src: slideImg9, alt: "Fitness training session" },
-  { src: slideImg10, alt: "Body wellness treatment" },
+  { src: slideImg4, alt: "Cryotherapy treatment" },
+  { src: slideImg5, alt: "Body sculpting assessment" },
+  { src: slideImg6, alt: "Clinic treatment" },
+  { src: slideImg7, alt: "Patient consultation" },
+  { src: slideImg8, alt: "Wellness studio" },
 ];
 
 export function Hero() {

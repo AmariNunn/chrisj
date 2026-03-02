@@ -10,33 +10,24 @@ import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 import coupleImg from "@assets/IMG_2607_1772062959050.JPG";
-import slidePhoto1 from "@assets/IMG_2228_1772059900723.jpg";
-import slidePhoto2 from "@assets/IMG_2364_1772059900723.jpg";
-import slidePhoto3 from "@/assets/images/slide-2386.jpg";
-import slidePhoto4 from "@/assets/images/slide-2406.jpg";
-import slidePhoto5 from "@/assets/images/slide-3100.jpg";
-import slidePhoto6 from "@assets/IMG_5085_1772390113181.jpg";
-import slidePhoto7 from "@assets/IMG_6517_1772390113182.jpg";
-import slidePhoto8 from "@/assets/images/img-3944.jpg";
-import slidePhoto9 from "@/assets/images/img-4930.jpg";
-import slidePhoto10 from "@/assets/images/img-5128.jpg";
-
-import fitnessPhoto from "@/assets/images/img-5128.jpg";
-import happyHourPhoto from "@assets/IMG_2364_1772412691901.jpg";
-
-const chiroServiceImg = "/images/chiro-service.jpg";
+import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
+import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
+import slidePhoto3 from "@/assets/images/img-2509.jpg";
+import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
+import slidePhoto5 from "@assets/IMG_6517_1772413246373.jpeg";
+import slidePhoto6 from "@/assets/images/img-4930.jpg";
+import slidePhoto7 from "@/assets/images/img-4462.jpg";
+import slidePhoto8 from "@/assets/images/img-4196.jpg";
 
 const slideshowPhotos = [
   { id: 1, src: slidePhoto1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
-  { id: 2, src: slidePhoto2, alt: "Percussion therapy treatment" },
+  { id: 2, src: slidePhoto2, alt: "Fitness training session" },
   { id: 3, src: slidePhoto3, alt: "Wellness care session" },
-  { id: 4, src: slidePhoto4, alt: "Patient consultation" },
-  { id: 5, src: slidePhoto5, alt: "Clinic treatment" },
-  { id: 6, src: slidePhoto6, alt: "Jordan Wellness Experience" },
-  { id: 7, src: slidePhoto7, alt: "Wellness studio" },
-  { id: 8, src: slidePhoto8, alt: "Chiropractic care" },
-  { id: 9, src: slidePhoto9, alt: "Fitness training session" },
-  { id: 10, src: slidePhoto10, alt: "Body wellness treatment" },
+  { id: 4, src: slidePhoto4, alt: "Cryotherapy treatment" },
+  { id: 5, src: slidePhoto5, alt: "Body sculpting assessment" },
+  { id: 6, src: slidePhoto6, alt: "Clinic treatment" },
+  { id: 7, src: slidePhoto7, alt: "Patient consultation" },
+  { id: 8, src: slidePhoto8, alt: "Wellness studio" },
 ];
 
 function PhotoSlideshow() {
@@ -172,9 +163,9 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: chiroServiceImg, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: fitnessPhoto, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: happyHourPhoto, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
+              { title: "Chiropractic Care", img: slidePhoto1, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
+              { title: "Fitness Training", img: slidePhoto2, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "\"Happy Hour\" Wellness Experience", img: slidePhoto4, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 

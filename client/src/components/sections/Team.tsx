@@ -64,7 +64,7 @@ export function Team() {
                     <img
                       src={member.image}
                       alt={member.imageLabel}
-                      className="w-full h-auto min-h-[480px] object-contain bg-muted/5"
+                      className="w-full h-auto min-h-[480px] object-cover md:object-contain bg-muted/5"
                       data-testid={`img-team-${idx}`}
                     />
                   </div>

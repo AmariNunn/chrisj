@@ -33,9 +33,9 @@ import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
 import { BOOKING_URL } from "@/lib/constants";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
-const chiroServiceImg = "/images/chiro-service.jpg";
-const fitnessServiceImg = "/images/fitness-service.jpg";
-const happyHourServiceImg = "/images/happy-hour-service.jpg";
+import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
+import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
+import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
 
 export default function Services() {
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Services() {
     {
       title: "Chiropractic Care",
       icon: Activity,
-      img: chiroServiceImg,
+      img: slidePhoto1,
       features: [
         "Private wellness setting",
         "Precision adjustments coupled with PT modalities",
@@ -70,7 +70,7 @@ export default function Services() {
     {
       title: "Fitness Training Wellness Experience",
       icon: Dumbbell,
-      img: fitnessServiceImg,
+      img: slidePhoto2,
       features: [
         "Private workout studio",
         "Personalized programs",
@@ -83,7 +83,7 @@ export default function Services() {
     {
       title: '"Happy Hour" Wellness Experience',
       icon: Clock,
-      img: happyHourServiceImg,
+      img: slidePhoto4,
       description:
         "ONE FULL HOUR of Relaxation therapy. Releases tension, supports recovery, reduces stress, and provides a nervous system reset.",
       features: [
