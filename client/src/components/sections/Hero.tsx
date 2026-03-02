@@ -57,7 +57,7 @@ export function Hero() {
               <img
                 src={slides[current].src}
                 alt={slides[current].alt}
-                className="absolute inset-0 w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-contain scale-[1.4]"
                 data-testid={`hero-slide-${current}`}
               />
             </motion.div>
