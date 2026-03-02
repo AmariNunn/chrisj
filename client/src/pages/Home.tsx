@@ -14,7 +14,6 @@ import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
 import slidePhoto3 from "@/assets/images/img-2509.jpg";
 import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
-import happyHourImg from "@assets/IMG_2364_1772414135004.jpg";
 import slidePhoto5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slidePhoto6 from "@/assets/images/img-4930.jpg";
 import slidePhoto7 from "@/assets/images/img-4462.jpg";
@@ -158,55 +157,6 @@ export default function Home() {
                 </Link>
               </div>
             </motion.div>
-          </div>
-        </Section>
-
-        <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Chiropractic Care", img: slidePhoto1, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: slidePhoto2, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: happyHourImg, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
-            ].map((service, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group relative overflow-hidden rounded-md shadow-lg h-[420px] card-hover"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
-                
-                <img 
-                  src={service.img} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="font-display font-bold text-2xl mb-2">{service.title}</h3>
-                    <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 mb-4 leading-relaxed">
-                      {service.desc}
-                    </p>
-                    <Link href={service.href}>
-                      <div className="w-12 h-12 rounded-md bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:shadow-accent/50 transition-all cursor-pointer">
-                        <ArrowRight size={20} />
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-14">
-            <Link href="/services">
-              <Button variant="outline" className="rounded-full border-2 border-primary/15 text-primary" data-testid="button-view-all-services">
-                View All Services
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
           </div>
         </Section>
 
