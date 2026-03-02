@@ -14,6 +14,7 @@ import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
 import slidePhoto3 from "@/assets/images/img-2509.jpg";
 import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
+import happyHourImg from "@assets/IMG_2364_1772414135004.jpg";
 import slidePhoto5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slidePhoto6 from "@/assets/images/img-4930.jpg";
 import slidePhoto7 from "@/assets/images/img-4462.jpg";
@@ -165,7 +166,7 @@ export default function Home() {
             {[
               { title: "Chiropractic Care", img: slidePhoto1, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
               { title: "Fitness Training", img: slidePhoto2, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: slidePhoto4, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
+              { title: "\"Happy Hour\" Wellness Experience", img: happyHourImg, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 
