@@ -109,20 +109,22 @@ export default function Testimonials() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-center space-y-4"
           >
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg mb-8">
               Enjoyed your experience? We'd love to hear from you.
             </p>
-            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full border-2 border-primary/20 text-primary px-10"
-                data-testid="button-google-review"
-              >
-                Leave a Google Review
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <div className="flex justify-center">
+              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full border-2 border-primary/20 text-primary px-10"
+                  data-testid="button-google-review"
+                >
+                  Leave a Google Review
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+            </div>
           </motion.div>
         </Section>
       </main>

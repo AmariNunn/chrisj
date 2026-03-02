@@ -10,8 +10,8 @@ const team = [
     image: nicoleImg,
     imageLabel: "Photo: Dr. Nicole Cox-Jordan",
     bio: [
-      "Dr. Nicole Cox-Jordan hails from Nashville, Tennessee. She completed her education at Davidson County Public Schools and graduated from Whites Creek High School. She earned her Bachelor's degree from Fisk University in Nashville. Subsequently, Dr. Cox-Jordan obtained her Doctor of Chiropractic (DC) degree from Parker College of Chiropractic in Dallas, Texas. Upon completing her studies, she returned to her community to practice. Notably, Dr. Cox-Jordan became the first African American female Chiropractor to practice in the state of Tennessee.",
-      "Dr. Cox-Jordan has 25+ years of Chiropractic experience; by teaming up with her husband Chris, they are better equipped to offer a unique, fun, and comprehensive wellness experience.",
+      "Dr. Nicole Cox-Jordan is a Nashville native and the first African American female Chiropractor to practice in the state of Tennessee. With over 25 years of experience, she provides a unique, unhurried, and comprehensive wellness experience alongside her husband Chris.",
+      "She earned her Doctor of Chiropractic (DC) degree from Parker College of Chiropractic in Dallas, Texas, after completing her undergraduate studies at Fisk University. Her commitment to lifelong wellness is reflected in her personalized approach to patient care.",
     ],
   },
   {
@@ -21,9 +21,8 @@ const team = [
     image: chrisImg,
     imageLabel: "Photo: Christopher Jordan, CPT",
     bio: [
-      "Chris graduated from Whites Creek High School and attended Tennessee State University, majoring in Architectural Engineering. He then relocated to Everett, Washington, where he lived for the next 9 years and began his career in the communications industry.",
-      "At one point, Chris weighed 350 pounds and was diagnosed with stage 2 hypertension. Over time, he aimed to lose 100 pounds in hopes of managing his blood pressure without medication. For the next 3 years, he followed a routine of daily cardio and improved diet. As a result of these lifestyle changes, Chris now maintains a weight of 260 pounds, suitable for his 6'5\" frame.",
-      "Chris started his first business years ago called Healthy Meal Prep by Chris. He prepared affordable, healthy entrees and snacks to demonstrate that eating healthy can be interesting, flavorful, and cost-effective. Chris aimed to better serve his clients by completing Certifications from the International Sports Sciences Association (ISSA). ISSA Certified in Fitness Training, Strength and Conditioning, Nutritional Counseling, and Kinesiotaping. In his spare time, he works out, relaxes, and spends time with his family. Chris is a long-standing member of The Temple Church in Nashville, TN.",
+      "Chris is an ISSA Certified Fitness Trainer and Nutrition Specialist who transformed his own health by losing 100 pounds through disciplined cardio and diet. His journey inspired him to help others achieve their own health goals through personalized programs and nutritional counseling.",
+      "A Nashville native and long-standing member of The Temple Church, Chris brings a passion for community health and practical, effective wellness strategies to every client interaction.",
     ],
   },
 ];
@@ -65,7 +64,7 @@ export function Team() {
                     <img
                       src={member.image}
                       alt={member.imageLabel}
-                      className="w-full h-[480px] object-cover object-center"
+                      className="w-full h-auto min-h-[480px] object-contain bg-muted/5"
                       data-testid={`img-team-${idx}`}
                     />
                   </div>

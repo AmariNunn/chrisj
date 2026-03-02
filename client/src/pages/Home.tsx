@@ -172,9 +172,9 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: chiroServiceImg, desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: fitnessPhoto, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: happyHourPhoto, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
+              { title: "Chiropractic Care", img: chiroServiceImg, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
+              { title: "Fitness Training", img: fitnessPhoto, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "\"Happy Hour\" Wellness Experience", img: happyHourPhoto, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 
@@ -183,6 +183,15 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="group relative overflow-hidden rounded-md shadow-lg cursor-pointer h-[420px] card-hover"
+                onClick={() => {
+                  const id = service.href.split('#')[1];
+                  const element = document.getElementById(id);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = service.href;
+                  }
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
                 

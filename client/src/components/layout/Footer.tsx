@@ -17,7 +17,7 @@ export function Footer() {
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
-            <p className="text-primary-foreground/60 leading-relaxed">
+            <p className="text-primary-foreground/60 leading-relaxed" data-testid="footer-tagline">
               Where clinical precision meets lifelong vitality. A private sanctuary for strength, restoration, and whole-body care.
             </p>
             <div className="flex gap-3">

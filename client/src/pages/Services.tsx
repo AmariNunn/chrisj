@@ -39,7 +39,17 @@ const happyHourServiceImg = "/images/happy-hour-service.jpg";
 
 export default function Services() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const signatureServices = [
@@ -221,6 +231,7 @@ export default function Services() {
               {signatureServices.map((service, i) => (
                 <motion.div
                   key={i}
+                  id={service.title.toLowerCase().includes("chiropractic") ? "chiropractic" : service.title.toLowerCase().includes("fitness") ? "fitness" : "happy-hour"}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -262,12 +273,15 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                          <Button size="lg" className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" data-testid={`button-book-signature-${i}`}>
-                            Book Now
+                          <Button 
+                            size="lg" 
+                            className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
+                            data-testid={`button-book-signature-${i}`}
+                            onClick={() => window.location.href = "/contact"}
+                          >
+                            Contact Us
                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
-                        </a>
                       </div>
                     </div>
                   </Card>
@@ -389,12 +403,15 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                          <Button size="lg" className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" data-testid={`button-book-premium-${i}`}>
-                            Book Now
+                          <Button 
+                            size="lg" 
+                            className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
+                            data-testid={`button-book-premium-${i}`}
+                            onClick={() => window.location.href = "/contact"}
+                          >
+                            Contact Us
                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
-                        </a>
                       </div>
                     </div>
                   </Card>
@@ -451,7 +468,7 @@ export default function Services() {
                   size="lg"
                   variant="outline"
                   className="border-white/30 text-white rounded-md px-10 text-base backdrop-blur-sm"
-                  data-testid="button-contact-us"
+                  data-testid="button-contact-us-footer"
                 >
                   Contact Us
                 </Button>
