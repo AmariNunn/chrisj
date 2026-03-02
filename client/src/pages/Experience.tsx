@@ -2,12 +2,10 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Team } from "@/components/sections/Team";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
-import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
-import slidePhoto2 from "@assets/E1B8E3F7-0E79-4E68-BD43-D2D57827C49F_1772413227959.JPG";
-import happyHourImg from "@assets/IMG_2364_1772414135004.jpg";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
@@ -96,59 +94,8 @@ export default function Experience() {
 
         <IntakeBanner />
 
-        {/* Our Wellness Services */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <span className="text-accent font-medium tracking-[0.2em] uppercase text-xs mb-3 block">What We Do</span>
-              <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight">Our Wellness Services</h2>
-            </motion.div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: "Chiropractic Care", img: slidePhoto1, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-                { title: "Fitness Training", img: slidePhoto2, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-                { title: '"Happy Hour" Wellness Experience', img: happyHourImg, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
-              ].map((service, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.6 }}
-                  className="group relative overflow-hidden rounded-md shadow-lg h-[420px] card-hover"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
-                  <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="font-display font-bold text-2xl mb-2">{service.title}</h3>
-                      <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 mb-4 leading-relaxed">{service.desc}</p>
-                      <Link href={service.href}>
-                        <div className="w-12 h-12 rounded-md bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:shadow-accent/50 transition-all cursor-pointer">
-                          <ArrowRight size={20} />
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="text-center mt-14">
-              <Link href="/services">
-                <Button variant="outline" className="rounded-full border-2 border-primary/15 text-primary" data-testid="button-view-all-services-exp">
-                  View All Services
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Meet the Team */}
+        <Team />
 
         {/* What to Expect */}
         <section className="py-20 md:py-28 bg-secondary/30">
