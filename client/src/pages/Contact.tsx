@@ -97,9 +97,6 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block" data-testid="text-contact-subtitle">
-                Get In Touch
-              </span>
               <h1 className="font-display font-bold text-4xl md:text-6xl leading-tight mb-6" data-testid="text-contact-title">
                 Contact Us
               </h1>
@@ -118,9 +115,6 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <span className="inline-block text-accent font-bold tracking-wider uppercase text-sm px-4 py-1.5 bg-accent/10 rounded-full mb-4">
-                  Contact Info
-                </span>
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-primary" data-testid="text-contact-heading">
                   Let's Connect
                 </h2>
