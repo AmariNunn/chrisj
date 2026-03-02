@@ -87,7 +87,6 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
       <Navbar />
-      
       <main>
         <Hero />
 
@@ -193,7 +192,7 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-[#3e6fad]">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="font-display font-bold text-2xl mb-2">{service.title}</h3>
                     <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 mb-4 leading-relaxed">
@@ -263,7 +262,6 @@ export default function Home() {
           </div>
         </Section>
       </main>
-
       <Footer />
     </div>
   );
