@@ -14,6 +14,8 @@ import slidePhoto2 from "@assets/IMG_5128_fitness.jpg";
 import slidePhoto3 from "@/assets/images/img-2509.jpg";
 import slidePhoto4 from "@assets/IMG_2636_1772413240374.jpeg";
 import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
+import chiropracticCardImg from "@assets/IMG_3100_chiropractic.jpg";
+import fitnessCardImg from "@assets/IMG_5085_1772495425863.jpg";
 import slidePhoto5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slidePhoto6 from "@/assets/images/img-4930.jpg";
 import slidePhoto7 from "@/assets/images/img-4462.jpg";
@@ -112,8 +114,8 @@ export default function Home() {
         <Section title="Our Wellness Services" subtitle="What We Do" className="bg-white">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropractic Care", img: slidePhoto1, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: slidePhoto2, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "Chiropractic Care", img: chiropracticCardImg, href: "/services#chiropractic", desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
+              { title: "Fitness Training", img: fitnessCardImg, href: "/services#fitness", desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
               { title: "\"Happy Hour\" Wellness Experience", img: happyHourImg, href: "/services#happy-hour", desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
