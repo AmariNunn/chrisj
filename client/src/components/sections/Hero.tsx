@@ -6,21 +6,21 @@ import { MapPin, Clock } from "lucide-react";
 import slideImg1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slideImg2 from "@assets/IMG_5128_fitness.jpg";
 import slideImg3 from "@/assets/images/img-2509.jpg";
-import slideImg4 from "@assets/IMG_2636_1772413240374.jpeg";
 import slideImg5 from "@assets/IMG_6517_1772413246373.jpeg";
 import slideImg6 from "@/assets/images/img-4930.jpg";
 import slideImg7 from "@/assets/images/img-4462.jpg";
 import slideImg8 from "@/assets/images/img-4196.jpg";
+import slideImg9 from "@assets/IMG_1065_1772494729327.jpeg";
 
 const slides = [
   { src: slideImg1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
   { src: slideImg2, alt: "Fitness training session" },
   { src: slideImg3, alt: "Wellness care session" },
-  { src: slideImg4, alt: "Cryotherapy treatment" },
   { src: slideImg5, alt: "Body sculpting assessment" },
   { src: slideImg6, alt: "Clinic treatment" },
   { src: slideImg7, alt: "Patient consultation" },
   { src: slideImg8, alt: "Wellness studio" },
+  { src: slideImg9, alt: "Treatment session" },
 ];
 
 export function Hero() {
@@ -57,7 +57,7 @@ export function Hero() {
               <img
                 src={slides[current].src}
                 alt={slides[current].alt}
-                className="absolute inset-0 w-full h-full object-contain scale-[1.4]"
+                className="absolute inset-0 w-full h-full object-contain scale-[1.3]"
                 data-testid={`hero-slide-${current}`}
               />
             </motion.div>
