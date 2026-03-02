@@ -59,8 +59,8 @@ export default function Contact() {
     {
       icon: Phone,
       label: "Phone",
-      value: "615-434-4328",
-      href: "tel:6154344328",
+      value: "615-414-5294",
+      href: "tel:6154145294",
     },
     {
       icon: Mail,
