@@ -98,7 +98,7 @@ export function Hero() {
             <span className="hidden sm:block text-white/30">|</span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-accent shrink-0" />
-              By Appt Only &nbsp;·&nbsp; 11am–2pm &amp; 4pm–7pm &nbsp;·&nbsp; Sun–Sat
+              By Appt Only &nbsp;·&nbsp; Sun–Sat
             </span>
           </div>
         </div>

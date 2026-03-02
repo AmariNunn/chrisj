@@ -77,7 +77,7 @@ export default function Contact() {
     {
       icon: Clock,
       label: "Hours",
-      value: "By Appointment Only — 11am to 2pm & 4pm to 7pm, Sun–Sat",
+      value: "By Appointment Only — Sun–Sat",
       href: undefined,
     },
   ];

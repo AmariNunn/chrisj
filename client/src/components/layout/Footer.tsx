@@ -106,8 +106,6 @@ export function Footer() {
                 <div>
                   <p className="font-semibold text-white">By Appointment Only</p>
                   <p className="mt-1">Sunday &ndash; Saturday</p>
-                  <p>11:00 AM &ndash; 2:00 PM</p>
-                  <p>4:00 PM &ndash; 7:00 PM</p>
                 </div>
               </li>
             </ul>
