@@ -21,9 +21,10 @@ import slidePhoto8 from "@/assets/images/img-3944.jpg";
 import slidePhoto9 from "@/assets/images/img-4930.jpg";
 import slidePhoto10 from "@/assets/images/img-5128.jpg";
 
+import fitnessPhoto from "@/assets/images/img-5128.jpg";
+import happyHourPhoto from "@assets/IMG_2364_1772412691901.jpg";
+
 const chiroServiceImg = "/images/chiro-service.jpg";
-const fitnessServiceImg = "/images/fitness-service.jpg";
-const happyHourServiceImg = "/images/happy-hour-service.jpg";
 
 const slideshowPhotos = [
   { id: 1, src: slidePhoto1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
@@ -173,8 +174,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Chiropractic Care", img: chiroServiceImg, desc: "Precision adjustments coupled with PT modalities in a private wellness setting. Personalized treatment plans for all ages." },
-              { title: "Fitness Training", img: fitnessServiceImg, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
-              { title: "\"Happy Hour\" Wellness Experience", img: happyHourServiceImg, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
+              { title: "Fitness Training", img: fitnessPhoto, desc: "Private workout studio with personalized programs including corrective exercise, performance training, and body transformation." },
+              { title: "\"Happy Hour\" Wellness Experience", img: happyHourPhoto, desc: "One full hour of relaxation therapy featuring zero gravity massage, hydrotherapy, Theragun, and more." },
             ].map((service, i) => (
               <motion.div 
                 key={i} 
