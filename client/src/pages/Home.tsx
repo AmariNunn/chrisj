@@ -173,16 +173,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group relative overflow-hidden rounded-md shadow-lg cursor-pointer h-[420px] card-hover"
-                onClick={() => {
-                  const id = service.href.split('#')[1];
-                  const element = document.getElementById(id);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = service.href;
-                  }
-                }}
+                className="group relative overflow-hidden rounded-md shadow-lg h-[420px] card-hover"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
                 
@@ -192,15 +183,17 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-[#3e6fad]">
+                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="font-display font-bold text-2xl mb-2">{service.title}</h3>
                     <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-all duration-500 mb-4 leading-relaxed">
                       {service.desc}
                     </p>
-                    <div className="w-12 h-12 rounded-md bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:shadow-accent/50 transition-all">
-                      <ArrowRight size={20} />
-                    </div>
+                    <Link href={service.href}>
+                      <div className="w-12 h-12 rounded-md bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:shadow-accent/50 transition-all cursor-pointer">
+                        <ArrowRight size={20} />
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
