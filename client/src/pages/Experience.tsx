@@ -66,7 +66,6 @@ export default function Experience() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
       <Navbar />
-
       <main>
         {/* Page Hero */}
         <section className="relative py-24 md:py-36 bg-primary text-white overflow-hidden">
@@ -145,9 +144,7 @@ export default function Experience() {
               className="text-center mb-12"
             >
               <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Who We Serve</span>
-              <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-who-for-title">
-                Who These Services Are For
-              </h2>
+              <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-who-for-title">Who The Services Are For</h2>
             </motion.div>
             <motion.div
               variants={fadeUp}
@@ -410,7 +407,6 @@ export default function Experience() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
