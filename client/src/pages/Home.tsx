@@ -186,7 +186,7 @@ export default function Home() {
                 Ready to Prioritize Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">Health?</span>
               </h2>
               <p className="text-lg md:text-xl text-white/70 max-w-lg mx-auto leading-relaxed">
-                Book your appointment today and start your journey to a healthier, happier you.
+                Book your experience today and start your journey to a healthier, happier you.
               </p>
             </motion.div>
             <motion.div

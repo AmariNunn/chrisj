@@ -125,7 +125,6 @@ export default function Experience() {
               transition={{ duration: 0.7 }}
               className="space-y-6"
             >
-              <span className="inline-block text-accent font-semibold tracking-widest uppercase text-xs" data-testid="text-about-subtitle">Our Studio</span>
               <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-primary leading-tight" data-testid="text-about-heading">
                 The Jordan Wellness Experience
               </h2>
@@ -149,7 +148,6 @@ export default function Experience() {
               viewport={{ once: true }}
               className="text-center mb-14"
             >
-              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Your First Visit</span>
               <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-what-to-expect-title">
                 What to Expect
               </h2>
@@ -185,7 +183,6 @@ export default function Experience() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Who We Serve</span>
               <h2 className="font-display font-bold text-3xl md:text-5xl text-primary leading-tight" data-testid="text-who-for-title">Who The Services Are For</h2>
             </motion.div>
             <motion.div
