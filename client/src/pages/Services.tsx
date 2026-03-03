@@ -29,7 +29,10 @@ import servicesHeaderImg from "/images/services-header.jpg";
 import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
 import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
-import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
+import chiroFitnessImg from "@assets/IMG_3058_chirofitness.jpg";
+import bodySculptingVideo from "@assets/IMG_9232_1772497281388.mov";
+import vipImg from "@assets/image_1772497463184.png";
+
 import { BOOKING_URL } from "@/lib/constants";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
@@ -101,8 +104,7 @@ export default function Services() {
       title: '"Essential" ChiroFitness Experience',
       icon: Star,
       badge: "Concierge Membership",
-      price: "Starting at $299+",
-      video: essentialVideo,
+      img: chiroFitnessImg,
       features: [
         "Chiro optimization",
         "Private fitness training",
@@ -117,9 +119,9 @@ export default function Services() {
       title: '"Enhanced" Body Sculpting / Fat Freezing',
       icon: Sparkles,
       badge: "Non-Invasive",
-      price: "Starting at $99+/session (min 6 sessions)",
       note: "NOT for weight loss",
       video: bodySculptingVideo,
+      img: chiroFitnessImg, // Placeholder for background blur if video is contained
       features: [
         "Abdomen",
         "Love handles",
@@ -137,7 +139,6 @@ export default function Services() {
       title: '"Elevated" Targeted Cryotherapy',
       icon: Snowflake,
       badge: "Precision Cold Therapy",
-      price: "Starting at $50/treatment",
       video: cryoVideo,
       features: [
         "Reduces inflammation",
@@ -151,8 +152,7 @@ export default function Services() {
       title: '"Elite" VIP Experience',
       icon: Crown,
       badge: "Concierge Membership",
-      price: "3-month membership required",
-      video: eliteVideo,
+      img: vipImg,
       features: [
         "Customized by both Chiropractor and Fitness Trainer",
         "Revisited every 2 weeks",
@@ -358,19 +358,41 @@ export default function Services() {
                     className="overflow-hidden h-full"
                     data-testid={`card-premium-service-${i}`}
                   >
-                    {"video" in service && service.video && (
+                    {"video" in service && service.video ? (
                       <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: "16/9" }}>
+                        {service.img && (
+                          <img
+                            src={service.img}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-70"
+                            aria-hidden="true"
+                          />
+                        )}
                         <video
                           src={service.video as string}
                           autoPlay
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-contain"
                           data-testid={`video-premium-service-${i}`}
                         />
                       </div>
-                    )}
+                    ) : service.img ? (
+                      <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: "16/9" }}>
+                        <img
+                          src={service.img}
+                          alt=""
+                          className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-70"
+                          aria-hidden="true"
+                        />
+                        <img
+                          src={service.img}
+                          alt={service.title}
+                          className="absolute inset-0 w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : null}
                     <div className="p-6 space-y-4 flex flex-col flex-1">
                       <div className="flex items-start justify-between gap-4 flex-wrap">
                         <div className="flex items-center gap-3">
