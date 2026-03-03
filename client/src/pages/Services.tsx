@@ -115,16 +115,12 @@ export default function Services() {
       video: bodySculptingVideo,
       img: chiroFitnessImg, // Placeholder for background blur if video is contained
       features: [
-        "Abdomen",
-        "Love handles",
-        "Thighs",
-        "Upper Arms",
-        "Back fat",
-        "Double Chin",
-        "Neck / Face",
-        "Under buttocks",
-        "Obliques",
-        "Gynecomastia",
+        "Advanced cooling technology with no surgery or downtime",
+        "Non-invasive, fat freezing treatment for fat reduction for stubborn resistant areas",
+        "Subtle, elegant contour refinement",
+        "Discreet comfortable sessions",
+        "Progressive natural looking sculpting over time",
+        "Integrated seamlessly with other Jordan Wellness Experiences",
       ],
     },
     {
