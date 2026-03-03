@@ -126,13 +126,18 @@ export default function Home() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="group relative overflow-hidden rounded-md shadow-lg h-[420px] card-hover"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
-                
-                <img 
-                  src={service.img} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <img
+                  src={service.img}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-70"
+                  aria-hidden="true"
                 />
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500 z-10" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

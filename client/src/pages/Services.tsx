@@ -33,8 +33,8 @@ import eliteVideo from "@assets/IMG_1419_1772074592270.mov";
 import { BOOKING_URL } from "@/lib/constants";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
-import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
-import slidePhoto2 from "@assets/IMG_5128_fitness.jpg";
+import chiropracticCardImg from "@assets/IMG_3100_chiropractic.jpg";
+import fitnessCardImg from "@assets/IMG_5085_1772495425863.jpg";
 import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
 
 export default function Services() {
@@ -56,7 +56,7 @@ export default function Services() {
     {
       title: "Chiropractic Care",
       icon: Activity,
-      img: slidePhoto1,
+      img: chiropracticCardImg,
       features: [
         "Private wellness setting",
         "Precision adjustments coupled with PT modalities",
@@ -70,7 +70,7 @@ export default function Services() {
     {
       title: "Fitness Training Wellness Experience",
       icon: Dumbbell,
-      img: slidePhoto2,
+      img: fitnessCardImg,
       features: [
         "Private workout studio",
         "Personalized programs",
@@ -241,11 +241,17 @@ export default function Services() {
                     className="overflow-visible h-full"
                     data-testid={`card-signature-service-${i}`}
                   >
-                    <div className="relative h-[220px] overflow-hidden rounded-t-md">
+                    <div className="relative h-[220px] overflow-hidden rounded-t-md bg-black">
+                      <img
+                        src={service.img}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-70"
+                        aria-hidden="true"
+                      />
                       <img
                         src={service.img}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-contain"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4 w-11 h-11 rounded-md bg-accent/90 flex items-center justify-center text-white">
