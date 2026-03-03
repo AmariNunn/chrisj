@@ -111,7 +111,6 @@ export default function Services() {
       title: '"Enhanced" Body Sculpting / Fat Freezing',
       icon: Sparkles,
       badge: "Non-Invasive",
-      note: "NOT for weight loss",
       video: bodySculptingVideo,
       img: chiroFitnessImg, // Placeholder for background blur if video is contained
       features: [
@@ -397,16 +396,6 @@ export default function Services() {
                           </div>
                         </div>
                       </div>
-
-                      <div className="text-accent font-bold text-lg">
-                        {service.price}
-                      </div>
-
-                      {service.note && (
-                        <p className="text-sm text-muted-foreground font-medium italic">
-                          Note: {service.note}
-                        </p>
-                      )}
 
                       <ul className="space-y-2.5 flex-1">
                         {service.features.map((feature, j) => (
