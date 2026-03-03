@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -22,23 +21,16 @@ import {
   Target,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import chiropracticImg from "@/assets/images/service-chiropractic.jpg";
-import massageImg from "@/assets/images/service-massage.jpg";
-import nutritionImg from "@/assets/images/service-nutrition.jpg";
 import servicesHeaderImg from "/images/services-header.jpg";
-import essentialVideo from "@assets/0225_(1)(1)_1772074153901.mp4";
-import bodySculptingVideo from "@assets/crisj_1772072399228.mp4";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
-import chiroFitnessImg from "@assets/IMG_3058_chirofitness.jpg";
 import bodySculptingVideo from "@assets/IMG_9232_1772497281388.mov";
+import chiroFitnessImg from "@assets/IMG_3058_chirofitness.jpg";
 import vipImg from "@assets/image_1772497463184.png";
-
-import { BOOKING_URL } from "@/lib/constants";
-import { IntakeBanner } from "@/components/ui/IntakeBanner";
-
 import chiropracticCardImg from "@assets/IMG_3100_chiropractic.jpg";
 import fitnessCardImg from "@assets/IMG_5085_1772495425863.jpg";
 import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
+import { BOOKING_URL } from "@/lib/constants";
+import { IntakeBanner } from "@/components/ui/IntakeBanner";
 
 export default function Services() {
   useEffect(() => {
