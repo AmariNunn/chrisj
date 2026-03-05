@@ -94,7 +94,7 @@ export function Hero() {
                 </Link>
               </div>
               <Link href="/intake-form">
-                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-new-patients">
+                <Button size="lg" className="rounded-full px-10 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-lg transition-all group" data-testid="button-new-patients">
                   New Patients
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
