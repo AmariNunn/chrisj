@@ -80,15 +80,22 @@ export function Hero() {
               Where Clinical Precision Meets Lifelong Vitality
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center pt-6">
+            <div className="flex flex-col items-center gap-4 pt-6">
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link href="/experience">
+                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-begin-experience">
+                    Begin Your Experience
+                  </Button>
+                </Link>
+                <Link href="/services">
+                  <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-view-services">
+                    Services
+                  </Button>
+                </Link>
+              </div>
               <Link href="/intake-form">
-                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-new-patient">
-                  New Patient
-                </Button>
-              </Link>
-              <Link href="/experience">
-                <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-begin-experience">
-                  Begin Your Experience
+                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 rounded-full px-8 transition-all" data-testid="button-new-patients">
+                  New Patients
                 </Button>
               </Link>
             </div>
