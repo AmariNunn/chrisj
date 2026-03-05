@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, ArrowRight } from "lucide-react";
 import slideImg1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slideImg2 from "@assets/IMG_5128_fitness.jpg";
 import slideImg3 from "@/assets/images/img-2509.jpg";
@@ -94,8 +94,9 @@ export function Hero() {
                 </Link>
               </div>
               <Link href="/intake-form">
-                <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 rounded-full px-8 transition-all" data-testid="button-new-patients">
+                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-new-patients">
                   New Patients
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
