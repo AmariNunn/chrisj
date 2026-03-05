@@ -21,11 +21,10 @@ import {
   Target,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import servicesHeaderImg from "/images/services-header.jpg";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import bodySculptingVideo from "@assets/IMG_9232_1772497281388.mov";
 import chiroFitnessImg from "@assets/IMG_3058_chirofitness.jpg";
-import vipImg from "@assets/image_1772497463184.png";
+import beforeAfterImg from "@assets/IMG_9202_1772733395393.jpeg";
 import chiropracticCardImg from "@assets/IMG_3100_chiropractic.jpg";
 import fitnessCardImg from "@assets/IMG_5085_1772495425863.jpg";
 import happyHourImg from "@assets/IMG_4172_happyhour.jpg";
@@ -139,7 +138,7 @@ export default function Services() {
       title: '"Elite" VIP Experience',
       icon: Crown,
       badge: "Concierge Membership",
-      img: vipImg,
+      img: beforeAfterImg,
       features: [
         "Customized by both Chiropractor and Fitness Trainer",
         "Revisited every 2 weeks",
@@ -165,9 +164,9 @@ export default function Services() {
       <div className="relative h-[340px] md:h-[420px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={servicesHeaderImg}
+            src={beforeAfterImg}
             alt="Services"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         </div>
