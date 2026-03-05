@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
+import { BOOKING_URL } from "@/lib/constants";
 import slidePhoto1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slidePhoto2 from "@assets/IMG_5128_fitness.jpg";
 import slidePhoto3 from "@/assets/images/img-2509.jpg";
@@ -196,7 +197,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
             >
-              <a href="https://cal.com/jordanwellnessexperience" target="_blank" rel="noopener noreferrer">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-white rounded-full text-lg group" data-testid="button-book-cta">
                   Book Experience
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
