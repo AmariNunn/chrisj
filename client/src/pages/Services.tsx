@@ -47,11 +47,15 @@ export default function Services() {
     }
   }, []);
 
+  const CHIROPRACTIC_URL = "https://cal.com/dr.-nicole-cox-jordan-gyq0bg/chiropractic-care";
+  const FITNESS_URL = "https://cal.com/chris-jordan-ghrbdo/training";
+
   const signatureServices = [
     {
       title: "Chiropractic Care",
       icon: Activity,
       img: chiropracticCardImg,
+      link: CHIROPRACTIC_URL,
       features: [
         "Private wellness setting",
         "Precision adjustments coupled with PT modalities",
@@ -66,6 +70,7 @@ export default function Services() {
       title: "Fitness Training Wellness Experience",
       icon: Dumbbell,
       img: fitnessCardImg,
+      link: FITNESS_URL,
       features: [
         "Private workout studio",
         "Personalized programs",
@@ -79,6 +84,7 @@ export default function Services() {
       title: '"Happy Hour" Wellness Experience',
       icon: Clock,
       img: happyHourImg,
+      link: CHIROPRACTIC_URL,
       description:
         "ONE FULL HOUR of Relaxation therapy. Releases tension, supports recovery, reduces stress, and provides a nervous system reset.",
       features: [
@@ -97,6 +103,7 @@ export default function Services() {
       icon: Star,
       badge: "Concierge Membership",
       img: chiroFitnessImg,
+      link: CHIROPRACTIC_URL,
       features: [
         "Chiro optimization",
         "Private fitness training",
@@ -113,6 +120,7 @@ export default function Services() {
       badge: "Non-Invasive",
       video: bodySculptingVideo,
       img: chiroFitnessImg, // Placeholder for background blur if video is contained
+      link: CHIROPRACTIC_URL,
       features: [
         "Advanced cooling technology with no surgery or downtime",
         "Non-invasive, fat freezing treatment for fat reduction for stubborn resistant areas",
@@ -127,6 +135,7 @@ export default function Services() {
       icon: Snowflake,
       badge: "Precision Cold Therapy",
       video: cryoVideo,
+      link: CHIROPRACTIC_URL,
       features: [
         "Reduces inflammation",
         "Accelerates recovery",
@@ -140,6 +149,7 @@ export default function Services() {
       icon: Crown,
       badge: "Concierge Membership",
       img: beforeAfterImg,
+      link: CHIROPRACTIC_URL,
       features: [
         "Customized by both Chiropractor and Fitness Trainer",
         "Revisited every 2 weeks",
@@ -266,7 +276,7 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                          <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer" className="block w-full">
+                          <a href={service.link} target="_blank" rel="noopener noreferrer" className="block w-full">
                             <Button 
                               size="lg" 
                               className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
@@ -409,7 +419,7 @@ export default function Services() {
                         ))}
                       </ul>
                       <div className="mt-auto pt-6">
-                          <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer" className="block w-full">
+                          <a href={service.link} target="_blank" rel="noopener noreferrer" className="block w-full">
                             <Button 
                               size="lg" 
                               className="w-full rounded-full bg-accent text-white shadow-sm hover:shadow-md hover:bg-accent/90 transition-all duration-300 group" 
@@ -460,7 +470,7 @@ export default function Services() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
             >
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <a href={CHIROPRACTIC_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-accent border-accent text-white rounded-md px-10 text-base group"
@@ -470,7 +480,7 @@ export default function Services() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="https://cal.com/chris-jordan-ghrbdo/training" target="_blank" rel="noopener noreferrer">
+              <a href={FITNESS_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
