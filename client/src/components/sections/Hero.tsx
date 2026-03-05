@@ -80,23 +80,21 @@ export function Hero() {
               Where Clinical Precision Meets Lifelong Vitality
             </p>
 
-            <div className="flex flex-col items-center gap-4 pt-6">
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/experience">
-                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-begin-experience">
-                    Begin Your Experience
-                  </Button>
-                </Link>
-                <Link href="/services">
-                  <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-view-services">
-                    Services
-                  </Button>
-                </Link>
-              </div>
+            <div className="flex flex-wrap gap-4 justify-center pt-6">
+              <Link href="/experience">
+                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-begin-experience">
+                  Begin Your Experience
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-view-services">
+                  Services
+                </Button>
+              </Link>
               <Link href="/intake-form">
-                <Button size="lg" className="rounded-full px-10 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-lg transition-all group" data-testid="button-new-patients">
+                <Button size="default" className="rounded-full px-7 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-lg transition-all group self-center" data-testid="button-new-patients">
                   New Patients
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
