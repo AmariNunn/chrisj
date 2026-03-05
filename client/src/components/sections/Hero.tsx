@@ -81,14 +81,14 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center pt-6">
-              <Link href="/experience">
-                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-begin-experience">
-                  Begin Your Experience
+              <Link href="/intake-form">
+                <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-new-patient">
+                  New Patient
                 </Button>
               </Link>
-              <Link href="/services">
-                <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-view-services">
-                  Services
+              <Link href="/experience">
+                <Button variant="outline" size="lg" className="rounded-full px-10 border-2 border-white/30 text-white backdrop-blur-sm transition-all" data-testid="button-begin-experience">
+                  Begin Your Experience
                 </Button>
               </Link>
             </div>
