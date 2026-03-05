@@ -21,6 +21,7 @@ import {
   Target,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import cryoVideo from "@assets/IMG_8944_1772074707677.mov";
 import bodySculptingVideo from "@assets/IMG_9232_1772497281388.mov";
 import chiroFitnessImg from "@assets/IMG_3058_chirofitness.jpg";
@@ -470,16 +471,16 @@ export default function Services() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center pt-2"
             >
-              <a href={CHIROPRACTIC_URL} target="_blank" rel="noopener noreferrer">
+              <Link href="/intake-form">
                 <Button
                   size="lg"
                   className="bg-accent border-accent text-white rounded-md px-10 text-base group"
-                  data-testid="button-book-appointment"
+                  data-testid="button-intake-form"
                 >
-                  Book Experience
+                  New Patients
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </a>
+              </Link>
               <a href={FITNESS_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
