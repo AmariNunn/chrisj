@@ -153,9 +153,9 @@ export default function Services() {
       link: CHIROPRACTIC_URL,
       features: [
         "Customized by both Chiropractor and Fitness Trainer",
-        "Revisited every 2 weeks",
+        "Treatment plan revisited every 2 weeks",
         "All services included",
-        "Up to 6 Body Sculpting sessions/month",
+        "Priority Access & Hours",
         "Full concierge wellness experience",
       ],
     },
