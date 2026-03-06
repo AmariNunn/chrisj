@@ -169,9 +169,7 @@ export default function Membership() {
                       </div>
                       <div className="flex-1 space-y-4">
                         <div>
-                          <span className={`text-xs font-bold tracking-[0.2em] uppercase mb-2 block ${tier.accent ? "text-accent" : "text-accent"}`}>
-                            {tier.label}
-                          </span>
+                          {/* Hidden labels */}
                           <h3 className={`font-display font-bold text-xl md:text-2xl mb-1 ${tier.accent ? "text-white" : "text-primary"}`} data-testid={`text-tier-name-${i}`}>
                             {tier.name}
                           </h3>
