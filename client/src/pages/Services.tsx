@@ -86,8 +86,7 @@ export default function Services() {
       icon: Clock,
       img: happyHourImg,
       link: CHIROPRACTIC_URL,
-      description:
-        "ONE FULL HOUR of Relaxation therapy. Releases tension, supports recovery, reduces stress, and provides a nervous system reset.",
+      description: "ONE FULL HOUR of Relaxation therapy.",
       features: [
         "Zero Gravity massage chair",
         "Intersegmental Traction table",
