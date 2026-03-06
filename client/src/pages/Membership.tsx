@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Star, Sparkles, Snowflake, Crown, CheckCircle2, ExternalLink } from "lucide-react";
 import { IntakeBanner } from "@/components/ui/IntakeBanner";
+import { BOOKING_URL } from "@/lib/constants";
 
 const FORMS_URL = "https://jordanwellnessxp.com/jordan-wellness-patient-questionnaire/";
 
