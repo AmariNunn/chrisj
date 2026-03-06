@@ -93,6 +93,7 @@ export default function Services() {
         "Heated Hydrotherapy table",
         "Theragun",
         "Jeanie Rub therapy",
+        "Percussor",
       ],
     },
   ];
