@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
+import { BOOKING_URL } from "@/lib/constants";
 import slideImg1 from "@assets/IMG_2228_1772413231480.jpeg";
 import slideImg2 from "@assets/IMG_5128_fitness.jpg";
 import slideImg3 from "@/assets/images/img-2509.jpg";
@@ -82,12 +83,12 @@ export function Hero() {
 
             <div className="flex flex-col items-center gap-4 pt-6">
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/experience">
-                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-begin-experience">
-                    Begin Your Experience
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-existing-patient">
+                    Existing Patient
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                </Link>
+                </a>
                 <Link href="/intake-form">
                   <Button size="default" className="rounded-full px-7 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-lg transition-all group self-center" data-testid="button-new-patients">
                     New Patients
