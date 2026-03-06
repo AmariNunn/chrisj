@@ -35,7 +35,6 @@ const tiers = [
       "Obliques", "Back fat / Bra fat", "Love handles", "Man boobs",
       "Double Chin", "Neck", "Jowl line",
     ],
-    addon: "Option to ADD-ON an additional Premium service",
     accent: true,
   },
   {
@@ -196,10 +195,10 @@ export default function Membership() {
 
                         {(tier as any).treatmentAreas && (
                           <div>
-                            <p className="text-sm font-semibold text-muted-foreground mb-2">Treatment Areas:</p>
+                            <p className={`text-sm font-semibold mb-2 ${tier.accent ? "text-white" : "text-muted-foreground"}`}>Treatment Areas:</p>
                             <div className="flex flex-wrap gap-2">
                               {(tier as any).treatmentAreas.map((area: string, j: number) => (
-                                <span key={j} className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium" data-testid={`badge-area-${j}`}>
+                                <span key={j} className={`px-3 py-1 rounded-full text-xs font-medium ${tier.accent ? "bg-white/20 text-white" : "bg-accent/10 text-accent"}`} data-testid={`badge-area-${j}`}>
                                   {area}
                                 </span>
                               ))}
@@ -262,7 +261,7 @@ export default function Membership() {
                 Ready to Invest in Your Wellness?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Apply for a membership today or contact us with any questions about which tier is right for you.
+                Book your experience today or contact us with any questions about which tier is right for you.
               </p>
             </motion.div>
             <motion.div
@@ -273,10 +272,14 @@ export default function Membership() {
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a href={FORMS_URL} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="rounded-full px-10 bg-accent text-white shadow-md shadow-accent/20 group" data-testid="button-apply-membership">
-                  Apply for Membership
-                  <ExternalLink className="ml-2 w-4 h-4" />
+              <Link href="/intake-form">
+                <Button size="lg" className="rounded-full px-10 bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20 group" data-testid="button-new-patients">
+                  New Patients
+                </Button>
+              </Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="rounded-full px-10 bg-accent text-white shadow-md shadow-accent/20 group" data-testid="button-existing-patients">
+                  Existing Patients
                 </Button>
               </a>
               <Link href="/contact">
