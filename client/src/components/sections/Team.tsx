@@ -12,6 +12,7 @@ const team = [
     bio: [
       "Dr. Nicole Cox-Jordan is a Nashville native and the first African American female Chiropractor to practice in the state of Tennessee. With over 25 years of experience, she provides a unique, unhurried, and comprehensive wellness experience alongside her husband Chris.",
       "She earned her Doctor of Chiropractic (DC) degree from Parker College of Chiropractic in Dallas, Texas, after completing her undergraduate studies at Fisk University. Her commitment to lifelong wellness is reflected in her personalized approach to patient care.",
+      "Dr. Nicole Cox-Jordan is a proud Silver Star member of Alpha Kappa Alpha, Sorority, Inc.",
     ],
   },
   {
