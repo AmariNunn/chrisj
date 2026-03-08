@@ -174,7 +174,7 @@ export default function Contact() {
                 </a>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-4 flex flex-wrap gap-4">
                 <a
                   href="https://cal.com/jordanwellnessexperience"
                   target="_blank"
@@ -183,6 +183,17 @@ export default function Contact() {
                 >
                   <Button size="lg" className="rounded-full px-10 bg-accent text-white shadow-lg shadow-accent/20">
                     Book Experience
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
+                <a
+                  href="https://cal.com/dr.-nicole-cox-jordan-gyq0bg/chiropractic-care?overlayCalendar=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="link-new-patients-contact"
+                >
+                  <Button size="lg" className="rounded-full px-10 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20">
+                    New Patients
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </a>
