@@ -12,6 +12,7 @@ import slideImg6 from "@/assets/images/img-4930.jpg";
 import slideImg7 from "@/assets/images/img-4462.jpg";
 import slideImg8 from "@assets/IMG_2364_1772494881531.jpg";
 import slideImg9 from "@assets/IMG_1065_1772494729327.jpeg";
+import slideImg10 from "@/assets/images/img-2170.jpg";
 
 const slides = [
   { src: slideImg1, alt: "Dr. Cox-Jordan chiropractic adjustment" },
@@ -22,6 +23,7 @@ const slides = [
   { src: slideImg7, alt: "Patient consultation" },
   { src: slideImg8, alt: "Wellness studio" },
   { src: slideImg9, alt: "Treatment session" },
+  { src: slideImg10, alt: "Wellness experience" },
 ];
 
 export function Hero() {
