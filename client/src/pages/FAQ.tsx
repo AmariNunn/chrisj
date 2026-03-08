@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "Click Begin Experience and follow the questionnaire. Make sure to submit and we'll be in touch within 24–48 hours to schedule your first appointment. For established patients, click Begin Experience and follow the Established Patient questionnaire.",
+      "New patients begin by clicking on the New Patient button and simply follow the prompts. Existing patients click on Book Experience and it will take you to the calendar where you will schedule your appt time.",
   },
   {
     question: "Do you accept insurance?",

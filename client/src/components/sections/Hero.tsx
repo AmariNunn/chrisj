@@ -86,8 +86,8 @@ export function Hero() {
             <div className="flex flex-col items-center gap-4 pt-6">
               <div className="flex flex-wrap gap-4 justify-center">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-existing-patient">
-                    Existing Patient
+                  <Button size="lg" className="rounded-full px-10 bg-accent text-accent-foreground border-accent shadow-lg transition-all group" data-testid="button-book-experience">
+                    Book Experience
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
